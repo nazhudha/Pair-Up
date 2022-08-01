@@ -5,9 +5,23 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cors = require("cors");
 require("dotenv").config();
+const session = require("express-session;");
 
 // app
 const app = express();
+
+//sessions for users
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: true,
+    resave: false,
+    cookie: {
+      httpOnly: true,
+      maxAge: 3600000,
+    },
+  })
+);
 
 // db
 mongoose
@@ -26,7 +40,8 @@ app.use(urlencoded({ extended: false }));
 app.use(cors({ origin: true, credentials: true })); //communicating between front and back end
 
 // routes
-app.use("/user", require('./routes/user'));
+app.use("/user", require("./routes/user"));
+app.use("/sessions", require("./routes/sessions"));
 
 // port
 const port = process.env.PORT || 8080; //use PORT set up in enVars, or use 8080
