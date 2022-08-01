@@ -12,6 +12,7 @@ const SessionsController = {
   },
 
   Create: async (req, res) => {
+    console.log(req.session);
     const body = req.body;
     const user = await User.findOne({ email: body.email });
     if (user) {
@@ -29,3 +30,5 @@ const SessionsController = {
     }
   },
 };
+
+module.exports = SessionsController;

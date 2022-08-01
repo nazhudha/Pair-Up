@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cors = require("cors");
 require("dotenv").config();
-const session = require("express-session;");
+const session = require("express-session");
 
 // app
 const app = express();
