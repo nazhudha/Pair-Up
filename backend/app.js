@@ -26,7 +26,7 @@ app.use(urlencoded({ extended: false }));
 app.use(cors({ origin: true, credentials: true })); //communicating between front and back end
 
 // routes
-app.use("/user");
+app.use("/user", require('./routes/user'));
 
 // port
 const port = process.env.PORT || 8080; //use PORT set up in enVars, or use 8080
