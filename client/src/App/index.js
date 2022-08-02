@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import LoginAndSignup from './LoginAndSignup/index'
-import Login from './LoginAndSignup/Login/index'
+import Login from './Login/index'
 
 function App() {
   return (
