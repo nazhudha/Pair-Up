@@ -95,4 +95,26 @@ describe("", () => {
     cy.get("input[name=postcode]").should("be.visible")
 
   });
+  it("User can't submit until all credential fields are filled", () => {
+    
+    cy.visit("/");
+    cy.contains("Sign up").click();
+
+    cy.get("input[name=fname]").type("Paddy")
+    cy.get("input[name=lname]").type("Reynolds")
+
+    cy.contains("NEXT").click();
+
+
+    cy.get("input[value=Beginner]").check()
+
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=ruby]").should("be.visible")
+    
+    cy.contains("NEXT").click();
+
+    cy.get(':button').should('be.disabled')
+
+  });
 });
