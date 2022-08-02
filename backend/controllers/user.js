@@ -20,7 +20,7 @@ const UserController = {
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
     console.log(user.password);
-    await user.save().then((doc) => res.status(201).redirect('/profile/me'));
+    await user.save().then((doc) => res.status(201).redirect('/'));
   },
 };
 
