@@ -21,6 +21,7 @@ const SessionsController = {
         res.status(200);
         //console.log(session.user);
         req.session.user = user;
+        console.log(req.session);
         res.redirect('/');
       } else {
         res.status(400).redirect('/');
