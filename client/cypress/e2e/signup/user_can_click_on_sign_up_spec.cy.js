@@ -12,7 +12,7 @@ describe("Sign in", () => {
     
     cy.visit("/");
 
-    cy.contains("Log in").should("be.visible")
+    cy.contains("Log In").should("be.visible")
     
     
     
@@ -20,7 +20,7 @@ describe("Sign in", () => {
   it("User can click on log in and see the email password inputs", () => {
     
     cy.visit("/");
-    cy.contains("Log in").click();
+    cy.contains("Log In").click();
 
 
     cy.get("input[name=email]").should("be.visible")
