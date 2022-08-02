@@ -31,9 +31,9 @@ describe("", () => {
     cy.contains("NEXT").click();
 
 
-    cy.get("input[name=beginner]").should("be.visible")
-    cy.get("input[name=intermediate]").should("be.visible")
-    cy.get("input[name=expert]").should("be.visible")
+    cy.get("input[value=Beginner]").should("be.visible")
+    cy.get("input[value=Intermediate]").should("be.visible")
+    cy.get("input[value=Expert]").should("be.visible")
 
     
   });
@@ -64,10 +64,35 @@ describe("", () => {
     cy.contains("Sign up").click();
 
     cy.get("input[name=fname]").type("Paddy")
-    // cy.get("input[name=lname]").type("Reynolds")
+
 
     cy.get(':button').should('be.disabled')
 
     
+  });
+  it("User can click next on the skills page to get to the credentials page", () => {
+    
+    cy.visit("/");
+    cy.contains("Sign up").click();
+
+    cy.get("input[name=fname]").type("Paddy")
+    cy.get("input[name=lname]").type("Reynolds")
+
+    cy.contains("NEXT").click();
+
+
+    cy.get("input[value=Beginner]").check()
+
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=ruby]").should("be.visible")
+    
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=email]").should("be.visible")
+    cy.get("input[name=password]").should("be.visible")
+    cy.get("input[name=password2]").should("be.visible")
+    cy.get("input[name=postcode]").should("be.visible")
+
   });
 });

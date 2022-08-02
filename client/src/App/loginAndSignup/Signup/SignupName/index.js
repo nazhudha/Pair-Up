@@ -27,7 +27,7 @@ export default function SignupName() {
         <input ref={lastNameRef}type="text" name="lname" onChange={handleChange} />
       </label>
     </form>
-    <Link to="/signupSkill">
+    <Link to="/signupskill">
       <button ref={nextButtonRef} disabled={true}>
         NEXT
       </button>
