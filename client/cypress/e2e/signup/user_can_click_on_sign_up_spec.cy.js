@@ -1,3 +1,5 @@
+
+
 describe("", () => {
   it("User sees signup button", () => {
     
@@ -95,7 +97,7 @@ describe("", () => {
     cy.get("input[name=postcode]").should("be.visible")
 
   });
-  it("User can't submit until all credential fields are filled", () => {
+  it("User can't submit until all credential fields are filled 1", () => {
     
     cy.visit("/");
     cy.contains("Sign up").click();
@@ -116,5 +118,147 @@ describe("", () => {
 
     cy.get(':button').should('be.disabled')
 
+  });
+  it("User can't submit until all credential fields are filled 2", () => {
+    
+    cy.visit("/");
+    cy.contains("Sign up").click();
+
+    cy.get("input[name=fname]").type("Paddy")
+    cy.get("input[name=lname]").type("Reynolds")
+
+    cy.contains("NEXT").click();
+
+
+    cy.get("input[value=Beginner]").check()
+
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=ruby]").should("be.visible")
+    
+    cy.contains("NEXT").click();
+
+    // cy.get("input[name=email]").type("paddy@test.com")
+    cy.get("input[name=password]").type("password")
+    cy.get("input[name=password2]").type("password")
+    cy.get("input[name=postcode]").type("se1 1ab")
+
+
+    cy.get(':button').should('be.disabled')
+
+  });
+  it("User can't submit until all credential fields are filled 3", () => {
+    
+    cy.visit("/");
+    cy.contains("Sign up").click();
+
+    cy.get("input[name=fname]").type("Paddy")
+    cy.get("input[name=lname]").type("Reynolds")
+
+    cy.contains("NEXT").click();
+
+
+    cy.get("input[value=Beginner]").check()
+
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=ruby]").should("be.visible")
+    
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=email]").type("paddy@test.com")
+    // cy.get("input[name=password]").type("password")
+    cy.get("input[name=password2]").type("password")
+    cy.get("input[name=postcode]").type("se1 1ab")
+
+
+    cy.get(':button').should('be.disabled')
+
+  });
+  it("User can't submit until all credential fields are filled 4", () => {
+    
+    cy.visit("/");
+    cy.contains("Sign up").click();
+
+    cy.get("input[name=fname]").type("Paddy")
+    cy.get("input[name=lname]").type("Reynolds")
+
+    cy.contains("NEXT").click();
+
+
+    cy.get("input[value=Beginner]").check()
+
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=ruby]").should("be.visible")
+    
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=email]").type("paddy@test.com")
+    cy.get("input[name=password]").type("password")
+    // cy.get("input[name=password2]").type("password")
+    cy.get("input[name=postcode]").type("se1 1ab")
+
+
+    cy.get(':button').should('be.disabled')
+
+  });
+  it("User can't submit until all credential fields are filled 5", () => {
+    
+    cy.visit("/");
+    cy.contains("Sign up").click();
+
+    cy.get("input[name=fname]").type("Paddy")
+    cy.get("input[name=lname]").type("Reynolds")
+
+    cy.contains("NEXT").click();
+
+
+    cy.get("input[value=Beginner]").check()
+
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=ruby]").should("be.visible")
+    
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=email]").type("paddy@test.com")
+    cy.get("input[name=password]").type("password")
+    cy.get("input[name=password2]").type("password")
+    // cy.get("input[name=postcode]").type("se1 1ab")
+
+
+    cy.get(':button').should('be.disabled')
+
+  });
+  it("User can submit", () => {
+    
+    cy.visit("/");
+    cy.contains("Sign up").click();
+
+    cy.get("input[name=fname]").type("Paddy")
+    cy.get("input[name=lname]").type("Reynolds")
+
+    cy.contains("NEXT").click();
+
+
+    cy.get("input[value=Beginner]").check()
+
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=ruby]").should("be.visible")
+    
+    cy.contains("NEXT").click();
+
+    cy.get("input[name=email]").type("paddy@test.com")
+    cy.get("input[name=password]").type("password")
+    cy.get("input[name=password2]").type("password")
+    cy.get("input[name=postcode]").type("se1 1ab")
+
+
+    cy.contains("SUBMIT").click();
+
+
+    cy.contains("Welcome To Pair-Up!")
   });
 });

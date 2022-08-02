@@ -39,7 +39,7 @@ export default function SignupCredentials() {
         <input ref={postcodeRef}type="text" name="postcode" onChange={handleChange} />
       </label>
     </form>
-    <Link to="/">
+    <Link to="/welcome">
       <button ref={submitButtonRef} disabled={true}>
         SUBMIT
       </button>

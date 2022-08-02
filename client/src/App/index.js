@@ -14,6 +14,7 @@ import SignupName from './LoginAndSignup/Signup/SignupName/index'
 import SignupSkill from './LoginAndSignup/Signup/SignupSkill/index'
 import SignupLanguage from './LoginAndSignup/Signup/SignupLanguage/index'
 import SignupCredentials from './LoginAndSignup/Signup/SignupCredentials/index'
+import Welcome from './LoginAndSignup/Signup/Welcome/index'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signupskill" element={<SignupSkill />} />
           <Route path="/signuplanguage" element={<SignupLanguage />} />
           <Route path="/signupcredentials" element={<SignupCredentials />} />
+          <Route path="/welcome" element={<Welcome />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
