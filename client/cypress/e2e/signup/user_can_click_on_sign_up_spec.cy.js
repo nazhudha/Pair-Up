@@ -8,18 +8,25 @@ describe("Sign in", () => {
     
     
   });
-  xit("User can click on sign up and log in to acebook", () => {
+  it("User sees login button", () => {
     
     cy.visit("/");
-    cy.contains("Sign Up").click();
+
+    cy.contains("Log in").should("be.visible")
+    
+    
+    
+  });
+  it("User can click on log in and see the email password inputs", () => {
+    
+    cy.visit("/");
+    cy.contains("Log in").click();
 
 
-    cy.contains("First name:").type("Chris")
-    cy.get("#lastName").type("Brown") 
-    cy.get("#next").click();
+    cy.get("input[name=email]").should("be.visible")
+    cy.get("input[name=password]").should("be.visible")
 
     
-    cy.contains("What's your coding level?").should("be.visible")
     
     
     
