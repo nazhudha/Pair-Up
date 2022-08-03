@@ -41,8 +41,8 @@ h1 {
   color: #ffffff;
 }
 
-h3 {
-  width: 710.2929687499999px;
+h2 {
+  width: 710px;
   height: 60px;
   font-family: Arial;
   font-size: 24px;
@@ -73,7 +73,7 @@ button {
   cursor: pointer;
 }
 
-/* styling for sign up page1 */
+/* styling for sign up name page */
 
 form {
   text-align: center;
@@ -93,5 +93,21 @@ input[type="text"] {
   display: inline;
 }
 
-.Next-btn {
+/* styling for sign up skill page */
+
+.codinglevel {
+  text-align: center;
+  margin: auto;
+  margin-top: 200px;
+}
+
+h3 {
+  margin: auto;
+  text-align: center;
+  height: 60px;
+  font-family: Arial;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
 }

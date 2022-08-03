@@ -14,9 +14,9 @@ export default function LoginAndSignup() {
         </motion.h1>
       </div>
 
-      <h3 className="header2">
+      <h2 className="header2">
         A website to pair program with coders from around the world
-      </h3>
+      </h2>
       <Link to="/Signupname">
         <button>Sign up</button>
       </Link>
