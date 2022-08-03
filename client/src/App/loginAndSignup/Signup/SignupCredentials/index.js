@@ -1,6 +1,7 @@
 import React, {useRef} from 'react'
 import {Link} from 'react-router-dom'
 
+
 export default function SignupCredentials() {
 
   const usernameRef = useRef();
@@ -19,6 +20,10 @@ export default function SignupCredentials() {
       else {submitButtonRef.current.disabled = false}
     }
   
+    function App() {
+      const [inputValue, setInputValue] = useState("");
+      const count = useRef(0); 
+    }
  
   return (
     <>

@@ -25,16 +25,16 @@ import { createUser } from '../functions/createUser';
 function App() {
 
 
- const testUser = {
-    fname: "Paddy",
-    lname: "Reynolds",
-    skill: "Master",
-    languages: ["ruby", "javascript"],
-    username: "paddyr105",
-    email: "paddy@test.com",
-    password: "password",
-    postcode: "se1 1ab"
-  }
+//  const testUser = {
+//     fname: "tom",
+//     lname: "Reynolds",
+//     skill: "Master",
+//     languages: ["ruby", "javascript"],
+//     username: "paddyr105",
+//     email: "paddy@test.com",
+//     password: "password",
+//     postcode: "se1 1ab"
+//   }
 
 
 // user signup 
@@ -43,19 +43,18 @@ function App() {
     lname: "",
     skill: "",
     languages: [],
+    username: "",
     email: "",
     password: "",
     postcode: ""
   })
 
-  //user SU functions
-  const addFname = () => {
-    
+  //user SU functions - move to componant
+  const addName = (fname, lname) => {
+    setUser({...user, })
   }
 
 
-  // createUser
-  createUser(testUser)
 
   //pass user and neccisary functions to the individual paths
   return (
