@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function LoginAndSignup() {
   return (
     <div>
-       <Link to="/">{/* add link */}
+       <Link to="/Signupname">
         <button>
           Sign up
         </button>
