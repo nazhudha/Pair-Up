@@ -19,7 +19,23 @@ import SignupLanguage from './LoginAndSignup/Signup/SignupLanguage/index'
 import SignupCredentials from './LoginAndSignup/Signup/SignupCredentials/index'
 import Welcome from './LoginAndSignup/Signup/Welcome/index'
 
+// Functions
+import { createUser } from '../functions/createUser';
+
 function App() {
+
+
+ const testUser = {
+    fname: "Paddy",
+    lname: "Reynolds",
+    skill: "Master",
+    languages: ["ruby", "javascript"],
+    username: "paddyr105",
+    email: "paddy@test.com",
+    password: "password",
+    postcode: "se1 1ab"
+  }
+
 
 // user signup 
   const [user, setUser] = useState({
@@ -36,6 +52,10 @@ function App() {
   const addFname = () => {
     
   }
+
+
+  // createUser
+  createUser(testUser)
 
   //pass user and neccisary functions to the individual paths
   return (
