@@ -51,7 +51,7 @@ function App() {
 
   //user SU functions - move to componant
   const addName = (fname, lname) => {
-    setUser({...user, email: fname, password: lname })
+    setUser({...user, fname: fname, lname: lname })
   }
 
 
