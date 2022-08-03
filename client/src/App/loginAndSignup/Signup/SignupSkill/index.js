@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import {Link} from 'react-router-dom'
 
-export default function SignupSkill() {
+export default function SignupSkill({ user }) {
 
 
   const beginnerRef = useRef();
@@ -17,6 +17,8 @@ export default function SignupSkill() {
       else {nextButtonRef.current.disabled = false}
     }
   
+      console.log(user)
+    
 
   return (
     <>

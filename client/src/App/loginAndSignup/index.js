@@ -5,21 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function LoginAndSignup() {
-  // user signup 
-  const [user, setUser] = useState({
-    fname: "",
-    lname: "",
-    skill: "",
-    languages: [],
-    username: "",
-    email: "",
-    password: "",
-    postcode: ""
-  })
 
-  //user SU functions - move to componant
-  const addFname = () => {
-    
   
   return (
     <div>

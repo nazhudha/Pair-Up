@@ -20,10 +20,6 @@ export default function SignupCredentials() {
       else {submitButtonRef.current.disabled = false}
     }
   
-    function App() {
-      const [inputValue, setInputValue] = useState("");
-      const count = useRef(0); 
-    }
  
   return (
     <>

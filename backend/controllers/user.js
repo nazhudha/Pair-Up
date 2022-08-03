@@ -15,11 +15,18 @@ const UserController = {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      fname: req.body.fname,
+      lname: req.body.lname,
+      skill: req.body.skill,
+      languages:
+        req.body.languages
+    ,
+    postcode: req.body.postcode
     });
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
     console.log(user.password);
-    await user.save().then((doc) => res.status(201).redirect("/"));
+    await user.save().then((doc) => res.status(201).json(user));//removed: .redirect("/new")
   },
 };
 

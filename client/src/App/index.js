@@ -20,7 +20,7 @@ import SignupCredentials from './LoginAndSignup/Signup/SignupCredentials/index'
 import Welcome from './LoginAndSignup/Signup/Welcome/index'
 
 // Functions
-import { createUser } from '../functions/createUser';
+import { createUser } from './LoginAndSignup/Signup/functions/createUser';
 
 function App() {
 
@@ -51,9 +51,8 @@ function App() {
 
   //user SU functions - move to componant
   const addName = (fname, lname) => {
-    setUser({...user, })
+    setUser({...user, email: fname, password: lname })
   }
-
 
 
   //pass user and neccisary functions to the individual paths
@@ -62,8 +61,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginAndSignup />} />
         <Route path="/login" element={<Login />} />
-          <Route path="/signupname" element={<SignupName />} />
-          <Route path="/signupskill" element={<SignupSkill />} />
+          <Route path="/signupname" element={<SignupName addName={addName} user={user}/>} />
+          <Route path="/signupskill" element={<SignupSkill user={user}/>} />
           <Route path="/signuplanguage" element={<SignupLanguage />} />
           <Route path="/signupcredentials" element={<SignupCredentials />} />
           <Route path="/welcome" element={<Welcome />} />
