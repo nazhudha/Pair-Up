@@ -111,3 +111,11 @@ h3 {
   text-align: center;
   color: #ffffff;
 }
+
+/* styling for sign up language page */
+
+.languagetype {
+  text-align: center;
+  margin: auto;
+  margin-top: 200px;
+}
