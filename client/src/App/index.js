@@ -48,6 +48,10 @@ function App() {
     setUser({ ...user, skill: skill });
   };
 
+  const addLang = (lang) => {
+    setUser({ ...user, languages: lang });
+  };
+
   //pass user and neccisary functions to the individual paths
   return (
     <BrowserRouter>
@@ -62,7 +66,10 @@ function App() {
           path="/signupskill"
           element={<SignupSkill addSkill={addSkill} user={user} />}
         />
-        <Route path="/signuplanguage" element={<SignupLanguage />} />
+        <Route
+          path="/signuplanguage"
+          element={<SignupLanguage addLang={addLang} user={user} />}
+        />
         <Route path="/signupcredentials" element={<SignupCredentials />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/profile" element={<Profile />} />
