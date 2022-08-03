@@ -1,12 +1,15 @@
 import './index.css';
 import {
+ useState,
+} from "react";
+import {
   BrowserRouter,
   Routes,
   Route,
   Link,
 } from "react-router-dom";
 
-// Componants
+// Components
 import LoginAndSignup from './LoginAndSignup/index'
 import Login from './LoginAndSignup/Login/index'
 import Profile from './Profile/index'
@@ -17,6 +20,24 @@ import SignupCredentials from './LoginAndSignup/Signup/SignupCredentials/index'
 import Welcome from './LoginAndSignup/Signup/Welcome/index'
 
 function App() {
+
+// user signup 
+  const [user, setUser] = useState({
+    fname: "",
+    lname: "",
+    skill: "",
+    languages: [],
+    email: "",
+    password: "",
+    postcode: ""
+  })
+
+  //user SU functions
+  const addFname = () => {
+    
+  }
+
+  //pass user and neccisary functions to the individual paths
   return (
     <BrowserRouter>
       <Routes>
