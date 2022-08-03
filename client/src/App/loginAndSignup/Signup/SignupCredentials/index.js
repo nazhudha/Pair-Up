@@ -2,8 +2,7 @@ import React, {useRef} from 'react'
 import {Link} from 'react-router-dom'
 
 
-export default function SignupCredentials() {
-
+export default function SignupCredentials({createUser, addCredentials, user}) {
   const usernameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -18,9 +17,10 @@ export default function SignupCredentials() {
         submitButtonRef.current.disabled = true
         }
       else {submitButtonRef.current.disabled = false}
+      addCredentials(usernameRef.current.value, emailRef.current.value, passwordRef.current.value, postcodeRef.current.value)
+      console.log(user)
     }
   
- 
   return (
     <>
     <form>
@@ -45,7 +45,11 @@ export default function SignupCredentials() {
         <input ref={postcodeRef}type="text" name="postcode" onChange={handleChange} />
       </label>
     </form>
-    <Link to="/login">
+    
+    {/* <button onClick={() => {createUser(user)}}>
+      test
+    </button> */}
+    <Link to="/login" onClick={() => {createUser(user)}}>
       <button ref={submitButtonRef} disabled={true}>
         SUBMIT
       </button>

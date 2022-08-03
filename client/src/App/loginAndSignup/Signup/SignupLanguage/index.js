@@ -18,9 +18,7 @@ export default function SignupLanguage({ addLang, user }) {
     if (pythonRef.current.checked === true) {
       languages.push("python");
     }
-    console.log(rubyRef.current.checked);
     addLang(languages);
-    console.log(user);
   }
 
   return (

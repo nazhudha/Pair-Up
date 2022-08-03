@@ -52,6 +52,10 @@ function App() {
     setUser({ ...user, languages: lang });
   };
 
+  const addCredentials = (username, email, password, postcode) => {
+    setUser({ ...user, username: username, email: email, password: password, postcode: postcode  });
+  };
+
   //pass user and neccisary functions to the individual paths
   return (
     <BrowserRouter>
@@ -70,7 +74,7 @@ function App() {
           path="/signuplanguage"
           element={<SignupLanguage addLang={addLang} user={user} />}
         />
-        <Route path="/signupcredentials" element={<SignupCredentials />} />
+        <Route path="/signupcredentials" element={<SignupCredentials user={user} addCredentials={addCredentials} createUser={createUser} />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
