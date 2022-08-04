@@ -13,6 +13,7 @@ const app = express();
 //sessions for users
 app.use(
   session({
+    key: "user_sid",
     secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
     resave: false,
@@ -42,6 +43,7 @@ app.use(cors({ origin: true, credentials: true })); //communicating between fron
 // routes
 app.use("/user", require("./routes/user"));
 app.use("/sessions", require("./routes/sessions"));
+app.use("/profile", require("./routes/profile"));
 
 // port
 const port = process.env.PORT || 8080; //use PORT set up in enVars, or use 8080
