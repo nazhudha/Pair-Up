@@ -11,6 +11,8 @@ export default function UserCards() {
         <div className="userInfo">
           <p>
             Some information about the user 
+            This is more information
+
           </p>
         </div>
         <div className="buttonContainer">
