@@ -40,7 +40,7 @@ export default function SignupName() {
         </label>
       </form>
       <Link to="/signupskill">
-        <button className="Next-btn" ref={nextButtonRef} disabled={true}>
+        <button ref={nextButtonRef} disabled={true}>
           NEXT
         </button>
       </Link>
