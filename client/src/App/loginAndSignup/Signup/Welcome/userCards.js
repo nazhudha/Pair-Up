@@ -6,10 +6,17 @@ import Chris from "./images/Chris.png";
 export default function UserCards() {
   return (
     <div className="cardsContainer">
-      <div className="userCards" style={{ color: "red" }}>
-        <img src={Chris} alt="Chris" />;<p>Info about the user</p>
-        <button>Profile</button>
-        <button>Contact me</button>
+      <div className="userCards">
+        <img src={Chris} alt="Chris" />
+        <div className="userInfo">
+          <p>
+            Some information about the user 
+          </p>
+        </div>
+        <div className="buttonContainer">
+          <button>Profile</button>
+          <button>Contact me</button>
+        </div>
       </div>
     </div>
   );
