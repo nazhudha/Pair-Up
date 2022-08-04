@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
-export default function SignupName() {
+
+export default function SignupName({ addName, user }) {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const nextButtonRef = useRef();
@@ -39,7 +40,13 @@ export default function SignupName() {
           />
         </label>
       </form>
-      <Link to="/signupskill">
+
+      <Link
+        to="/signupskill"
+        onClick={() => {
+          addName(firstNameRef.current.value, lastNameRef.current.value);
+        }}
+      >
         <button ref={nextButtonRef} disabled={true}>
           NEXT
         </button>

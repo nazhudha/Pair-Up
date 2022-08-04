@@ -14,7 +14,9 @@ code {
     monospace;
 }
 
+
 /* styling for homepage  */
+
 .header {
   margin: auto;
   margin-top: 140px;
@@ -73,6 +75,7 @@ button {
   cursor: pointer;
 }
 
+
 /* styling for sign up name page */
 
 form {
@@ -119,3 +122,4 @@ h3 {
   margin: auto;
   margin-top: 200px;
 }
+
