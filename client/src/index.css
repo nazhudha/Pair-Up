@@ -14,7 +14,6 @@ code {
     monospace;
 }
 
-
 /* styling for homepage  */
 
 .header {
@@ -75,7 +74,6 @@ button {
   cursor: pointer;
 }
 
-
 /* styling for sign up name page */
 
 form {
@@ -123,3 +121,26 @@ h3 {
   margin-top: 200px;
 }
 
+/* styling for sign up credentials page */
+:root {
+  font-size: 1vw;
+}
+
+input,
+textarea {
+  font-size: inherit;
+}
+
+.wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit.btn {
+  align-self: center;
+}
