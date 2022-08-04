@@ -7,7 +7,7 @@ export default function Login() {
       <form>
         <label>
           Email:
-          <input type="text" name="email" />
+          <input type="email" name="email" />
         </label>
         <label>
           Password:

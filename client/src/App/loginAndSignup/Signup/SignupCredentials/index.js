@@ -30,7 +30,7 @@ export default function SignupCredentials({createUser, addCredentials, user}) {
       </label>
       <label>
         Email:
-        <input ref={emailRef} type="text" name="email" onChange={handleChange}/>
+        <input ref={emailRef} type="email" name="email" onChange={handleChange}/>
       </label>
       <label>
         Password:
