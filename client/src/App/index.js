@@ -12,9 +12,6 @@ import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
 import Welcome from "./LoginAndSignup/Signup/Welcome/index";
 
-// Functions
-import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
-
 function App() {
   //  const testUser = {
   //     fname: "tom",
@@ -39,7 +36,12 @@ function App() {
     postcode: "",
   });
 
-  //user SU functions - move to componant
+  const [userSignIn, setuserSignIn] = useState({
+    email: "",
+    password: "",
+  });
+
+  //user Signup functions
   const addName = (fname, lname) => {
     setUser({ ...user, fname: fname, lname: lname });
   };
@@ -53,7 +55,18 @@ function App() {
   };
 
   const addCredentials = (username, email, password, postcode) => {
-    setUser({ ...user, username: username, email: email, password: password, postcode: postcode  });
+    setUser({
+      ...user,
+      username: username,
+      email: email,
+      password: password,
+      postcode: postcode,
+    });
+  };
+
+  //user Signin functions
+  const createSignInObject = (email, password) => {
+    setuserSignIn({ email: email, password: password });
   };
 
   //pass user and neccisary functions to the individual paths
@@ -61,7 +74,15 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginAndSignup />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={
+            <Login
+              userSignIn={userSignIn}
+              createSignInObject={createSignInObject}
+            />
+          }
+        />
         <Route
           path="/signupname"
           element={<SignupName addName={addName} user={user} />}
@@ -74,7 +95,12 @@ function App() {
           path="/signuplanguage"
           element={<SignupLanguage addLang={addLang} user={user} />}
         />
-        <Route path="/signupcredentials" element={<SignupCredentials user={user} addCredentials={addCredentials} createUser={createUser} />} />
+        <Route
+          path="/signupcredentials"
+          element={
+            <SignupCredentials user={user} addCredentials={addCredentials} />
+          }
+        />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>

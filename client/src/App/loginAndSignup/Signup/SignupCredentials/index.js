@@ -1,8 +1,9 @@
 import React, {useRef} from 'react'
 import {Link} from 'react-router-dom'
 
+import { createUser } from '../functions/createUser';
 
-export default function SignupCredentials({createUser, addCredentials, user}) {
+export default function SignupCredentials({ addCredentials, user}) {
   const usernameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -13,7 +14,7 @@ export default function SignupCredentials({createUser, addCredentials, user}) {
   const submitButtonRef = useRef();
 
     function handleChange() {
-      if ((emailRef.current.value.length == 0) || (passwordRef.current.value.length == 0) || (password2Ref.current.value.length == 0) || (postcodeRef.current.value.length == 0) || (usernameRef.current.value.length == 0)) {
+      if ((emailRef.current.value.length === 0) || (passwordRef.current.value.length === 0) || (password2Ref.current.value.length === 0) || (postcodeRef.current.value.length === 0) || (usernameRef.current.value.length === 0)) {
         submitButtonRef.current.disabled = true
         }
       else {submitButtonRef.current.disabled = false}

@@ -14,14 +14,12 @@ const SessionsController = {
   Create: async (req, res) => {
     const body = req.body;
     const user = await User.findOne({ email: body.email });
+
     if (user) {
       const validPassword = await bcrypt.compare(body.password, user.password);
       if (validPassword) {
         res.status(200);
-        //console.log(session.user);
         req.session.user = user;
-        console.log(req.session);
-        res.redirect("/");
       } else {
         res.status(400).redirect("/");
       }
