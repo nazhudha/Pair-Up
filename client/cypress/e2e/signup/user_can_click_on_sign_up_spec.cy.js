@@ -250,6 +250,7 @@ describe("", () => {
     
     cy.contains("NEXT").click();
 
+    cy.get("input[name=username]").type("paddyr105")
     cy.get("input[name=email]").type("paddy@test.com")
     cy.get("input[name=password]").type("password")
     cy.get("input[name=password2]").type("password")
@@ -259,6 +260,6 @@ describe("", () => {
     cy.contains("SUBMIT").click();
 
 
-    cy.contains("Welcome To Pair-Up!")
+    cy.contains("Log in")
   });
 });
