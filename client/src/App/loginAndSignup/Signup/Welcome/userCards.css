@@ -2,12 +2,19 @@
   font-size: 15px;
 }
 
+h1{
+  font-size: 60px;
+}
+
 .cardsContainer {
+  margin-top: 90px;
+  margin-left: 270px;
+  width: 80%;
   border-style: solid;
   border-color: black;
   display: flex;
-  
-  justify-content: center;
+  justify-content: space-around;
+
 }
 
 .userCards {

@@ -12,7 +12,49 @@ export default function UserCards() {
           <p>
             Some information about the user 
             This is more information
+          </p>
+        </div>
+        <div className="buttonContainer">
+          <button>Profile</button>
+          <button>Contact me</button>
+        </div>
+      </div>
 
+
+      <div className="userCards">
+        <img src={Chris} alt="Chris" />
+        <div className="userInfo">
+          <p>
+            Some information about the user 
+            This is more information
+          </p>
+        </div>
+        <div className="buttonContainer">
+          <button>Profile</button>
+          <button>Contact me</button>
+        </div>
+      </div>
+
+      <div className="userCards">
+        <img src={Chris} alt="Chris" />
+        <div className="userInfo">
+          <p>
+            Some information about the user 
+            This is more information
+          </p>
+        </div>
+        <div className="buttonContainer">
+          <button>Profile</button>
+          <button>Contact me</button>
+        </div>
+      </div>
+
+      <div className="userCards">
+        <img src={Chris} alt="Chris" />
+        <div className="userInfo">
+          <p>
+            Some information about the user 
+            This is more information
           </p>
         </div>
         <div className="buttonContainer">
@@ -21,5 +63,7 @@ export default function UserCards() {
         </div>
       </div>
     </div>
+
+    
   );
 }
