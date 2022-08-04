@@ -1,0 +1,23 @@
+.cardsContainer {
+  border-style: solid;
+  border-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.userCards {
+  background-color: white;
+  border-radius: 10px;
+  height: 130px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  /* background-image: url(./Chris.png); */
+}
+
+button {
+  height: 20px;
+  width: 40px;
+  font-size: 7px;
+  background-color: #1f74de;
+  border-style: none;
+}
