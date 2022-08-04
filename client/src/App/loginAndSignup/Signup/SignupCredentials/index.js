@@ -34,11 +34,11 @@ export default function SignupCredentials({createUser, addCredentials, user}) {
       </label>
       <label>
         Password:
-        <input ref={passwordRef}type="text" name="password" onChange={handleChange} />
+        <input ref={passwordRef}type="password" name="password" onChange={handleChange} />
       </label>
       <label>
         Please re-type password:
-        <input ref={password2Ref}type="text" name="password2" onChange={handleChange} />
+        <input ref={password2Ref}type="password" name="password2" onChange={handleChange} />
       </label>
       <label>
         Postcode:
