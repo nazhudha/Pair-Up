@@ -56,7 +56,9 @@ button {
   border-style: none;
 }
 
-
+button:hover{
+  background-color: orange;
+}
 
 img{
 margin-top: 10px;
