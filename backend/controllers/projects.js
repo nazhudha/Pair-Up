@@ -4,21 +4,23 @@ const ProjectController = {
 
   Create: async (req, res) => {
 
-    console.log(req.body)
-
     const project = new Project({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-
-      fname: req.body.fname,
-      lname: req.body.lname,
-      skill: req.body.skill,
-      languages:
-        req.body.languages
-    ,
-    postcode: req.body.postcode
-
+      owner: req.body.owner, 
+      name: req.body.name,
+      difficulty: req.body.difficulty,
+      expectedProjectLength: req.body.expectedProjectLength,
+      category: req.body.category,
+      preferedSessionLength: req.body.preferedSessionLength,
+      numberOfAdditionalUsersNeeded: req.body.numberOfAdditionalUsersNeeded,
+      summary: req.body.summary,
+      description: req.body.description,
+      users: req.body.users,
+      langWeHave: req.body.langWeHave,
+      langWeNeed: req.body.langWeNeed,
+      additionalSkillsNeeded: req.body.additionalSkillsNeeded,
+      displayLocation: req.body.displayLocation,
+      commitmentLevel: req.body.commitmentLevel
+    
     });
  
 
