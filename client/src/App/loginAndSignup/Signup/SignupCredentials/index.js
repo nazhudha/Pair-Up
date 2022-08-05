@@ -37,69 +37,69 @@ export default function SignupCredentials({
 
   return (
     <>
-      <div className="wrapper">
-        <form className="form">
-          <label>
-            Username:
-            <input
-              ref={usernameRef}
-              type="text"
-              name="username"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Email:
-            <input
-              ref={emailRef}
-              type="text"
-              name="email"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Password:
-            <input
-              ref={passwordRef}
-              type="text"
-              name="password"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Please re-type password:
-            <input
-              ref={password2Ref}
-              type="text"
-              name="password2"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Postcode:
-            <input
-              ref={postcodeRef}
-              type="text"
-              name="postcode"
-              onChange={handleChange}
-            />
-          </label>
-        </form>
-      </div>
+      <div className="form-container">
+        <div className="wrapper">
+          <form className="form">
+            <label>
+              Username:
+              <input
+                ref={usernameRef}
+                type="text"
+                name="username"
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Email:
+              <input
+                ref={emailRef}
+                type="text"
+                name="email"
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Password:
+              <input
+                ref={passwordRef}
+                type="text"
+                name="password"
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Please re-type password:
+              <input
+                ref={password2Ref}
+                type="text"
+                name="password2"
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Postcode:
+              <input
+                ref={postcodeRef}
+                type="text"
+                name="postcode"
+                onChange={handleChange}
+              />
+            </label>
+            <Link
+          to="/login"
+          onClick={() => {
+            createUser(user);
+          }}
+        >
+          <button className="submit-btn" ref={submitButtonRef} disabled={true}>
+            SUBMIT
+          </button>
+        </Link>
+          </form>
+        </div>
 
-      {/* <button onClick={() => {createUser(user)}}>
-      test
-    </button> */}
-      <Link
-        to="/login"
-        onClick={() => {
-          createUser(user);
-        }}
-      >
-        <button className="submit-btn" ref={submitButtonRef} disabled={true}>
-          SUBMIT
-        </button>
-      </Link>
+       
+      </div>
     </>
   );
 }
