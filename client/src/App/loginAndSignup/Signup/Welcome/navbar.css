@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: darkgray;
+  padding: 20px 40px;
+}
+.nav--icon {
+  height: 30px;
+  margin-right: 7px;
+}
