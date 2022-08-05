@@ -148,7 +148,7 @@ export default function NewProjectPage() {
       <br></br>
       <label>
       display your location?
-      <input type="checkbox" name="displayLocation" value="true" {...register('displayLocation')}/>
+      <input type="checkbox" name="displayLocation" value={true} {...register('displayLocation')}/>
       </label>
 
       <h3>How many additional people are you looking for to help you in this project</h3>
@@ -166,10 +166,54 @@ export default function NewProjectPage() {
         <input type="checkbox" name="langWeNeed" value="bootstrap" {...register('langWeNeed')}/>
       </div>
       <div>
-      <i className="devicon-bootstrap-plain"></i>
+      <i className="devicon-ruby-plain"></i>
         <br></br>
         <input type="checkbox" name="langWeNeed" value="ruby" {...register('langWeNeed')}/>
       </div>
+      <div>
+      <i className="devicon-javascript-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="javascript" {...register('langWeNeed')}/>
+      </div>
+      <div>
+      <i className="devicon-python-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="python" {...register('langWeNeed')}/>
+      </div>
+      <div>
+      <i className="devicon-java-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="java" {...register('langWeNeed')}/>
+      </div>
+      <div>
+      <i className="devicon-cplusplus-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="cplusplus" {...register('langWeNeed')}/>
+      </div>
+      <div>
+      <i className="devicon-typescript-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="typescript" {...register('langWeNeed')}/>
+      </div>
+      <div>
+      <i className="devicon-csharp-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="csharp" {...register('langWeNeed')}/>
+      </div>
+      <div>
+      <i className="devicon-docker-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="docker" {...register('langWeNeed')}/>
+      </div>
+      <div>
+      <i className="devicon-django-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="django" {...register('langWeNeed')}/>
+      </div>
+      
+      
+      
+
 
         {/* add more icons from https://devicon.dev/ */}
         <br></br>
