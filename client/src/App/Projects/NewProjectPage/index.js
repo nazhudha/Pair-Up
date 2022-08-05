@@ -52,7 +52,7 @@ export default function NewProjectPage() {
       </label>
 
       <h3>Describe briefly what you are trying to build</h3>
-      <textarea name="summary">
+      <textarea name="summary" {...register('summary', { required: true })}>
       </textarea>
       
 
@@ -60,43 +60,53 @@ export default function NewProjectPage() {
         <input
           type="radio"
           name="expectedProjectLength"
-        
+          value="<1 day"
+          {...register('expectedProjectLength', { required: true })}
         />
         &lt;1 day
         <input
           type="radio"
           name="expectedProjectLength"
-        
+          value=">1 day"
+          {...register('expectedProjectLength', { required: true })}
         />
         &gt;1 day
         <input
           type="radio"
           name="expectedProjectLength"
-        
+          value="2-3 days"
+          {...register('expectedProjectLength', { required: true })}
         />
         2-3 days
         <input
           type="radio"
           name="expectedProjectLength"
-        
+          value="<1 week"
+          {...register('expectedProjectLength', { required: true })}
         />
         &lt;1 week
         <input
           type="radio"
           name="expectedProjectLength"
-        
+          value=">1 week"
+          {...register('expectedProjectLength', { required: true })}
         />
         &gt;1 week
         <input
           type="radio"
           name="expectedProjectLength"
-        
+          value="2-3 weeks"
+          {...register('expectedProjectLength', { required: true })}
         />
         2-3 weeks
-      {/* </form>
-
-      <form> */}
-
+        <input
+          type="radio"
+          name="expectedProjectLength"
+          value="Longer"
+          {...register('expectedProjectLength', { required: true })}
+        />
+        Longer
+    
      <h3>How much of a commitment are you looking for from your team?</h3>
       <input
         type="radio"
@@ -122,38 +132,41 @@ export default function NewProjectPage() {
 
       <h3>How difficult do you think this will be?</h3>
      
-      <textarea name="difficulty"/>
+      <textarea name="difficulty" {...register('difficulty', { required: true })}/>
 
 
       <h3>How long do you want a pair-up session to be?</h3>
       <label>
-      <input type="number" name="preferedSessionLength" min="1" max="8"/>
+      <input type="number" name="preferedSessionLength" min="1" max="8" {...register('preferedSessionLength', { required: true })}/>
       (1 - 8 hours)
       </label>
 
       <h3>Write the full details of what you want to achieve in this project:</h3>
-      <textarea name="description">
+      <textarea name="description" {...register('description', { required: true })}>
       </textarea>
     
       <br></br>
       <label>
       display your location?
-      <input type="checkbox" name="displayLocation"/>
+      <input type="checkbox" name="displayLocation" {...register('displayLocation')}/>
       </label>
 
       <h3>How many additional people are you looking for to help you in this project</h3>
       <label>
-      <input type="number" name="numberOfAdditionalUsersNeeded" min="1" max="5"/>
+      <input type="number" name="numberOfAdditionalUsersNeeded" min="1" max="5" {...register('numberOfAdditionalUsersNeeded', { required: true })}/>
       (max 5)
       </label>
 
 
       <h3>What skills are you looking for to help you on this project? </h3>
-        <i className="devicon-coffeescript-original" name="coffeescript" onClick={()=>{console.log("hello")}}></i>
+        <i className="devicon-coffeescript-original" name="langWeNeed" value="coffeescript" type="checkbox" onClick={()=>{console.log("hello")}} {...register('langWeNeed')}></i>
+        <i class="devicon-bootstrap-plain"></i>
+        
+
         {/* add more icons from https://devicon.dev/ */}
         <br></br>
 
-        <textarea name="description" placeholder="other details" />
+        <textarea name="description" placeholder="other details" {...register('additionalSkillsNeeded')}/>
 
         <input type="submit" value="submit" />
       </form>
