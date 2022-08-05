@@ -28,6 +28,18 @@
   color: #fbb861;
 }
 
+#map {
+  height: 400px;
+}
+
+.image-icon {
+  height: 52px !important;
+  width: 52px !important;
+  border-radius: 50%;
+  border: solid;
+  border-color: rgba(99, 92, 237, 0.43);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

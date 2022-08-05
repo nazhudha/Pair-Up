@@ -1,16 +1,17 @@
 import "./index.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
+import 'leaflet/dist/leaflet.css';
 // Components
 import LoginAndSignup from "./LoginAndSignup/index";
 import Login from "./LoginAndSignup/Login/index";
 import Profile from "./Profile/index";
+import Find from "./Find/index";
 import SignupName from "./LoginAndSignup/Signup/SignupName/index";
 import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
 import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
-import Welcome from "./LoginAndSignup/Signup/Welcome/index";
+// import Welcome from "./LoginAndSignup/Signup/Welcome/index";
 import NewProjectPage from "./Projects/NewProjectPage";
 
 // Functions
@@ -77,7 +78,8 @@ function App() {
           element={<SignupLanguage addLang={addLang} user={user} />}
         />
         <Route path="/signupcredentials" element={<SignupCredentials user={user} addCredentials={addCredentials} createUser={createUser} />} />
-        <Route path="/welcome" element={<Welcome />} />
+        {/* <Route path="/welcome" element={<Welcome />} /> */}
+        <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
