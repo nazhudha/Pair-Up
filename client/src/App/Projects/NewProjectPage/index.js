@@ -13,6 +13,10 @@ export default function NewProjectPage() {
         headers: {
           "Content-Type": "application/json",
         },
+      }).then(res => {
+        console.log(res)
+        window.location = "http://localhost:3000/welcome";
+
       });
   
       // const json = await res.json(); // not sure why this line is needed?
