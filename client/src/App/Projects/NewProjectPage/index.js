@@ -148,7 +148,7 @@ export default function NewProjectPage() {
       <br></br>
       <label>
       display your location?
-      <input type="checkbox" name="displayLocation" {...register('displayLocation')}/>
+      <input type="checkbox" name="displayLocation" value="true" {...register('displayLocation')}/>
       </label>
 
       <h3>How many additional people are you looking for to help you in this project</h3>
@@ -159,9 +159,17 @@ export default function NewProjectPage() {
 
 
       <h3>What skills are you looking for to help you on this project? </h3>
-        <i className="devicon-coffeescript-original" name="langWeNeed" value="coffeescript" type="checkbox" onClick={()=>{console.log("hello")}} {...register('langWeNeed')}></i>
-        <i class="devicon-bootstrap-plain"></i>
-        
+        {/* <i className="devicon-coffeescript-original" name="langWeNeed" value="coffeescript" type="checkbox" onClick={()=>{console.log("hello")}} {...register('langWeNeed')}></i> */}
+       <div>
+       <i className="devicon-bootstrap-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="bootstrap" {...register('langWeNeed')}/>
+      </div>
+      <div>
+      <i className="devicon-bootstrap-plain"></i>
+        <br></br>
+        <input type="checkbox" name="langWeNeed" value="ruby" {...register('langWeNeed')}/>
+      </div>
 
         {/* add more icons from https://devicon.dev/ */}
         <br></br>
