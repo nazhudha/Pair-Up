@@ -5,11 +5,12 @@ import {Link} from 'react-router-dom'
 export default function NewProjectPage() {
   const {register, handleSubmit} = useForm();
 
-   const addProjectToDb = async (project) => {
+   const addProjectToDb = async (createdProject) => {
+    console.log(JSON.stringify(createdProject))
     try {
       const res = await fetch("http://localhost:8080/projects/createproject", {
         method: "POST",
-        body: JSON.stringify(project),
+        body: JSON.stringify(createdProject),
         headers: {
           "Content-Type": "application/json",
         },
@@ -24,30 +25,9 @@ export default function NewProjectPage() {
   };
   
 
-
-  const onSubmit = (data) => {
-    setProject(data);
-    addProjectToDb(project);
+  const submitForm = (data) => {
+    addProjectToDb(data);
   }
-
-  const [project, setProject] = useState({
-      owner: "", //placeholder id - replace with sessions ID
-      name: "",
-      difficulty: "",
-      expectedProjectLength: "",
-      category: "",
-      preferedSessionLength: "",
-      numberOfAdditionalUsersNeeded: "",
-      summary: "",
-      description: "",
-      users: [], 
-      langWeHave: [],
-      langWeNeed: [],
-      additionalSkillsNeeded: "",
-      displayLocation: false,
-      commitmentLevel: ""
-  });
-
 
   // //function to pull sessions userID to owner and users
   // const addUserIdToProject = () => {
@@ -57,7 +37,7 @@ export default function NewProjectPage() {
 
   return (
     <>
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(submitForm)}>
 
       <label>
         Name
