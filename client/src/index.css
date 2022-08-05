@@ -172,3 +172,15 @@ h3 {
   height: 40px;
   width: 80px;
 }
+
+/* styling for nav bar */
+
+.nav-container {
+  display: flex;
+  height: 60px;
+  background-color: #ffffff;
+}
+
+.nav--icon {
+  height: 80px;
+}
