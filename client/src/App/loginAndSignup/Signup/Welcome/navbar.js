@@ -1,9 +1,11 @@
 import React from "react";
+import Pairuplogo from "./images/Pairuplogo.png";
 
 export default function Navbar() {
   return (
-    <nav>
-      <img src="../images/Pairuplogo.png" className="nav--icon" />
-    </nav>
+    <div className="nav-container">
+      <img src={Pairuplogo} alt="logo" />
+      <nav></nav>
+    </div>
   );
 }
