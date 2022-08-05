@@ -5,7 +5,6 @@ import Chris from "./images/Chris.png";
 
 export default function UserCards({user}) {
   return (
-    <div className="cardsContainer">
       <div className="userCards">
         <img src={Chris} alt="Chris" />
         <div className="userInfo">
@@ -20,9 +19,6 @@ export default function UserCards({user}) {
           <button>Profile</button>
           <button>Contact me</button>
         </div>
-      </div>
-    </div>
-
-    
+      </div>    
   );
 }
