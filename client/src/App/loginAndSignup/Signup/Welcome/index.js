@@ -11,17 +11,16 @@ export default function Welcome() {
 
 
   const pullUsers = () => {
-    console.log("hello")
     getAllUsers() // api function
-      .then((res) => console.log(res))
+      .then((res) => setUsersData(res))
       .catch((err) => console.log(err));
   }
 
 
   useEffect(() => {
     pullUsers();
-  }, []); // this is the dependancy array. 
-
+  }, []); // this is the dependancy array. [] means it will run once when the page opens
+  
   return (
     <div>
       <h1>Welcome to Pair Up!</h1>
