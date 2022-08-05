@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
-
 export default function SignupSkill({ user, addSkill }) {
   const beginnerRef = useRef();
   const intermediateRef = useRef();
@@ -10,7 +9,6 @@ export default function SignupSkill({ user, addSkill }) {
   const nextButtonRef = useRef();
 
   function handleChange() {
-
     let skill = "";
 
     if (
@@ -31,12 +29,10 @@ export default function SignupSkill({ user, addSkill }) {
       skill = "expert";
     }
     addSkill(skill);
-
   }
 
   return (
     <>
-
       <div className="codinglevel">
         <h3>What's your coding level?</h3>
         <input
@@ -65,7 +61,7 @@ export default function SignupSkill({ user, addSkill }) {
         Expert
       </div>
       <Link to="/signuplanguage">
-        <button ref={nextButtonRef} disabled={true}>
+        <button className="next-btn" ref={nextButtonRef} disabled={true}>
           NEXT
         </button>
       </Link>

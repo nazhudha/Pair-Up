@@ -86,19 +86,21 @@ export default function SignupCredentials({
               />
             </label>
             <Link
-          to="/login"
-          onClick={() => {
-            createUser(user);
-          }}
-        >
-          <button className="submit-btn" ref={submitButtonRef} disabled={true}>
-            SUBMIT
-          </button>
-        </Link>
+              to="/login"
+              onClick={() => {
+                createUser(user);
+              }}
+            >
+              <button
+                className="submit-btn"
+                ref={submitButtonRef}
+                disabled={true}
+              >
+                SUBMIT
+              </button>
+            </Link>
           </form>
         </div>
-
-       
       </div>
     </>
   );

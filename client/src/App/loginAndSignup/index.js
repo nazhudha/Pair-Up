@@ -19,10 +19,10 @@ export default function LoginAndSignup() {
         A website to pair program with coders from around the world
       </h2>
       <Link to="/Signupname">
-        <button>Sign up</button>
+        <button className="signup-btn">Sign up</button>
       </Link>
       <Link to="/login">
-        <button>Log in</button>
+        <button className="login-btn">Log in</button>
       </Link>
     </div>
   );
