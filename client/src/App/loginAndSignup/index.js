@@ -1,19 +1,15 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-
-
 export default function LoginAndSignup() {
-
-  
   return (
     <div>
       <div className="header">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, scale: 1.8 }}
+          transition={{ delay: 0.1, duration: 2.5 }}
         >
           Pair Up!
         </motion.h1>
