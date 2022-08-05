@@ -18,6 +18,7 @@ describe('User model', () => {
       username: 'Test User',
       email: 'example@example.com',
       password: '123456',
+      postcode: 'E1',
     });
 
     user.save((err) => {
@@ -37,7 +38,7 @@ describe('User model', () => {
       username: 'Test User',
       email: 'example@example.com',
       password: '123456',
-      postcode: 'E1 6LT',
+      postcode: 'E1',
     });
 
     user.save((err) => {
@@ -45,8 +46,8 @@ describe('User model', () => {
 
       User.find((err, users) => {
         expect(err).toBeNull();
-        expect(users[0].geoLocation[0]).toEqual(expect.any(Number));
-        expect(users[0].geoLocation[1]).toEqual(expect.any(Number));
+        expect(users[0].geoLocation.coordinates[0]).toEqual(expect.any(Number));
+        expect(users[0].geoLocation.coordinates[1]).toEqual(expect.any(Number));
       });
       done();
     });
