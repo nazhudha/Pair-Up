@@ -44,6 +44,7 @@ app.use(cors({ origin: true, credentials: true })); //communicating between fron
 app.use("/user", require("./routes/user"));
 app.use("/sessions", require("./routes/sessions"));
 app.use("/profile", require("./routes/profile"));
+app.use("/projects", require("./routes/projects"));
 
 // port
 const port = process.env.PORT || 8080; //use PORT set up in enVars, or use 8080

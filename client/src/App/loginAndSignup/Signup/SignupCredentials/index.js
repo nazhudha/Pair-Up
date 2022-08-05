@@ -53,7 +53,7 @@ export default function SignupCredentials({
               Email:
               <input
                 ref={emailRef}
-                type="text"
+                type="email"
                 name="email"
                 onChange={handleChange}
               />
@@ -62,7 +62,7 @@ export default function SignupCredentials({
               Password:
               <input
                 ref={passwordRef}
-                type="text"
+                type="password"
                 name="password"
                 onChange={handleChange}
               />
@@ -71,7 +71,7 @@ export default function SignupCredentials({
               Please re-type password:
               <input
                 ref={password2Ref}
-                type="text"
+                type="password"
                 name="password2"
                 onChange={handleChange}
               />

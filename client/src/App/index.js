@@ -11,6 +11,7 @@ import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
 import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
 import Welcome from "./LoginAndSignup/Signup/Welcome/index";
+import NewProjectPage from "./Projects/NewProjectPage";
 
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
@@ -60,6 +61,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+      <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
         <Route path="/login" element={<Login />} />
         <Route
