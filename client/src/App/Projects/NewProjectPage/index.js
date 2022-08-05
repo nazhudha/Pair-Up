@@ -131,7 +131,7 @@ export default function NewProjectPage() {
       <textarea name="description" onChange={handleChange}>
       </textarea>
     
-
+      <br></br>
       <label>
       display your location?
       <input type="checkbox" name="displayLocation"/>
@@ -147,9 +147,10 @@ export default function NewProjectPage() {
       <h3>What skills are you looking for to help you on this project? </h3>
         <i class="devicon-coffeescript-original" name="coffeescript" onClick={()=>{console.log("hello")}}></i>
         {/* add more icons from https://devicon.dev/ */}
+        <br></br>
 
         <textarea name="description" placeholder="other details" onChange={handleChange} />
-        
+
       </form>
 
     <Link
