@@ -20,9 +20,15 @@
     "mongodb": "^4.8.1",
     "mongoose": "^6.5.0",
     "morgan": "^1.10.0",
+    "node-geocoder": "^4.2.0",
     "nodemon": "^2.0.19"
   },
   "devDependencies": {
     "jest": "^28.1.3"
+  },
+  "jest": {
+    "setupFiles": [
+      "./spec/jestVars.js"
+    ]
   }
 }
