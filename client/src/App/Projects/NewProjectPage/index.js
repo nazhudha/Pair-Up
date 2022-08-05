@@ -1,13 +1,14 @@
 import React, {useRef} from 'react'
+import {useForm} from "react-hook-form"
 import {Link} from 'react-router-dom'
 
 export default function NewProjectPage() {
+  const {register, handleSubmit} = useForm();
 
-  const submitButtonRef = useRef();
-
-  const handleChange = () => {
-    console.log("hello")
+  const onSubmit = (data) => {
+    console.log(data);
   }
+
 
   // const [project, setProject] = useState({
   //     owner: "", //placeholder id - replace with sessions ID
@@ -38,87 +39,90 @@ export default function NewProjectPage() {
 
   return (
     <>
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
 
       <label>
         Name
-        <input type="text" name="name" onChange={handleChange}/>
+        <input type="text" name="name" {...register('name', { required: true })}/>
       </label>
 
       <label>
         Category
-        <input type="text" name="category" onChange={handleChange}/>
+        <input type="text" name="category" {...register('category', { required: true })}/>
       </label>
 
       <h3>Describe briefly what you are trying to build</h3>
-      <textarea name="summary" onChange={handleChange}>
+      <textarea name="summary">
       </textarea>
       
 
       <h3>How long do you think this project will take?</h3>
         <input
           type="radio"
-          name="radAnswer"
-          onChange={handleChange}
+          name="expectedProjectLength"
+        
         />
         &lt;1 day
         <input
           type="radio"
-          name="radAnswer"
-          onChange={handleChange}
+          name="expectedProjectLength"
+        
         />
         &gt;1 day
         <input
           type="radio"
-          name="radAnswer"
-          onChange={handleChange}
+          name="expectedProjectLength"
+        
         />
         2-3 days
         <input
           type="radio"
-          name="radAnswer"
-          onChange={handleChange}
+          name="expectedProjectLength"
+        
         />
         &lt;1 week
         <input
           type="radio"
-          name="radAnswer"
-          onChange={handleChange}
+          name="expectedProjectLength"
+        
         />
         &gt;1 week
         <input
           type="radio"
-          name="radAnswer"
-          onChange={handleChange}
+          name="expectedProjectLength"
+        
         />
         2-3 weeks
-      </form>
+      {/* </form>
 
-      <form>
+      <form> */}
 
      <h3>How much of a commitment are you looking for from your team?</h3>
       <input
         type="radio"
-        name="radAnswer"
-        onChange={handleChange}
+        name="commitmentLevel"
+        value="eh, whenever is good for them!"
+        {...register('commitmentLevel', { required: true })}
       />
       eh, whenever is good for them!
       <input
         type="radio"
-        name="radAnswer"
-        onChange={handleChange}
+        name="commitmentLevel"
+        value="maybe 1 session a week?"
+        {...register('commitmentLevel', { required: true })}
       />
       maybe 1 session a week?
       <input
         type="radio"
-        name="radAnswer"
-        onChange={handleChange}
+        name="commitmentLevel"
+        value="couple times a week preferably"
+        {...register('commitmentLevel', { required: true })}
       />
       couple times a week preferably
 
       <h3>How difficult do you think this will be?</h3>
      
-      <textarea name="difficulty" onChange={handleChange}/>
+      <textarea name="difficulty"/>
 
 
       <h3>How long do you want a pair-up session to be?</h3>
@@ -128,7 +132,7 @@ export default function NewProjectPage() {
       </label>
 
       <h3>Write the full details of what you want to achieve in this project:</h3>
-      <textarea name="description" onChange={handleChange}>
+      <textarea name="description">
       </textarea>
     
       <br></br>
@@ -145,20 +149,18 @@ export default function NewProjectPage() {
 
 
       <h3>What skills are you looking for to help you on this project? </h3>
-        <i class="devicon-coffeescript-original" name="coffeescript" onClick={()=>{console.log("hello")}}></i>
+        <i className="devicon-coffeescript-original" name="coffeescript" onClick={()=>{console.log("hello")}}></i>
         {/* add more icons from https://devicon.dev/ */}
         <br></br>
 
-        <textarea name="description" placeholder="other details" onChange={handleChange} />
+        <textarea name="description" placeholder="other details" />
 
+        <input type="submit" value="submit" />
       </form>
 
-    <Link
-      to="/ADDLINKHERE"> 
-      <button ref={submitButtonRef} >
-        NEXT
-      </button>
-    </Link>
+  
+      
+    
   </>
   )
 }
