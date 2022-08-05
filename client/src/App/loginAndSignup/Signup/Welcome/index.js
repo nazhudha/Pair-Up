@@ -2,12 +2,24 @@ import React, {useState, useEffect} from "react";
 import UserCards from "./userCards";
 import UserCardsContainer from "./AllUserCardsContainer";
 
+// Functions
+import {getAllUsers} from "../../../Functions/getAllUsers";
+
 export default function Welcome() {
 
   const [usersData, setUsersData] = useState([]);
 
-  useEffect(() => {
+
+  const pullUsers = () => {
     console.log("hello")
+    getAllUsers() // api function
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
+
+
+  useEffect(() => {
+    pullUsers();
   }, []); // this is the dependancy array. 
 
   return (
