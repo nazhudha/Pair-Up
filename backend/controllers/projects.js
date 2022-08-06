@@ -27,6 +27,10 @@ const ProjectController = {
     await project.save().then((doc) => res.status(201).json(project)); //doc?
 
   },
+  All: async (req, res) => {
+    const allProjects = await Project.find();
+    return res.json(allProjects);
+  },
 };
 
 module.exports = ProjectController;
