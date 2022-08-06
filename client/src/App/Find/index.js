@@ -3,6 +3,6 @@ import Location from '../../Components/Location';
 
 export default function Find() {
   return (
-    <div><Location /></div>
+    <div><br /><Location /></div>
   )
 }
