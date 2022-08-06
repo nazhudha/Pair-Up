@@ -20,6 +20,8 @@ export default function ProjectPostCard({ project }) {
     <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <div>
         <p>
+          {project.users.length}/{project.numberOfAdditionalUsersNeeded} Users
+          <br></br>
           {project.name} 
           <br></br>
           {project.category}
@@ -29,6 +31,7 @@ export default function ProjectPostCard({ project }) {
           <br></br>
           {isHovering && project.difficulty}
           <br></br>
+          {isHovering && "Learn More"}
         </p>
       </div>
       
