@@ -28,18 +28,23 @@ const UserSchema = new mongoose.Schema({
       index: '2dsphere',
     },
   },
+  picture: {
+    type: String,
+    default: null,
+  },
 });
 
 UserSchema.pre('save', async function (next) {
   const location = await geocoder.geocode({
     countryCode: this.contry,
-    zipcode: this.postcode,
+    zipcode: this.postcode.replace(/ /g, ""),
     maxResults: 1,
   });
   this.geoLocation = {
     type: 'Point',
     coordinates: [location[0].longitude, location[0].latitude],
   };
+  console.log(this.postcode.replace(/ /g, ""))
   next();
 });
 
