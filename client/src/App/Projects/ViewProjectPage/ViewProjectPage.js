@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { getOneProjectById } from '../../Functions/getProjects'
 
-const dummyProject = "62efabfdd218aebb148b751d"
+const dummyProject = "62eff8e0aa50eb1864005aea"
 
 export default function ViewProjectPage() {
   const [project, setProject] = useState([]);
@@ -20,6 +20,15 @@ export default function ViewProjectPage() {
 
 
   return (
-    <div>{project.name}</div>
+    <>
+    {/* banner */}
+      <div>
+        <small>{project.category}</small><br/>
+        <strong>{project.name}</strong><br/>
+        <h4>{project.difficulty}</h4>
+      
+      
+      </div>
+    </>
   )
 }

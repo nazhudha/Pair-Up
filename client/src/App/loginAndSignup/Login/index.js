@@ -11,7 +11,7 @@ export default function Login() {
         </label>
         <label>
           Password:
-          <input type="text" name="password" />
+          <input type="password" name="password" />
         </label>
       </form>
       <Link to="/">{/* add link */}
