@@ -1,11 +1,14 @@
+const { findOne } = require('../models/projects');
 const Project = require('../models/projects');
+const User = require('../models/user')
 
 const ProjectController = {
 
   Create: async (req, res) => {
-
+    const signedInUser = await User.findOne({_id: "62ebab3246601bb290812d9e"}) // change to take ID from sessions
+    console.log(signedInUser.languages)
     const project = new Project({
-      owner: "62ebab3246601bb290812d9e", // change back to req.body.owner
+      owner: "62ebab3246601bb290812d9e", // change to take ID from sessions
       name: req.body.name,
       difficulty: req.body.difficulty,
       expectedProjectLength: req.body.expectedProjectLength,
@@ -15,7 +18,7 @@ const ProjectController = {
       summary: req.body.summary,
       description: req.body.description,
       users: req.body.users,
-      langWeHave: req.body.langWeHave,
+      langWeHave: signedInUser.languages,
       langWeNeed: req.body.langWeNeed,
       additionalSkillsNeeded: req.body.additionalSkillsNeeded,
       displayLocation: req.body.displayLocation,
