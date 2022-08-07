@@ -39,6 +39,7 @@ const ProjectController = {
       
     Project.find({ owner: req.params.userid})
       .populate("owner")
+      .populate("users")
       .exec((err, projectsById) => {
                 if (err) {
             throw err;  
@@ -50,9 +51,15 @@ const ProjectController = {
   
 
   All: async (req, res) => {
-    const allProjects = await Project.find();
+    Project.find()
+    .populate("owner")
+    .populate("users")
+    .exec((err, allProjects) => {
+              if (err) {
+          throw err;  
+        }
     return res.json(allProjects);
-  },
-};
-
+    });
+  }
+}
 module.exports = ProjectController;
