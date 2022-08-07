@@ -30,19 +30,20 @@ const UserSchema = new mongoose.Schema({
   },
   picture: {
     type: String,
-    default: null,
+    default: "https://ca.slack-edge.com/T0266FRGM-U011PLSSMA9-g7e8a6705c42-512",
   },
 });
 
 UserSchema.pre('save', async function (next) {
   const location = await geocoder.geocode({
     countryCode: this.contry,
-    zipcode: this.postcode.replace(/ /g, ""),
+    zipcode: this.postcode,
     maxResults: 1,
   });
   this.geoLocation = {
     type: 'Point',
-    coordinates: [location[0].longitude, location[0].latitude],
+    coordinates: [location[0].latitude, location[0].longitude],
+    
   };
   console.log(this.postcode.replace(/ /g, ""))
   next();
