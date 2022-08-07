@@ -43,7 +43,7 @@
   width: 80px !important;
   border-radius: 50%;
   border: solid;
-  border-color: rgba(178, 15, 15, 0.93);
+  border-color: rgba(255, 255, 255, 0.93);
   animation: fadein 5s;
   -moz-animation: fadein 5s; /* Firefox */
   -webkit-animation: fadein 5s; /* Safari and Chrome */
