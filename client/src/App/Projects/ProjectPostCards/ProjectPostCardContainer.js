@@ -3,7 +3,7 @@ import ProjectPostCard from './ProjectPostCard';
 
 
 
-export default function AllProjectPostCardContainer({projects}) {
+export default function ProjectPostCardContainer({projects}) {
   return projects.map((project) => {
     return (
       
