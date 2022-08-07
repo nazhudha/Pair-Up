@@ -5,10 +5,11 @@ const User = require('../models/user')
 const ProjectController = {
 
   Create: async (req, res) => {
-    const signedInUser = await User.findOne({_id: "62ebab3246601bb290812d9e"}) // change to take ID from sessions
+    const signedInUserId = "62ebab3246601bb290812d9e" // change to take ID from sessions
+    const signedInUser = await User.findOne({_id: signedInUserId})
     console.log(signedInUser.languages)
     const project = new Project({
-      owner: "62ebab3246601bb290812d9e", // change to take ID from sessions
+      owner: signedInUserId, 
       name: req.body.name,
       difficulty: req.body.difficulty,
       expectedProjectLength: req.body.expectedProjectLength,
@@ -17,7 +18,7 @@ const ProjectController = {
       numberOfAdditionalUsersNeeded: req.body.numberOfAdditionalUsersNeeded,
       summary: req.body.summary,
       description: req.body.description,
-      users: req.body.users,
+      users: [signedInUser],
       langWeHave: signedInUser.languages,
       langWeNeed: req.body.langWeNeed,
       additionalSkillsNeeded: req.body.additionalSkillsNeeded,
