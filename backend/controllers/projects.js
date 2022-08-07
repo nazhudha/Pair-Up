@@ -49,6 +49,21 @@ const ProjectController = {
     });
 
     },    
+
+    GetOneById: async (req, res) => {
+      console.log(req.params.projectid);
+        
+      Project.findOne({ _id: req.params.projectid})
+        .populate("owner")
+        .populate("users")
+        .exec((err, projectById) => {
+                  if (err) {
+              throw err;  
+            }
+        return res.json(projectById);
+      });
+  
+      },    
   
 
   All: async (req, res) => {

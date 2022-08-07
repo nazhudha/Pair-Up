@@ -13,6 +13,7 @@ import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
 import Welcome from "./LoginAndSignup/Signup/Welcome/index";
 import NewProjectPage from "./Projects/NewProjectPage";
 import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
+import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
 
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
@@ -83,6 +84,7 @@ function App() {
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/home/projects" element={<HomepageProjects/>} />
+        <Route path="/projects/view" element={<ViewProjectPage/>} />
       </Routes>
     </BrowserRouter>
   );
