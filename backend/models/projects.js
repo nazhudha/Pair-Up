@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const ProjectSchema = new mongoose.Schema({
   owner: {
-    type: mongoose.SchemaTypes.ObjectId
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'User'
   },
   name: String,
   difficulty: String,
@@ -14,6 +15,7 @@ const ProjectSchema = new mongoose.Schema({
   description: String,
   users: [{
     type: mongoose.SchemaTypes.ObjectId,
+    ref: 'User'
 }],
   langWeHave: [],
   langWeNeed: [],
