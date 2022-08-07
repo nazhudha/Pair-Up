@@ -38,7 +38,11 @@ const ProjectController = {
   AllById: async (req, res) => {
     console.log(req.params.userid);
       
-    Project.find({ owner: req.params.userid})
+    Project.find({
+      $expr: {
+        $in: [req.params.userid, "$users"]
+      }
+    })
       .populate("owner")
       .populate("users")
       .exec((err, projectsById) => {

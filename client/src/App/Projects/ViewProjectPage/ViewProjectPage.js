@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+// functions
 import { getOneProjectById } from '../../Functions/getProjects'
+
+// componants
+import UserCardsContainer from "../../LoginAndSignup/Signup/Welcome/AllUserCardsContainer";
+import JoinButton from "../Componants/JoinButton";
 
 const dummyProject = "62effd775c8f214c1439d2f6"
 
@@ -35,11 +40,14 @@ export default function ViewProjectPage() {
     {/* Join this project */}
       <div>
         <strong>Join this project</strong>
+        <JoinButton projectId={project._id}/>
       </div>
     {/* Skills we have */}
       <div>
         <strong>Skills we have </strong><br/>
-        {project.langWeHave}
+        {project.langWeHave.map((languange)=>{
+          return `${languange} `
+        })}
       </div>
     {/* Skills we need */}
       <div>
@@ -47,6 +55,11 @@ export default function ViewProjectPage() {
         {project.langWeNeed.map((languange)=>{
           return `${languange} `
         })}
+      </div>
+    {/* Users in this project */}
+      <div>
+        <strong>Users in this project </strong><br/>
+        <UserCardsContainer usersData={project.users}/>
       </div>
     </>
   )
