@@ -174,8 +174,6 @@ export default function NewProjectPage() {
       />
       It will require people looking to tackle the most severe problem solving.
 
-      // here
-
       <h3>How long do you want a pair-up session to be?</h3>
       <label>
       <input type="number" name="preferedSessionLength" min="1" max="8" {...register('preferedSessionLength', { required: true })}/>
