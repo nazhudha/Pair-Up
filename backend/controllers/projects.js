@@ -5,7 +5,7 @@ const ProjectController = {
   Create: async (req, res) => {
 
     const project = new Project({
-      owner: req.body.owner, 
+      owner: "62ebab3246601bb290812d9e", // change back to req.body.owner
       name: req.body.name,
       difficulty: req.body.difficulty,
       expectedProjectLength: req.body.expectedProjectLength,
@@ -24,9 +24,28 @@ const ProjectController = {
     });
  
 
+
+    
+
     await project.save().then((doc) => res.status(201).json(project)); //doc?
 
   },
+
+  AllById: async (req, res) => {
+    console.log(req.params.userid);
+      
+    Project.find({ owner: req.params.userid})
+      .populate("owner")
+      .exec((err, projectsById) => {
+                if (err) {
+            throw err;  
+          }
+      return res.json(projectsById);
+    });
+
+    },    
+  
+
   All: async (req, res) => {
     const allProjects = await Project.find();
     return res.json(allProjects);
