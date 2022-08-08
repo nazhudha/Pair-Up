@@ -37,22 +37,32 @@ const ProjectController = {
   },
 
   Join: async (req, res) => {
+    console.log(req.params.projectid)
     try {
-      const projectToUpdate = await Project.updateOne(
+      const userjoining = await User.findById(signedInUserId)
+      await Project.updateOne(
         {
-          _id: req.body._id, //send the project as the request
+          _id: req.params.projectid,
+       
         },
         {
-          $set: { users: projectToUpdate.users.push(signedInUserId) }, //replace signedInUserID with cookie id
+          $addToSet: { users: signedInUserId},
+          userjoining.languages.each(lang => {
+          $addToSet: { langWeHave: userjoining.languages },
+           } )
+          
         },
         {
           upsert: true,
           runValidators: true
         }
-      );
+      )
+        res.status(201).send("joined the project!")
+      ;
     } catch (error) {
-      res.status(400).send("Error: Can't join project");
+      res.status(400).send("Error: Can't join this project");
     }
+    
   },
   
 
