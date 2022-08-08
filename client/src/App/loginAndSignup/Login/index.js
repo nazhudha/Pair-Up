@@ -10,6 +10,7 @@ export default function Login({ userSignIn, createSignInObject }) {
     try {
       const res = await fetch("http://localhost:8080/sessions/", {
         method: "POST",
+        credentials: "include",
         body: JSON.stringify(user),
         headers: {
           "Content-Type": "application/json",

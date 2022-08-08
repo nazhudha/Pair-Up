@@ -18,9 +18,10 @@ const SessionsController = {
     if (user) {
       const validPassword = await bcrypt.compare(body.password, user.password);
       if (validPassword) {
-        console.log(req.session.user);
         res.status(200);
         req.session.user = user;
+
+        res.send(req.session);
       } else {
         res.status(400).redirect("/");
       }
