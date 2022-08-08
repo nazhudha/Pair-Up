@@ -10,6 +10,12 @@ const ProfileController = {
     const allUsers = await User.find();
     return res.json(allUsers);
   },
+
+  AddFriend: async (req, res) => {
+    console.log("hello")
+    return res.send("it works!");
+  },
+
 };
 
 module.exports = ProfileController;
