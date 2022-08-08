@@ -13,6 +13,7 @@ import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
 // import Welcome from "./LoginAndSignup/Signup/Welcome/index";
 import NewProjectPage from "./Projects/NewProjectPage";
+import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
 
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
@@ -40,6 +41,8 @@ function App() {
     password: "",
     postcode: "",
   });
+
+
 
   //user SU functions - move to componant
   const addName = (fname, lname) => {
@@ -81,6 +84,7 @@ function App() {
         {/* <Route path="/welcome" element={<Welcome />} /> */}
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/home/projects" element={<HomepageProjects/>} />
       </Routes>
     </BrowserRouter>
   );
