@@ -14,7 +14,24 @@ const ProfileController = {
   AddFriend: async (req, res) => {
     console.log(req.body)
     console.log(req.params)
-    return res.send("it works!");
+    const friend = await User.findById(req.body._id)
+    await User.updateOne(
+      {
+        _id: req.params.id,
+     
+      },
+      {
+        $addToSet: { friends: req.body._id},
+
+  
+        
+      },
+      {
+        upsert: true,
+        runValidators: true
+      });
+    
+      res.status(201).send("joined the project!")
   },
 
 };
