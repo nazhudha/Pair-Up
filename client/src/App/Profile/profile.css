@@ -35,6 +35,14 @@
   color: wheat;
 }
 
+.profile-header-contents img{
+  width: 125px;
+  border-radius: 50px;
+  position: relative;
+  right: -82vw;
+  top: -19.5vh;
+}
+
 /* MAIN FEED CONTAINER*/
 .main-feed-container {
   height: 80vh;

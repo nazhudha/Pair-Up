@@ -11,6 +11,7 @@ export default function ProfileHeader() {
           <div>Available to pair</div>
           <div>Other information</div>
         </div>
+        <img src="https://openpsychometrics.org/tests/characters/test-resources/pics/S/2.jpg"></img>
       </div>
     </div>
   );
