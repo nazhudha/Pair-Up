@@ -12,7 +12,8 @@ const ProfileController = {
   },
 
   AddFriend: async (req, res) => {
-    console.log("hello")
+    console.log(req.body)
+    console.log(req.params)
     return res.send("it works!");
   },
 
