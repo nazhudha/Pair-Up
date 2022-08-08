@@ -1,7 +1,7 @@
 import "./index.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import 'leaflet/dist/leaflet.css';
+import "leaflet/dist/leaflet.css";
 // Components
 import LoginAndSignup from "./LoginAndSignup/index";
 import Login from "./LoginAndSignup/Login/index";
@@ -42,7 +42,10 @@ function App() {
     postcode: "",
   });
 
-
+  const [userSignIn, setuserSignIn] = useState({
+    email: "",
+    password: "",
+  });
 
   //user SU functions - move to componant
   const addName = (fname, lname) => {
@@ -57,17 +60,35 @@ function App() {
     setUser({ ...user, languages: lang });
   };
 
+  const createSignInObject = (email, password) => {
+    setuserSignIn({ email: email, password: password });
+  };
+
   const addCredentials = (username, email, password, postcode) => {
-    setUser({ ...user, username: username, email: email, password: password, postcode: postcode  });
+    setUser({
+      ...user,
+      username: username,
+      email: email,
+      password: password,
+      postcode: postcode,
+    });
   };
 
   //pass user and neccisary functions to the individual paths
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/projects/newproject" element={<NewProjectPage />} />
+        <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={
+            <Login
+              userSignIn={userSignIn}
+              createSignInObject={createSignInObject}
+            />
+          }
+        />
         <Route
           path="/signupname"
           element={<SignupName addName={addName} user={user} />}
@@ -80,11 +101,20 @@ function App() {
           path="/signuplanguage"
           element={<SignupLanguage addLang={addLang} user={user} />}
         />
-        <Route path="/signupcredentials" element={<SignupCredentials user={user} addCredentials={addCredentials} createUser={createUser} />} />
+        <Route
+          path="/signupcredentials"
+          element={
+            <SignupCredentials
+              user={user}
+              addCredentials={addCredentials}
+              createUser={createUser}
+            />
+          }
+        />
         {/* <Route path="/welcome" element={<Welcome />} /> */}
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/home/projects" element={<HomepageProjects/>} />
+        <Route path="/home/projects" element={<HomepageProjects />} />
       </Routes>
     </BrowserRouter>
   );
