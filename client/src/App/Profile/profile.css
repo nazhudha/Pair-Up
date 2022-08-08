@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Profile header--------- */
+.profile-header-container {
+  height: 20vh;
+  background-color: darkblue;
+}
+
+.profile-header-contents {
+  position: relative;
+  top: 9vh;
+  background-color: transparent;
+  right: 60px;
+}
+
+#profile-title {
+  font-size: 1.8em;
+}
+
+.profile-sub-header {
+  height: 30px;
+  position: relative;
+  top: -36px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 110px;
+}
+
+.profile-sub-header div {
+  margin-right: 60px;
+  color: wheat;
+}
+
+.profile-header-contents img{
+  width: 125px;
+  border-radius: 50px;
+  position: relative;
+  right: -87vw;
+  top: -19.5vh;
+}
+
+/* MAIN FEED CONTAINER*/
+.main-feed-container {
+  height: 80vh;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 25px;
+  background-color: transparent;
+}
+
+/* Left Profile Feed */
+.left-profilefeed-container {
+  width: 60vw;
+  margin-right: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-feed-container{
+  border: solid black 1.5px;
+  padding: 15px;
+  height:fit-content;
+  margin-bottom: 15px;
+  background-color: aliceblue;
+}
+
+h3{
+  font-size: 1.2em;
+  text-align: left;
+  color: black;
+}
+
+p{
+  position: relative;
+  top: -20px;
+}
+
+img{
+  width: 45vw;
+}
+
+/* Right Profile Feed */
+.right-sidebar-container{
+  width: 40vw;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-container{
+  border: solid black 1.5px;
+  padding: 15px;
+  height: 150px;
+  margin-bottom: 15px;
+  background-color: beige;
+}
+
+h4 {
+  font-size: 1.2em;
+  text-align: center;
+  color: black;
+}
+
+#join-project-container{
+  justify-content: center;
+  text-align: center;
+}
+
+#join-project-container h4{
+  margin-top: 20px;
+  font-size: 2em;
+  text-align: center;
+  justify-content: center;
+  color: black;
+}
+
+#user-in-project-container{
+  position: relative;
+  top: 30px;
+}
