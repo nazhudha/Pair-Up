@@ -21,6 +21,6 @@ export default function Profile() {
     console.log(records);
   }
 
-  getRecords();
+  setTimeout(getRecords, 1000);
   return <div>Profile</div>;
 }
