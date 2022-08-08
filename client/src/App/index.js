@@ -66,7 +66,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/projects/newproject" element={<NewProjectPage />} />
+        
         <Route path="/" element={<LoginAndSignup />} />
         <Route path="/login" element={<Login />} />
         <Route
@@ -85,6 +85,7 @@ function App() {
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/home/projects" element={<HomepageProjects/>} />
+        <Route path="/project/newproject" element={<NewProjectPage />} />
         <Route path="/project/view" element={<ViewProjectPage/>} />
         <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
       </Routes>

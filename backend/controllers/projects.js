@@ -2,12 +2,13 @@ const { findOne } = require('../models/projects');
 const Project = require('../models/projects');
 const User = require('../models/user')
 
+const signedInUserId = "62f007e5dd344fce0c132aa1" // change to take ID from sessions
+
 const ProjectController = {
 
   Create: async (req, res) => {
-    const signedInUserId = "62eff044c98668c5a2f8d923" // change to take ID from sessions
     const signedInUser = await User.findOne({_id: signedInUserId})
-    console.log(signedInUser.languages)
+    console.log(signedInUser)
     const project = new Project({
       owner: signedInUserId, 
       name: req.body.name,
@@ -34,6 +35,26 @@ const ProjectController = {
     await project.save().then((doc) => res.status(201).json(project)); //doc?
 
   },
+
+  Join: async (req, res) => {
+    try {
+      const projectToUpdate = await Project.updateOne(
+        {
+          _id: req.body._id, //send the project as the request
+        },
+        {
+          $set: { users: projectToUpdate.users.push(signedInUserId) }, //replace signedInUserID with cookie id
+        },
+        {
+          upsert: true,
+          runValidators: true
+        }
+      );
+    } catch (error) {
+      res.status(400).send("Error: Can't join project");
+    }
+  },
+  
 
   AllById: async (req, res) => {
     console.log(req.params.userid);

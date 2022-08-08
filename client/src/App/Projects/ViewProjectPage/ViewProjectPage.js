@@ -6,6 +6,7 @@ import { getOneProjectById } from '../../Functions/getProjects'
 // componants
 import UserCardsContainer from "../../LoginAndSignup/Signup/Welcome/AllUserCardsContainer";
 import JoinButton from "../Componants/JoinButton";
+import ProjectPage from "./ProjectPage";
 
 const dummyProject = "62effd775c8f214c1439d2f6"
 
@@ -15,7 +16,7 @@ export default function ViewProjectPage() {
 
   const pullMyProject = () => {
     getOneProjectById(dummyProject) // api function
-      .then((res) => setProject(res))
+      .then((data) => setProject(data))
       .catch((err) => console.log(err));
   };
 
@@ -23,49 +24,9 @@ export default function ViewProjectPage() {
     pullMyProject();
   }, []); 
 
-console.log(project)
-  return (   
-<>
-{/* banner */}
-  <div>
-    <small>{project.category}</small><br/>
-    <strong>{project.name}</strong><br/>
-    <h4>Difficulty: {project.difficulty} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Commitment: {project.commitmentLevel}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Session Length: Roughly {project.preferedSessionLength} hour  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Team Size: {project.users.length}/{project.numberOfAdditionalUsersNeeded}</h4> 
-  </div>
-{/* Summary and Description */}
-  <div>
-    <p>{project.summary}</p>
-    <p>{project.description}</p>
-  </div>   
-{/* Join this project */}
-  <div>
-    <strong>Join this project</strong>
-    <JoinButton projectId={project._id}/>
-  </div>
-{/* Skills we have */}
-  <div>
-    <strong>Skills we have </strong><br/>
-    {project.langWeHave.map((languange)=>{
-      return `${languange} `
-    })}
-  </div>
-{/* Skills we need */}
-  <div>
-    <strong>Skills we need </strong><br/>
-    {project.langWeNeed.map((languange)=>{
-      return `${languange} `
-    })}
-  </div>
-{/* Users in this project */}
-  <div>
-    <strong>Users in this project </strong><br/>
-    <UserCardsContainer usersData={project.users}/>
-  </div>
-   {/* Map of users*/}
-   <div>
-    <strong>Where everyone is based</strong><br/>
-    <JoinButton />
-  </div>
-</>
+
+  return (
+  
+    <ProjectPage project={project}/>
   )
 }
