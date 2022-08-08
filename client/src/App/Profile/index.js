@@ -8,8 +8,10 @@ export default function Profile() {
   return (
     <div>
       <ProfileHeader/>
+      <div className='main-feed-container'>
       <ProfileFeed/>
       <RightSideBar/>
+      </div>
     </div>
     
   )
