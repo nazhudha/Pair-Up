@@ -1,3 +1,42 @@
-/* *{
-  background:white  
-} */
+*{
+  box-sizing: border-box;  
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Profile header--------- */
+.profile-header-container{
+  height: 20vh;
+  background-color: darkblue;
+}
+
+.profile-header-contents{
+  position: relative;
+  top: 9vh;
+  background-color: transparent; 
+}
+
+#profile-title{
+  font-size: 1.8em;
+}
+
+.profile-sub-header{
+  height: 30px;
+  position: relative;
+  top: -36px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 110px;   
+}
+
+.profile-sub-header div{
+  margin-right: 60px;
+  color: wheat;
+}
+
+
+/* Left Profile Feed */
+.left-profile-feed{
+  margin-top: 20vh;
+}
