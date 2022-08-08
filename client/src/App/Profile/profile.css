@@ -60,9 +60,24 @@
 .left-feed-container{
   border: solid red 1px;
   padding: 15px;
-  height: 150px;
+  height:fit-content;
   margin-bottom: 15px;
   background-color: aliceblue;
+}
+
+h3{
+  font-size: 1.2em;
+  text-align: left;
+  color: black;
+}
+
+p{
+  position: relative;
+  top: -20px;
+}
+
+img{
+  width: 45vw;
 }
 
 /* Right Profile Feed */
@@ -80,4 +95,28 @@
   height: 150px;
   margin-bottom: 15px;
   background-color: beige;
+}
+
+h4 {
+  font-size: 1.2em;
+  text-align: center;
+  color: black;
+}
+
+#join-project-container{
+  justify-content: center;
+  text-align: center;
+}
+
+#join-project-container h4{
+  margin-top: 20px;
+  font-size: 2em;
+  text-align: center;
+  justify-content: center;
+  color: black;
+}
+
+#user-in-project-container{
+  position: relative;
+  top: 30px;
 }
