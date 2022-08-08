@@ -45,6 +45,7 @@ app.use('/auth', require('./routes/auth'));
 app.use('/user', require('./routes/user'));
 app.use('/sessions', require('./routes/sessions'));
 app.use('/profile', require('./routes/profile'));
+app.use('/profile:id', require('./routes/profile'));
 app.use('/projects', require('./routes/projects'));
 
 // port

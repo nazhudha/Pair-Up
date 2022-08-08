@@ -22,6 +22,13 @@ const ProfileController = {
     const allUsers = await User.find();
     return res.json(allUsers);
   },
+  User: async (req, res) => {
+    console.log('!!!!');
+    const profile = await User.findOne({
+      _id: req.params.id,
+    });
+    return res.json(profile);
+  },
 };
 
 module.exports = ProfileController;

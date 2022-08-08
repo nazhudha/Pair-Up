@@ -1,29 +1,62 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 
-export default function Login() {
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [redirect, setRedirect] = useState(false);
+
+  const submit = async (e) => {
+    e.preventDefault();
+    const data = {
+      email: email,
+      password: password,
+    };
+    const requestOptions = {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, password: password }),
+    };
+    fetch('http://localhost:8080/auth', requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.token);
+        localStorage.setItem('token', data.token);
+      });
+    setRedirect(true);
+  };
+
+  if (redirect) return <Navigate to="/" />;
+
   return (
-    <>
-
-      <div className="form-container">
-        <div className="login-wrapper">
-          <form>
-            <label>
-              Email:
-              <input type="text" name="email" />
-            </label>
-            <label>
-              Password:
-              <input type="text" name="password" />
-            </label>
-          </form>
-          <Link to="/">
-            {/* add link */}
-            <button className="login-btn">Log in</button>
-          </Link>
-        </div>
+    <form onSubmit={submit}>
+      <h3>Login</h3>
+      <div className="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          className="form-control"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
 
-    </>
+      <div className="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          className="form-control"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button to={'/'} className="btn btn-primary btn-bloack">
+          Login
+        </button>
+      </div>
+    </form>
   );
-}
+};
+
+export default Login;
