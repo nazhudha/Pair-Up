@@ -30,6 +30,21 @@ const ProfileController = {
         upsert: true,
         runValidators: true
       });
+      await User.updateOne(
+        {
+          _id: req.body._id,
+       
+        },
+        {
+          $addToSet: { friends: req.params.id},
+  
+    
+          
+        },
+        {
+          upsert: true,
+          runValidators: true
+        });
     
       res.status(201).send("joined the project!")
   },
