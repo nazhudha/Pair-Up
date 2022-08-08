@@ -14,23 +14,13 @@ import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
 import Welcome from "./LoginAndSignup/Signup/Welcome/index";
 import NewProjectPage from "./Projects/NewProjectPage";
 import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
+import AddFriendButton from "../Components/AddFriendButton";
 
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
 
 function App() {
-  //  const testUser = {
-  //     fname: "tom",
-  //     lname: "Reynolds",
-  //     skill: "Master",
-  //     languages: ["ruby", "javascript"],
-  //     username: "paddyr105",
-  //     email: "paddy@test.com",
-  //     password: "password",
-  //     postcode: "se1 1ab"
-  //   }
 
-  // user signup
   const [user, setUser] = useState({
     fname: "",
     lname: "",
@@ -65,6 +55,7 @@ function App() {
     });
   };
 
+
   //pass user and neccisary functions to the individual paths
   return (
     <BrowserRouter>
@@ -96,8 +87,8 @@ function App() {
         />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/find" element={<Find />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/home/projects" element={<HomepageProjects />} />
+
       </Routes>
     </BrowserRouter>
   );

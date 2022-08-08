@@ -5,6 +5,6 @@ const ProfileController = require('../controllers/profile');
 
 router.get('/me', ProfileController.Me);
 router.get('/all', ProfileController.All);
-router.patch('/:id', ProfileController.AddFriend);
+router.patch('/addfriend/:id', ProfileController.AddFriend);
 
 module.exports = router;
