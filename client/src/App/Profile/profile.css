@@ -1,53 +1,83 @@
-*{
-  box-sizing: border-box;  
+* {
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
 
 /* Profile header--------- */
-.profile-header-container{
+.profile-header-container {
   height: 20vh;
   background-color: darkblue;
 }
 
-.profile-header-contents{
+.profile-header-contents {
   position: relative;
   top: 9vh;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
-#profile-title{
+#profile-title {
   font-size: 1.8em;
 }
 
-.profile-sub-header{
+.profile-sub-header {
   height: 30px;
   position: relative;
   top: -36px;
   background-color: transparent;
   display: flex;
   justify-content: flex-start;
-  margin-left: 110px;   
+  margin-left: 110px;
 }
 
-.profile-sub-header div{
+.profile-sub-header div {
   margin-right: 60px;
   color: wheat;
 }
 
 /* MAIN FEED CONTAINER*/
-.main-feed-container{
-height: 80vh;
-border: 2px solid black;
-background-color: antiquewhite;
-display: flex;
-flex-direction: row;
-margin-left: 50px;
-margin-right: 50px;
-margin-top: 25px;
+.main-feed-container {
+  height: 80vh;
+  border: 2px solid black;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 25px;
+  background-color: transparent;
 }
 
 /* Left Profile Feed */
-.left-profile-feed{
-  /* margin-top: 20vh; */
+.left-profilefeed-container {
+  width: 60vw;
+  margin-right: 12px;
+  display: flex;
+  flex-direction: column;
+  border: solid black 2px;
+}
+
+.left-feed-container{
+  border: solid red 1px;
+  padding: 15px;
+  height: 150px;
+  margin-bottom: 15px;
+  background-color: aliceblue;
+}
+
+/* Right Profile Feed */
+.right-sidebar-container{
+  width: 40vw;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  border: solid black 2px;
+}
+
+.right-container{
+  border: solid green 1px;
+  padding: 15px;
+  height: 150px;
+  margin-bottom: 15px;
+  background-color: beige;
 }
