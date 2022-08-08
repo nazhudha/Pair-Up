@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function Login() {
   return (
     <>
+
       <div className="form-container">
         <div className="login-wrapper">
           <form>
@@ -22,6 +23,7 @@ export default function Login() {
           </Link>
         </div>
       </div>
+
     </>
   );
 }
