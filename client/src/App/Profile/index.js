@@ -1,18 +1,37 @@
-import React from 'react'
-import ProfileHeader from './profileHeader'
-import './profile.css'
-import LeftProfileFeed from './LeftProfileFeed/LeftProfileFeed'
-import RightSideBar from './RightSideBar/RightSideBar'
+import React from "react";
+import ProfileHeader from "./profileHeader";
+import "./profile.css";
+import LeftProfileFeed from "./LeftProfileFeed/LeftProfileFeed";
+import RightSideBar from "./RightSideBar/RightSideBar";
 
 export default function Profile() {
+  async function getRecords() {
+    const response = await fetch(`http://localhost:8080/profile/me`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      const message = `An error occurred: ${response.statusText}`;
+      window.alert(message);
+      return;
+    }
+
+    const records = await response.json();
+    console.log(records);
+  }
+
+  setTimeout(getRecords, 1000);
   return (
     <div>
-      <ProfileHeader/>
-      <div className='main-feed-container'>
-      <LeftProfileFeed/>
-      <RightSideBar/>
+      <ProfileHeader />
+      <div className="main-feed-container">
+        <LeftProfileFeed />
+        <RightSideBar />
       </div>
     </div>
-    
-  )
+  );
 }

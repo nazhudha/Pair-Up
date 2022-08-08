@@ -1,29 +1,70 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Login({ userSignIn, createSignInObject }) {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const submitButtonRef = useRef();
+
+  const signIn = async (user) => {
+    try {
+      const res = await fetch("http://localhost:8080/sessions/", {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      // const json = await res.json(); // not sure why this line is needed?
+    } catch (err) {}
+  };
+
+  function handleChange() {
+    if (
+      emailRef.current.value.length === 0 ||
+      passwordRef.current.value.length === 0
+    ) {
+      submitButtonRef.current.disabled = true;
+    } else {
+      submitButtonRef.current.disabled = false;
+    }
+    createSignInObject(emailRef.current.value, passwordRef.current.value);
+  }
+
   return (
     <>
-
-      <div className="form-container">
-        <div className="login-wrapper">
-          <form>
-            <label>
-              Email:
-              <input type="text" name="email" />
-            </label>
-            <label>
-              Password:
-              <input type="text" name="password" />
-            </label>
-          </form>
-          <Link to="/">
-            {/* add link */}
-            <button className="login-btn">Log in</button>
-          </Link>
-        </div>
-      </div>
-
+      <form>
+        <label>
+          Email:
+          <input
+            ref={emailRef}
+            type="text"
+            name="email"
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Password:
+          <input
+            ref={passwordRef}
+            type="text"
+            name="password"
+            onChange={handleChange}
+          />
+        </label>
+      </form>
+      <Link
+        to="/profile"
+        onClick={() => {
+          signIn(userSignIn);
+        }}
+      >
+        <button ref={submitButtonRef} disabled={true}>
+          Log in
+        </button>
+      </Link>
     </>
   );
 }
