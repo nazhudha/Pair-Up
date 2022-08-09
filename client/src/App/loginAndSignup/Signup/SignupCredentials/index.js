@@ -4,6 +4,8 @@ import TextField from "@mui/material/TextField";
 import { Box } from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
+import FormGroup from "@mui/material/FormControl";
+
 export default function SignupCredentials({
   createUser,
   addCredentials,
@@ -14,7 +16,18 @@ export default function SignupCredentials({
   const passwordRef = useRef(null);
   const password2Ref = useRef(null);
   const postcodeRef = useRef(null);
-
+  const checkBox = {
+    bottom: -300,
+    left: 1200,
+    fontSize: 20,
+    center: 10,
+  };
+  const button = {
+    bottom: -650,
+    left: 1000,
+    fontSize: 20,
+    center: 10,
+  };
   const submitButtonRef = useRef();
 
   function handleChange() {
@@ -29,46 +42,49 @@ export default function SignupCredentials({
 
   return (
     <div>
-      <TextField
-        type="text"
-        inputRef={usernameRef}
-        //style={firstName}
-        id="Email_"
-        label="Username"
-        variant="filled"
-      />
-      <TextField
-        type="text"
-        inputRef={emailRef}
-        //style={firstName}
-        id="Email_"
-        label="Email"
-        variant="filled"
-      />
-      <TextField
-        type="text"
-        inputRef={passwordRef}
-        //style={lastName}
-        id="Password_"
-        label="Password"
-        variant="filled"
-      />
-      <TextField
-        type="text"
-        inputRef={password2Ref}
-        //style={lastName}
-        id="Password2_"
-        label="Password Checker"
-        variant="filled"
-      />
-      <TextField
-        type="text"
-        inputRef={postcodeRef}
-        //style={firstName}
-        id="Postcode_"
-        label="Postcode"
-        variant="filled"
-      />
+      <FormGroup style={checkBox}>
+        <TextField
+          type="text"
+          inputRef={usernameRef}
+          //style={firstName}
+          id="Username_"
+          label="Username"
+          variant="filled"
+        />
+        <TextField
+          type="text"
+          inputRef={emailRef}
+          //style={firstName}
+          id="Email_"
+          label="Email"
+          variant="filled"
+        />
+        <TextField
+          type="text"
+          inputRef={passwordRef}
+          //style={lastName}
+          id="Password_"
+          label="Password"
+          variant="filled"
+        />
+        <TextField
+          type="text"
+          inputRef={password2Ref}
+          //style={lastName}
+          id="Password2_"
+          label="Password Checker"
+          variant="filled"
+        />
+
+        <TextField
+          type="text"
+          inputRef={postcodeRef}
+          //style={firstName}
+          id="Postcode_"
+          label="Postcode"
+          variant="filled"
+        />
+      </FormGroup>
       <Link
         to="/login"
         onClick={() => {
@@ -81,7 +97,7 @@ export default function SignupCredentials({
         }}
       >
         <Button
-          //style={button}
+          style={button}
           variant="contained"
           sx={{
             color: "black",
