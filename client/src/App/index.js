@@ -86,7 +86,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/home/projects" element={<HomepageProjects/>} />
         <Route path="/project/newproject" element={<NewProjectPage />} />
-        <Route path="/project/view" element={<ViewProjectPage/>} />
+        <Route path="/project/view/:id" element={<ViewProjectPage/>} />
         <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
       </Routes>
     </BrowserRouter>

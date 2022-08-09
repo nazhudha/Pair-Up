@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 
 // functions
 import { getOneProjectById } from '../../Functions/getProjects'
@@ -6,14 +7,14 @@ import { getOneProjectById } from '../../Functions/getProjects'
 // componants
 import ProjectPage from "./ProjectPage";
 
-const dummyProject = "62f0f5ec1bb392f63aead02c"
-
 export default function ViewProjectPage() {
+
+  const { id } = useParams();
   const [project, setProject] = useState(null);
 
 
   const pullMyProject = () => {
-    getOneProjectById(dummyProject) // api function
+    getOneProjectById(id) // api function
       .then((data) => setProject(data))
       .catch((err) => console.log(err));
   };
