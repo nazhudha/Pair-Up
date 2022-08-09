@@ -1,50 +1,46 @@
-import "./index.css";
-import { useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import "leaflet/dist/leaflet.css";
+
+import './index.css';
+import { Component, useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import 'leaflet/dist/leaflet.css';
+
 // Components
-import LoginAndSignup from "./LoginAndSignup/index";
-import Login from "./LoginAndSignup/Login/index";
-import Profile from "./Profile/index";
-import Find from "./Find/index";
-import SignupName from "./LoginAndSignup/Signup/SignupName/index";
-import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
-import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
-import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
+import LoginAndSignup from './LoginAndSignup/index';
+import Login from './LoginAndSignup/Login/index';
+import Profile from './Profile/index';
+import ProfileUser from './ProfileUser/index';
+import Find from './Find/index';
+import SignupName from './LoginAndSignup/Signup/SignupName/index';
+import SignupSkill from './LoginAndSignup/Signup/SignupSkill/index';
+import SignupLanguage from './LoginAndSignup/Signup/SignupLanguage/index';
+import SignupCredentials from './LoginAndSignup/Signup/SignupCredentials/index';
 // import Welcome from "./LoginAndSignup/Signup/Welcome/index";
-import NewProjectPage from "./Projects/NewProjectPage";
-import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
+import NewProjectPage from './Projects/NewProjectPage';
+import HomepageProjects from './Projects/HomepageProjects/HomepageProjects';
 
 // Functions
-import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
+import { createUser } from './LoginAndSignup/Signup/functions/createUser';
 
 function App() {
-  //  const testUser = {
-  //     fname: "tom",
-  //     lname: "Reynolds",
-  //     skill: "Master",
-  //     languages: ["ruby", "javascript"],
-  //     username: "paddyr105",
-  //     email: "paddy@test.com",
-  //     password: "password",
-  //     postcode: "se1 1ab"
-  //   }
+  //state = {};
 
   // user signup
   const [user, setUser] = useState({
-    fname: "",
-    lname: "",
-    skill: "",
+    fname: '',
+    lname: '',
+    skill: '',
     languages: [],
-    username: "",
-    email: "",
-    password: "",
-    postcode: "",
+    username: '',
+    email: '',
+    password: '',
+    postcode: '',
   });
 
   const [userSignIn, setuserSignIn] = useState({
-    email: "",
-    password: "",
+
+    email: '',
+    password: '',
+
   });
 
   //user SU functions - move to componant
@@ -74,7 +70,26 @@ function App() {
     });
   };
 
-  //pass user and neccisary functions to the individual paths
+  // render() {
+  //   if (localStorage.getItem('token') !== null) {
+  //     return (
+  //       <BrowserRouter>
+  //         <h2>Hi, welcome to Pair Up!</h2>
+  //         <button onClick={() => localStorage.clear()} className="log-out">
+  //           Logout
+  //         </button>
+  //         <Routes>
+  //           <Route path="/projects/newproject" element={<NewProjectPage />} />
+  //           {/* <Route path="/" element={<LoginAndSignup />} /> */}
+  //           {/* <Route path="/welcome" element={<Welcome />} /> */}
+  //           <Route path="/find" element={<Find />} />
+  //           <Route path="/profile" element={<Profile />} />
+  //           <Route path="/profile/:id" element={<ProfileUser />} />
+  //           <Route path="/home/projects" element={<HomepageProjects />} />
+  //         </Routes>
+  //       </BrowserRouter>
+  //     );
+  //   }
   return (
     <BrowserRouter>
       <Routes>
@@ -114,6 +129,7 @@ function App() {
         {/* <Route path="/welcome" element={<Welcome />} /> */}
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:id" element={<ProfileUser />} />
         <Route path="/home/projects" element={<HomepageProjects />} />
       </Routes>
     </BrowserRouter>

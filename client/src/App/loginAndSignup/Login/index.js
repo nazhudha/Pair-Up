@@ -1,70 +1,75 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { Component, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 
-export default function Login({ userSignIn, createSignInObject }) {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const submitButtonRef = useRef();
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
-  const signIn = async (user) => {
-    try {
-      const res = await fetch("http://localhost:8080/sessions/", {
-        method: "POST",
-        credentials: "include",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
+  const submit = async (e) => {
+    e.preventDefault();
+    const data = {
+      email: email,
+      password: password,
+    };
+    const requestOptions = {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, password: password }),
+    };
+    fetch('http://localhost:8080/auth', requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.token);
+        localStorage.setItem('token', data.token);
       });
-
-      // const json = await res.json(); // not sure why this line is needed?
-    } catch (err) {}
+    setRedirect(true);
   };
 
-  function handleChange() {
-    if (
-      emailRef.current.value.length === 0 ||
-      passwordRef.current.value.length === 0
-    ) {
-      submitButtonRef.current.disabled = true;
-    } else {
-      submitButtonRef.current.disabled = false;
-    }
-    createSignInObject(emailRef.current.value, passwordRef.current.value);
-  }
+  if (redirect) return <Navigate to="/profile" />;
+  
+  // function handleChange() {
+//   if (
+//     emailRef.current.value.length === 0 ||
+//     passwordRef.current.value.length === 0
+//   ) {
+//     submitButtonRef.current.disabled = true;
+//   } else {
+//     submitButtonRef.current.disabled = false;
+//   }
+//   createSignInObject(emailRef.current.value, passwordRef.current.value);
+// }
 
   return (
-    <>
-      <form>
-        <label>
-          Email:
-          <input
-            ref={emailRef}
-            type="text"
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            ref={passwordRef}
-            type="text"
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-      </form>
-      <Link
-        to="/profile"
-        onClick={() => {
-          signIn(userSignIn);
-        }}
-      >
-        <button ref={submitButtonRef} disabled={true}>
-          Log in
+    <form onSubmit={submit}>
+      <h3>Login</h3>
+      <div className="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          className="form-control"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+
+      <div className="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          className="form-control"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button to={'/profile'} className="btn btn-primary btn-bloack">
+          Login
         </button>
-      </Link>
-    </>
+      </div>
+    </form>
+
   );
-}
+};
+
+export default Login;
