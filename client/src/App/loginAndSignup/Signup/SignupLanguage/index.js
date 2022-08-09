@@ -26,11 +26,18 @@ export default function SignupLanguage({ addLang, user }) {
       <div className="languagetype">
         <h3>What programming languages do you know?</h3>
         <input ref={rubyRef} type="radio" value="ruby" name="ruby" /> ruby
-        <input ref={javascriptRef} type="radio" value="javascript"name="javascript" /> javascript
-        <input ref={pythonRef} type="radio" value="python" name="python" /> python
+        <input
+          ref={javascriptRef}
+          type="radio"
+          value="javascript"
+          name="javascript"
+        />{" "}
+        javascript
+        <input ref={pythonRef} type="radio" value="python" name="python" />{" "}
+        python
       </div>
       <Link to="/signupcredentials" onClick={sendSkillsArray}>
-        <button>NEXT</button>
+        <button className="next-btn">NEXT</button>
       </Link>
     </>
   );
