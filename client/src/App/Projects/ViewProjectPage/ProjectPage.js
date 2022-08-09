@@ -21,10 +21,10 @@ export default function ProjectPage({ project }) {
     <p>{project.description}</p>
   </div>   
 {/* Join this project */}
-  {/* <div>
+  <div>
     <strong>Join this project</strong>
     <JoinButton projectId={project._id}/>
-  </div> */}
+  </div>
 {/* Skills we have */}
   <div>
     <strong>Skills we have </strong><br/>

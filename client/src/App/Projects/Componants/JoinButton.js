@@ -1,23 +1,21 @@
 import React, {Link} from 'react'
 
+import { joinProject } from '../Functions/joinProject'
+
 export default function JoinButton({ projectId }) {
 
-  const joinProject = () => {
-    console.log(projectId)
+  const handleOnClick = () => {
+    joinProject(projectId)
   }
 
+  // to="/project/joinrequestsent"
   return (
     <>
-      <Link
-        to="/project/joinrequestsent"
-        onClick={() => {
-          joinProject();
-        }}
-      >
-        <button>
+
+        <button onClick={handleOnClick}>
           JOIN
         </button>
-      </Link>
+ 
     </>
   )
 }

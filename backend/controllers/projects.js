@@ -2,7 +2,7 @@ const { findOne } = require('../models/projects');
 const Project = require('../models/projects');
 const User = require('../models/user')
 
-const signedInUserId = "62f007a4dd344fce0c132a9d" // change to take ID from sessions
+const signedInUserId = "62f00f64623c84a6a434a41e" // change to take ID from sessions
 
 const ProjectController = {
 

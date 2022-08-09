@@ -25,7 +25,6 @@ export default function ViewProjectPage() {
 
 
   if (project !== null){
-  console.log(project)
 
   return (
   
