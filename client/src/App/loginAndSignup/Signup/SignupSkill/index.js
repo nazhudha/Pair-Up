@@ -12,11 +12,10 @@ export default function SignupSkill({ user, addSkill }) {
   const intermediateRef = useRef();
   const expertRef = useRef();
   const radio = {
-    minWidth: 50,
-    minHeight: 50,
     bottom: -300,
-    left: 750,
+    left: 1200,
     fontSize: 20,
+    center: 10,
   };
 
   const nextButtonRef = useRef();
