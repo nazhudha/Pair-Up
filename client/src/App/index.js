@@ -18,6 +18,7 @@ import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
 import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
 import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
 import Find from './Find/index';
+import ProfileUser from "./ProfileUser/index"
 
 
 // Functions

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const auth = require('../middleware/auth');
 
 const ProjectController = require("../controllers/projects")
 
@@ -10,6 +11,6 @@ router.get("/getprojectbyid/:projectid", ProjectController.GetOneById);
 router.patch("/joinproject/:projectid", ProjectController.Join);
 
 
-router.post("/createproject", ProjectController.Create);
+router.post("/createproject", auth, ProjectController.Create);
 
 module.exports = router;
