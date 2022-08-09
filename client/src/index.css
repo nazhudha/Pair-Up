@@ -52,7 +52,12 @@ h2 {
   color: #ffffff;
 }
 
-button {
+/* button styles  */
+
+.signup-btn,
+.login-btn,
+.next-btn,
+.submit-btn {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -66,32 +71,47 @@ button {
   text-align: center;
   color: #ffffff;
   background-color: #000000;
-  border-top: 1px solid #000000;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  border-left: 1px solid #000000;
+  border: none;
   border-radius: 20px;
   cursor: pointer;
 }
 
-/* styling for sign up name page */
-
-form {
-  text-align: center;
-  margin: 0px;
+.next-btn {
+  width: 80px;
 }
 
-label {
-  padding: 5px;
+.button:hover {
+  background-color: orange;
 }
+
+a {
+  text-decoration: none;
+}
+
+/* styling for sign up name /login pages */
 
 input[type="text"] {
   margin: 10px;
   width: 180px;
   padding: 10px;
   border-radius: 5px;
-  border: 0;
-  display: inline;
+  border: 0px;
+  justify-content: left;
+}
+
+.form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.signup-wrapper,
+.login-wrapper {
+  height: fit-content;
+  margin-top: 40vh;
+  display: flex;
+  justify-content: center;
 }
 
 /* styling for sign up skill page */
@@ -122,7 +142,7 @@ h3 {
 }
 
 /* styling for sign up credentials page */
-.form-container{
+.form-container {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -133,9 +153,9 @@ h3 {
   height: fit-content;
   margin-top: 20vh;
   display: flex;
-  border: solid 2px; 
+  border: solid 0.25px;
+  box-shadow: 3px 5px 8px 10px rgba(0, 0, 0, 0.2);
   justify-content: center;
-  /* place-items: center; */
 }
 
 .form {
@@ -149,6 +169,18 @@ h3 {
   align-self: center;
   font-size: 1rem;
   background-color: black;
-  height: 60px;
+  height: 40px;
   width: 80px;
+}
+
+/* styling for nav bar */
+
+.nav-container {
+  display: flex;
+  height: 60px;
+  background-color: #ffffff;
+}
+
+.nav--icon {
+  height: 80px;
 }
