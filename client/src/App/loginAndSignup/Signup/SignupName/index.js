@@ -26,20 +26,10 @@ export default function SignupName({ addName, user }) {
     minWidth: 50,
     minHeight: 50,
     bottom: -400,
-    left: 350,
+    left: 390,
     fontSize: 20,
   };
 
-  function handleChange() {
-    if (
-      firstNameRef.current.value.length == 0 ||
-      lastNameRef.current.value.length == 0
-    ) {
-      nextButtonRef.current.disabled = true;
-    } else {
-      nextButtonRef.current.disabled = false;
-    }
-  }
 
   return (
     <div>
