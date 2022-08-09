@@ -5,7 +5,7 @@ const auth = require('../middleware/auth');
 const ProjectController = require("../controllers/projects")
 
 router.get("/getallprojects", ProjectController.All);
-router.get("/getallprojects/:userid", ProjectController.AllById);
+router.get("/getallmyprojects/", auth, ProjectController.AllById);
 router.get("/getprojectbyid/:projectid", ProjectController.GetOneById);
 
 router.patch("/joinproject/:projectid", auth, ProjectController.Join);
