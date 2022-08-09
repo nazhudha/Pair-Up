@@ -13,3 +13,11 @@ export const getAllProjectsById = async (id) => {
     return await res.json();
   } catch (err) {}
 };
+
+export const getOneProjectById = async (id) => {
+  try {
+    const res = await fetch(`http://localhost:8080/projects/getprojectbyid/${id}`);
+    console.log("pulling project by ID")
+    return await res.json();
+  } catch (err) {}
+};

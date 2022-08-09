@@ -5,18 +5,20 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 
 // Components
-import LoginAndSignup from './LoginAndSignup/index';
-import Login from './LoginAndSignup/Login/index';
-import Profile from './Profile/index';
-import ProfileUser from './ProfileUser/index';
+import LoginAndSignup from "./LoginAndSignup/index";
+import Login from "./LoginAndSignup/Login/index";
+import Profile from "./Profile/index";
+import SignupName from "./LoginAndSignup/Signup/SignupName/index";
+import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
+import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
+import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
+import Welcome from "./LoginAndSignup/Signup/Welcome/index";
+import NewProjectPage from "./Projects/NewProjectPage";
+import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
+import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
+import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
 import Find from './Find/index';
-import SignupName from './LoginAndSignup/Signup/SignupName/index';
-import SignupSkill from './LoginAndSignup/Signup/SignupSkill/index';
-import SignupLanguage from './LoginAndSignup/Signup/SignupLanguage/index';
-import SignupCredentials from './LoginAndSignup/Signup/SignupCredentials/index';
-// import Welcome from "./LoginAndSignup/Signup/Welcome/index";
-import NewProjectPage from './Projects/NewProjectPage';
-import HomepageProjects from './Projects/HomepageProjects/HomepageProjects';
+
 
 // Functions
 import { createUser } from './LoginAndSignup/Signup/functions/createUser';
@@ -129,8 +131,12 @@ function App() {
         {/* <Route path="/welcome" element={<Welcome />} /> */}
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/project/home" element={<HomepageProjects/>} />
+        <Route path="/project/newproject" element={<NewProjectPage />} />
+        <Route path="/project/view/:id" element={<ViewProjectPage/>} />
+        <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
         <Route path="/profile/:id" element={<ProfileUser />} />
-        <Route path="/home/projects" element={<HomepageProjects />} />
+
       </Routes>
     </BrowserRouter>
   );
