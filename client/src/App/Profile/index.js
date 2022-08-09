@@ -1,9 +1,8 @@
-
 import React, { Component, useEffect, useState } from 'react';
-import ProfileHeader from "./profileHeader";
-import "./profile.css";
-import LeftProfileFeed from "./LeftProfileFeed/LeftProfileFeed";
-import RightSideBar from "./RightSideBar/RightSideBar";
+import ProfileHeader from './profileHeader';
+import './profile.css';
+import LeftProfileFeed from './LeftProfileFeed/LeftProfileFeed';
+import RightSideBar from './RightSideBar/RightSideBar';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,22 +32,20 @@ const Profile = () => {
       </div>
     );
 
-};
-
-  setTimeout(getRecords, 1000);
+  // setTimeout(getRecords, 1000);
   return (
     <div>
-      <ProfileHeader />
-          <div>
-      <p>{result.user.fname}</p>
-      <p>{result.user.lname}</p>
-      <p>{result.user.email}</p>
-    </div>
+      <ProfileHeader result={result.user} />
+      {/* <div>
+        <p>{result.user.fname}</p>
+        <p>{result.user.lname}</p>
+        <p>{result.user.email}</p>
+      </div> */}
       <div className="main-feed-container">
         <LeftProfileFeed />
         <RightSideBar />
       </div>
     </div>
   );
-}
+};
 export default Profile;
