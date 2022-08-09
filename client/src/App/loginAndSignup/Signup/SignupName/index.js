@@ -75,41 +75,5 @@ export default function SignupName({ addName, user }) {
         </Link>
       </Grid>
     </div>
-
-    // <>
-    //   <div className="form-container">
-    //     <div className="signup-wrapper">
-    //       <form>
-    //         First Name:
-    //         <input
-    //           ref={firstNameRef}
-    //           type="text"
-    //           name="fname"
-    //           onChange={handleChange}
-    //         />
-    //         <label>
-    //           Last Name:
-    //           <input
-    //             ref={lastNameRef}
-    //             type="text"
-    //             name="lname"
-    //             onChange={handleChange}
-    //           />
-    //         </label>
-    //       </form>
-
-    //       <Link
-    //         to="/signupskill"
-    //         onClick={() => {
-    //           addName(firstNameRef.current.value, lastNameRef.current.value);
-    //         }}
-    //       >
-    //         <button className="next-btn" ref={nextButtonRef} disabled={true}>
-    //           NEXT
-    //         </button>
-    //       </Link>
-    //     </div>
-    //   </div>
-    // </>
   );
 }
