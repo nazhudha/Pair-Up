@@ -1,7 +1,9 @@
+
 import './index.css';
 import { Component, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
+
 // Components
 import LoginAndSignup from './LoginAndSignup/index';
 import Login from './LoginAndSignup/Login/index';
@@ -35,8 +37,10 @@ function App() {
   });
 
   const [userSignIn, setuserSignIn] = useState({
+
     email: '',
     password: '',
+
   });
 
   //user SU functions - move to componant
@@ -91,7 +95,15 @@ function App() {
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={
+            <Login
+              userSignIn={userSignIn}
+              createSignInObject={createSignInObject}
+            />
+          }
+        />
         <Route
           path="/signupname"
           element={<SignupName addName={addName} user={user} />}

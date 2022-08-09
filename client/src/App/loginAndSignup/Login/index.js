@@ -28,6 +28,18 @@ const Login = () => {
   };
 
   if (redirect) return <Navigate to="/profile" />;
+  
+  // function handleChange() {
+//   if (
+//     emailRef.current.value.length === 0 ||
+//     passwordRef.current.value.length === 0
+//   ) {
+//     submitButtonRef.current.disabled = true;
+//   } else {
+//     submitButtonRef.current.disabled = false;
+//   }
+//   createSignInObject(emailRef.current.value, passwordRef.current.value);
+// }
 
   return (
     <form onSubmit={submit}>
@@ -56,6 +68,7 @@ const Login = () => {
         </button>
       </div>
     </form>
+
   );
 };
 
