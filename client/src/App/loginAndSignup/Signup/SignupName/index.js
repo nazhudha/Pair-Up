@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import { Box } from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
 export default function SignupName({ addName, user }) {
   const firstNameRef = useRef();
@@ -19,6 +20,13 @@ export default function SignupName({ addName, user }) {
     minHeight: 100,
     bottom: -300,
     left: 700,
+    fontSize: 20,
+  };
+  const button = {
+    minWidth: 50,
+    minHeight: 50,
+    bottom: -400,
+    left: 350,
     fontSize: 20,
   };
 
@@ -57,9 +65,22 @@ export default function SignupName({ addName, user }) {
           addName(firstNameRef.current.value, lastNameRef.current.value);
         }}
       >
-        <button className="next-btn" ref={nextButtonRef}>
+        <Button
+          useRef={nextButtonRef}
+          style={button}
+          variant="contained"
+          sx={{
+            color: "black",
+            backgroundColor: "#b7bfe4",
+            border: "2px black solid",
+          }}
+          className="btn btn-primary btn-bloack"
+        >
+          Next
+        </Button>
+        {/* <button className="next-btn" ref={nextButtonRef}>
           NEXT
-        </button>
+        </button> */}
       </Link>
     </div>
 
