@@ -1,5 +1,4 @@
-
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from "react";
 import ProfileHeader from "./profileHeader";
 import "./profile.css";
 import LeftProfileFeed from "./LeftProfileFeed/LeftProfileFeed";
@@ -11,14 +10,14 @@ const Profile = () => {
 
   useEffect(() => {
     let config = null;
-    if (localStorage.getItem('token') !== null) {
+    if (localStorage.getItem("token") !== null) {
       config = {
         headers: {
-          'x-auth-token': localStorage.getItem('token'),
+          "x-auth-token": localStorage.getItem("token"),
         },
       };
     }
-    fetch('http://localhost:8080/profile/me', config)
+    fetch("http://localhost:8080/profile/me", config)
       .then((response) => response.json())
       .then((data) => {
         setResult({ user: data });
@@ -33,22 +32,20 @@ const Profile = () => {
       </div>
     );
 
-};
-
-  setTimeout(getRecords, 1000);
+  //setTimeout(getRecords, 1000);
   return (
     <div>
       <ProfileHeader />
-          <div>
-      <p>{result.user.fname}</p>
-      <p>{result.user.lname}</p>
-      <p>{result.user.email}</p>
-    </div>
+      <div>
+        <p>{result.user.fname}</p>
+        <p>{result.user.lname}</p>
+        <p>{result.user.email}</p>
+      </div>
       <div className="main-feed-container">
         <LeftProfileFeed />
         <RightSideBar />
       </div>
     </div>
   );
-}
+};
 export default Profile;

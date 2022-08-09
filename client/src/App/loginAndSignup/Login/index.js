@@ -1,9 +1,10 @@
-import React, { Component, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import React, { Component, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
 
   const submit = async (e) => {
@@ -13,33 +14,33 @@ const Login = () => {
       password: password,
     };
     const requestOptions = {
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: email, password: password }),
     };
-    fetch('http://localhost:8080/auth', requestOptions)
+    fetch("http://localhost:8080/auth", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data.token);
-        localStorage.setItem('token', data.token);
+        localStorage.setItem("token", data.token);
       });
     setRedirect(true);
   };
 
   if (redirect) return <Navigate to="/profile" />;
-  
+
   // function handleChange() {
-//   if (
-//     emailRef.current.value.length === 0 ||
-//     passwordRef.current.value.length === 0
-//   ) {
-//     submitButtonRef.current.disabled = true;
-//   } else {
-//     submitButtonRef.current.disabled = false;
-//   }
-//   createSignInObject(emailRef.current.value, passwordRef.current.value);
-// }
+  //   if (
+  //     emailRef.current.value.length === 0 ||
+  //     passwordRef.current.value.length === 0
+  //   ) {
+  //     submitButtonRef.current.disabled = true;
+  //   } else {
+  //     submitButtonRef.current.disabled = false;
+  //   }
+  //   createSignInObject(emailRef.current.value, passwordRef.current.value);
+  // }
 
   return (
     <form onSubmit={submit}>
@@ -63,12 +64,16 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button to={'/profile'} className="btn btn-primary btn-bloack">
+        <Button
+          type="submit"
+          variant="contained"
+          onClick={() => "/profile"}
+          className="btn btn-primary btn-bloack"
+        >
           Login
-        </button>
+        </Button>
       </div>
     </form>
-
   );
 };
 
