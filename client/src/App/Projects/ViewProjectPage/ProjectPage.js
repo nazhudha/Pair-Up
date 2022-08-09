@@ -6,7 +6,7 @@ import JoinButton from "../Componants/JoinButton";
 
 export default function ProjectPage({ project }) {
 
-  console.log(project)
+  // console.log(project)
   return (
     <>
 {/* banner */}
@@ -21,10 +21,10 @@ export default function ProjectPage({ project }) {
     <p>{project.description}</p>
   </div>   
 {/* Join this project */}
-  <div>
+  {/* <div>
     <strong>Join this project</strong>
     <JoinButton projectId={project._id}/>
-  </div>
+  </div> */}
 {/* Skills we have */}
   <div>
     <strong>Skills we have </strong><br/>
@@ -45,10 +45,7 @@ export default function ProjectPage({ project }) {
     <UserCardsContainer usersData={project.users}/>
   </div>
    {/* Map of users*/}
-   <div>
-    <strong>Where everyone is based</strong><br/>
-    <JoinButton />
-  </div>
+
 </>
   )
 }

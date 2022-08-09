@@ -4,14 +4,12 @@ import React, { useState, useEffect } from "react";
 import { getOneProjectById } from '../../Functions/getProjects'
 
 // componants
-import UserCardsContainer from "../../LoginAndSignup/Signup/Welcome/AllUserCardsContainer";
-import JoinButton from "../Componants/JoinButton";
 import ProjectPage from "./ProjectPage";
 
-const dummyProject = "62effd775c8f214c1439d2f6"
+const dummyProject = "62f0f5ec1bb392f63aead02c"
 
 export default function ViewProjectPage() {
-  const [project, setProject] = useState([]);
+  const [project, setProject] = useState(null);
 
 
   const pullMyProject = () => {
@@ -25,8 +23,13 @@ export default function ViewProjectPage() {
   }, []); 
 
 
+
+  if (project !== null){
+  console.log(project)
+
   return (
   
     <ProjectPage project={project}/>
   )
+  }
 }
