@@ -84,7 +84,7 @@ function App() {
         <Route path="/signupcredentials" element={<SignupCredentials user={user} addCredentials={addCredentials} createUser={createUser} />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/home/projects" element={<HomepageProjects/>} />
+        <Route path="/project/home" element={<HomepageProjects/>} />
         <Route path="/project/newproject" element={<NewProjectPage />} />
         <Route path="/project/view/:id" element={<ViewProjectPage/>} />
         <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
