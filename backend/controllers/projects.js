@@ -2,7 +2,7 @@ const { findOne } = require('../models/projects');
 const Project = require('../models/projects');
 const User = require('../models/user')
 
-const signedInUserId = "62f007e5dd344fce0c132aa1" // change to take ID from sessions
+const signedInUserId = "62f007a4dd344fce0c132a9d" // change to take ID from sessions
 
 const ProjectController = {
 
@@ -39,7 +39,6 @@ const ProjectController = {
   Join: async (req, res) => {
     console.log(req.params.projectid)
     try {
-      const userjoining = await User.findById(signedInUserId)
       await Project.updateOne(
         {
           _id: req.params.projectid,
@@ -47,9 +46,6 @@ const ProjectController = {
         },
         {
           $addToSet: { users: signedInUserId},
-          userjoining.languages.each(lang => {
-          $addToSet: { langWeHave: userjoining.languages },
-           } )
           
         },
         {
@@ -57,12 +53,27 @@ const ProjectController = {
           runValidators: true
         }
       )
-        res.status(201).send("joined the project!")
-      ;
-    } catch (error) {
-      res.status(400).send("Error: Can't join this project");
-    }
-    
+    const userjoining = await User.findById(signedInUserId)
+    await Project.updateOne(
+      {
+        _id: req.params.projectid,
+     
+      },
+      {
+        $addToSet: { langWeHave: {$each: userjoining.languages}},
+  
+        
+      },
+      {
+        upsert: true,
+        runValidators: true
+      }
+    )
+      res.status(201).send("joined the project!")
+    ;
+  } catch (error) {
+    res.status(400).send("Error: Can't join this project");
+  }
   },
   
 
