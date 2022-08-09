@@ -38,7 +38,6 @@ const ProjectController = {
 
   Join: async (req, res) => {
     signedInUserId = req.user.id
-    console.log(req.user.id)
     try {
       await Project.updateOne(
         {
