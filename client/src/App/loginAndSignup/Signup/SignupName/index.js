@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import { Box } from "@mui/material/Box";
 
 export default function SignupName({ addName, user }) {
   const firstNameRef = useRef();
@@ -22,15 +24,13 @@ export default function SignupName({ addName, user }) {
       <div className="form-container">
         <div className="signup-wrapper">
           <form>
-            <label>
-              First Name:
-              <input
-                ref={firstNameRef}
-                type="text"
-                name="fname"
-                onChange={handleChange}
-              />
-            </label>
+            First Name:
+            <input
+              ref={firstNameRef}
+              type="text"
+              name="fname"
+              onChange={handleChange}
+            />
             <label>
               Last Name:
               <input
