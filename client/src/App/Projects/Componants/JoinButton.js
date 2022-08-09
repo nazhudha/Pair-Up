@@ -19,7 +19,7 @@ export default function JoinButton({ projectId }) {
       const res = await fetch(`http://localhost:8080/projects/joinproject/${projectId}`, config
       ).then(res => {
         console.log(res)
-        // window.location = "http://localhost:3000/project/home";
+        window.location = "http://localhost:3000/project/home";
 
       });
   
