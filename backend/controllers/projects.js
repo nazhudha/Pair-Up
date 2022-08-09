@@ -82,19 +82,19 @@ const ProjectController = {
     console.log("hello")
     console.log(signedInUserId);
       
-    // Project.find({
-    //   $expr: {
-    //     $in: [req.params.userid, "$users"]
-    //   }
-    // })
-    //   .populate("owner")
-    //   .populate("users")
-    //   .exec((err, projectsById) => {
-    //             if (err) {
-    //         throw err;  
-    //       }
-    //   return res.json(projectsById);
-    // });
+    Project.find({
+      $expr: {
+        $in: [signedInUserId, "$users"]
+      }
+    })
+      .populate("owner")
+      .populate("users")
+      .exec((err, projectsById) => {
+                if (err) {
+            throw err;  
+          }
+      return res.json(projectsById);
+    });
 
     },    
 
