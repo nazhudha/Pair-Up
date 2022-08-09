@@ -9,6 +9,12 @@ export default function SignupLanguage({ addLang, user }) {
   const rubyRef = useRef(null);
   const javascriptRef = useRef(null);
   const pythonRef = useRef(null);
+  const checkBox = {
+    bottom: -300,
+    left: 1200,
+    fontSize: 20,
+    center: 10,
+  };
 
   function sendSkillsArray() {
     let languages = [];
@@ -26,7 +32,7 @@ export default function SignupLanguage({ addLang, user }) {
   }
 
   return (
-    <FormGroup>
+    <FormGroup style={checkBox}>
       <FormControlLabel
         inputRef={rubyRef}
         control={<Checkbox />}
