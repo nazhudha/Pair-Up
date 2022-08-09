@@ -2,43 +2,43 @@ const { findOne } = require('../models/projects');
 const Project = require('../models/projects');
 const User = require('../models/user')
 
-const signedInUserId = "62f00f64623c84a6a434a41e" // change to take ID from sessions
+// const signedInUserId = "62f00f64623c84a6a434a41e" // change to take ID from sessions
 
 const ProjectController = {
 
   Create: async (req, res) => {
-    console.log(req.user.id)
-    // const signedInUser = await User.findOne({_id: signedInUserId})
-    // console.log(signedInUser)
-    // const project = new Project({
-    //   owner: signedInUserId, 
-    //   name: req.body.name,
-    //   difficulty: req.body.difficulty,
-    //   expectedProjectLength: req.body.expectedProjectLength,
-    //   category: req.body.category,
-    //   preferedSessionLength: req.body.preferedSessionLength,
-    //   numberOfAdditionalUsersNeeded: req.body.numberOfAdditionalUsersNeeded,
-    //   summary: req.body.summary,
-    //   description: req.body.description,
-    //   users: [signedInUser],
-    //   langWeHave: signedInUser.languages,
-    //   langWeNeed: req.body.langWeNeed,
-    //   additionalSkillsNeeded: req.body.additionalSkillsNeeded,
-    //   displayLocation: req.body.displayLocation,
-    //   commitmentLevel: req.body.commitmentLevel
+    signedInUserId = req.user.id
+    const signedInUser = await User.findOne({_id: signedInUserId})
+    const project = new Project({
+      owner: signedInUserId, 
+      name: req.body.name,
+      difficulty: req.body.difficulty,
+      expectedProjectLength: req.body.expectedProjectLength,
+      category: req.body.category,
+      preferedSessionLength: req.body.preferedSessionLength,
+      numberOfAdditionalUsersNeeded: req.body.numberOfAdditionalUsersNeeded,
+      summary: req.body.summary,
+      description: req.body.description,
+      users: [signedInUser],
+      langWeHave: signedInUser.languages,
+      langWeNeed: req.body.langWeNeed,
+      additionalSkillsNeeded: req.body.additionalSkillsNeeded,
+      displayLocation: req.body.displayLocation,
+      commitmentLevel: req.body.commitmentLevel
     
-    // });
+    });
  
 
 
     
 
-    // await project.save().then((doc) => res.status(201).json(project)); //doc?
+    await project.save().then((doc) => res.status(201).json(project)); //doc?
 
   },
 
   Join: async (req, res) => {
-    console.log(req.params.projectid)
+    signedInUserId = req.user.id
+    console.log(req.user.id)
     try {
       await Project.updateOne(
         {
