@@ -1,4 +1,3 @@
-
 import './index.css';
 import { Component, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -20,6 +19,7 @@ import HomepageProjects from './Projects/HomepageProjects/HomepageProjects';
 
 // Functions
 import { createUser } from './LoginAndSignup/Signup/functions/createUser';
+import ResponsiveAppBar from '../Components/ResponsiveAppBar';
 
 function App() {
   //state = {};
@@ -37,10 +37,8 @@ function App() {
   });
 
   const [userSignIn, setuserSignIn] = useState({
-
     email: '',
     password: '',
-
   });
 
   //user SU functions - move to componant
@@ -92,6 +90,7 @@ function App() {
   //   }
   return (
     <BrowserRouter>
+      <ResponsiveAppBar />
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
