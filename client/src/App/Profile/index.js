@@ -36,11 +36,6 @@ const Profile = () => {
   return (
     <div>
       <ProfileHeader result={result.user} />
-      {/* <div>
-        <p>{result.user.fname}</p>
-        <p>{result.user.lname}</p>
-        <p>{result.user.email}</p>
-      </div> */}
       <div className="main-feed-container">
         <LeftProfileFeed />
         <RightSideBar />
