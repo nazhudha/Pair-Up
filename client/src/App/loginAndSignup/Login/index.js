@@ -27,7 +27,7 @@ const Login = () => {
     setRedirect(true);
   };
 
-  if (redirect) return <Navigate to="/" />;
+  if (redirect) return <Navigate to="/profile" />;
 
   return (
     <form onSubmit={submit}>
@@ -51,7 +51,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button to={'/'} className="btn btn-primary btn-bloack">
+        <button to={'/profile'} className="btn btn-primary btn-bloack">
           Login
         </button>
       </div>
