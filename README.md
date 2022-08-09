@@ -13,6 +13,29 @@
 - [Saif](https://github.com/shsn1990s)
 
 
+# Technologies
+MERN Stack
+
+### Front End
+- React - front-end framework
+- React-router-dom - react app navigation
+- Material UI React - Custom-Styled React Component Library
+
+### Server
+
+### Database
+- MongoDB - document-oriented NoSQL database
+- Mongo Atlas - hosted mongoDB production database
+- Mongoose - ODM for MongoDB
+
+### Autentication
+- Passport JWT - issuance of JSON WEB TOKENS (based on public-key cryptography) used for user authorization purposes
+
+### Testing
+- Jest - JavaScript testing framework
+- Cypress
+
+
 # Headline specifications
 
 * Any signed-up user can.....
