@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SignupSkill({ user, addSkill }) {
   const beginnerRef = useRef();
@@ -9,7 +9,7 @@ export default function SignupSkill({ user, addSkill }) {
   const nextButtonRef = useRef();
 
   function handleChange() {
-    let skill = "";
+    let skill = '';
 
     if (
       beginnerRef.current.checked == false &&
@@ -22,11 +22,11 @@ export default function SignupSkill({ user, addSkill }) {
     }
 
     if (beginnerRef.current.checked === true) {
-      skill = "beginner";
+      skill = 'beginner';
     } else if (intermediateRef.current.checked === true) {
-      skill = "intermediate";
+      skill = 'intermediate';
     } else if (expertRef.current.checked === true) {
-      skill = "expert";
+      skill = 'expert';
     }
     addSkill(skill);
   }
