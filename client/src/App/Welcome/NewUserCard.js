@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import profilePic from "./images/profile-pic-stock.webp"; //test
 
 export default function NewUserCard() {
   return (
@@ -12,7 +13,7 @@ export default function NewUserCard() {
       <CardMedia
         component="img"
         height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={profilePic}
         alt="green iguana"
       />
       <CardContent>

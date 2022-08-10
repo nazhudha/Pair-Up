@@ -1,7 +1,7 @@
 import React from 'react'
 
 // componants
-import UserCardsContainer from "../../LoginAndSignup/Signup/Welcome/AllUserCardsContainer";
+import UserCardsContainer from '../../Welcome/AllUserCardsContainer';
 import JoinButton from "../Componants/JoinButton";
 
 export default function ProjectPage({ project }) {
