@@ -13,8 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Home', 'Profile', 'My Projects', 'New Projects'];
-const pageLink = ['/welcome', '/profile', '/project/home', '/project/newproject'];
+const pages = ['Profile', 'My Projects', 'New Projects', 'View Projects', 'Find User'];
+const pageLink = ['/profile', '/project/home', '/project/newproject', '/project/view/:id', '/find'];
 
 const settings = ['Logout'];
 
