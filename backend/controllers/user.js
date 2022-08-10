@@ -30,12 +30,8 @@ const UserController = {
     await user.save().then((doc) => res.status(201).json(user));
   },
   GetFriends: (req, res) => {
-    console.log(req.user.id);
+    console.log(req.user);
   },
-  // Join: async (req, res) => {
-  //   console.log(req.params)
-
-  // },
 };
 
 module.exports = UserController;

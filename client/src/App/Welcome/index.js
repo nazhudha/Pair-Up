@@ -15,15 +15,15 @@ export default function Welcome() {
       .catch((err) => console.log(err));
   };
 
-  const getAllUsersById = () => {
-    getAllUsers() // api function
+  const pullFriends = () => {
+    getAllUsersById() // api function
       .then((res) => setFriendsData(res))
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    pullUsers();
-    getAllUsersById();
+    pullUsers()
+    pullFriends();
   }, []); // this is the dependancy array. [] means it will run once when the page opens
 
   
