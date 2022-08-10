@@ -23,8 +23,10 @@ export default function Welcome() {
 
   useEffect(() => {
     pullUsers();
+    getAllUsersById();
   }, []); // this is the dependancy array. [] means it will run once when the page opens
 
+  
   return (
     <div>
       <h1>Welcome to Pair Up!</h1>
