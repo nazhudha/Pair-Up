@@ -5,6 +5,6 @@ const UserController = require("../controllers/user");
 
 router.get("/new", UserController.New);
 router.post("/", UserController.Create);
-router.get("/addfriend", UserController.AddFriend);
+router.get("/getfriends", UserController.GetFriends);
 
 module.exports = router;
