@@ -7,7 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import profilePic from "./images/profile-pic-stock.webp"; //test
 
-export default function NewUserCard() {
+
+export default function NewUserCard({user}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -26,9 +27,9 @@ export default function NewUserCard() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Profile</Button>
+        <Button size="small">Pair now</Button>
       </CardActions>
-    </Card>
+      </Card>
   );
 }
