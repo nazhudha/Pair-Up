@@ -102,7 +102,10 @@ a {
 
 /* styling for sign up name /login pages */
 
-input[type='text'] {
+
+input[type="text"],
+[type="password"],
+[type="email"] {
   margin: 10px;
   width: 180px;
   padding: 10px;

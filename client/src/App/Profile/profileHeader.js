@@ -1,11 +1,14 @@
-import React from "react";
+import React from 'react';
 
-export default function ProfileHeader() {
+export default function ProfileHeader({ result }) {
   return (
     <div className="profile-header-container">
       <div className="profile-header-contents">
-        <h1 id="profile-title">Profile Name</h1>
+        <h1 id="profile-title">
+          {result.fname} {result.lname}
+        </h1>
         <div className="profile-sub-header">
+          <div>Email: {result.email}</div>
           <div>Coding Level</div>
           <div>Location</div>
           <div>Available to pair</div>

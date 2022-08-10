@@ -22,6 +22,47 @@ const ProfileController = {
     const allUsers = await User.find();
     return res.json(allUsers);
   },
+
+
+  AddFriend: async (req, res) => {
+    console.log(req.body)
+    console.log(req.params)
+    const friend = await User.findById(req.body._id)
+    await User.updateOne(
+      {
+        _id: req.params.id,
+     
+      },
+      {
+        $addToSet: { friends: req.body._id},
+
+  
+        
+      },
+      {
+        upsert: true,
+        runValidators: true
+      });
+      await User.updateOne(
+        {
+          _id: req.body._id,
+       
+        },
+        {
+          $addToSet: { friends: req.params.id},
+  
+    
+          
+        },
+        {
+          upsert: true,
+          runValidators: true
+        });
+    
+      res.status(201).send("joined the project!")
+  },
+
+
   User: async (req, res) => {
     console.log('!!!!');
     const profile = await User.findOne({
@@ -29,6 +70,7 @@ const ProfileController = {
     });
     return res.json(profile);
   },
+
 };
 
 module.exports = ProfileController;

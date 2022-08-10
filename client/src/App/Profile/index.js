@@ -39,15 +39,20 @@ const Profile = () => {
       </div>
     );
 
-  //setTimeout(getRecords, 1000);
+
+  // setTimeout(getRecords, 1000);
   return (
     <div>
+
       {/* <ProfileHeader />
       <div>
         <p>{result.user.fname}</p>
         <p>{result.user.lname}</p>
         <p>{result.user.email}</p>
       </div>
+
+      <ProfileHeader result={result.user} />
+
       <div className="main-feed-container">
         <LeftProfileFeed />
         <RightSideBar />

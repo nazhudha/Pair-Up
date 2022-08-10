@@ -7,16 +7,23 @@ export default function NewProjectPage() {
 
    const addProjectToDb = async (createdProject) => {
     console.log(JSON.stringify(createdProject))
-    try {
-      const res = await fetch("http://localhost:8080/projects/createproject", {
-        method: "POST",
-        body: JSON.stringify(createdProject),
+    let config = null;
+    if (localStorage.getItem('token') !== null) {
+      config = {
         headers: {
+          'x-auth-token': localStorage.getItem('token'),
           "Content-Type": "application/json",
         },
-      }).then(res => {
+        method: "POST",
+        body: JSON.stringify(createdProject),
+      };
+    }
+
+    try {
+      const res = await fetch("http://localhost:8080/projects/createproject", config
+      ).then(res => {
         console.log(res)
-        window.location = "http://localhost:3000/welcome";
+        window.location = "http://localhost:3000/project/home";
 
       });
   
@@ -128,10 +135,51 @@ export default function NewProjectPage() {
       />
       couple times a week preferably
 
-      <h3>How difficult do you think this will be?</h3>
+ 
      
-      <textarea name="difficulty" {...register('difficulty', { required: true })}/>
-
+      <h3>How difficult do you think this project will be?</h3>
+      <input
+        type="radio"
+        name="difficulty"
+        value="Very Easy"
+        {...register('difficulty', { required: true })}
+      />
+      Quite easy. A good beginner project for new coders just starting out.
+      <input
+        type="radio"
+        name="difficulty"
+        value="Easy"
+        {...register('difficulty', { required: true })}
+      />
+      Not too tricky. But might be a challenge for absolute beginner.
+      <input
+        type="radio"
+        name="difficulty"
+        value="Intermediate"
+        {...register('difficulty', { required: true })}
+      />
+      It will likely need people with a good understanding of their perfered language, who have built apps and websites previously.
+      <input
+        type="radio"
+        name="difficulty"
+        value="Hard"
+        {...register('difficulty', { required: true })}
+      />
+      It will likely need people who have worked as coders before.
+      <input
+        type="radio"
+        name="difficulty"
+        value="Very Hard"
+        {...register('difficulty', { required: true })}
+      />
+      It need very experienced professional coders.
+      <input
+        type="radio"
+        name="difficulty"
+        value="Master"
+        {...register('difficulty', { required: true })}
+      />
+      It will require people looking to tackle the most severe problem solving.
 
       <h3>How long do you want a pair-up session to be?</h3>
       <label>

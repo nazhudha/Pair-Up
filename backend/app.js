@@ -7,6 +7,9 @@ const cors = require('cors');
 require('dotenv').config();
 const session = require('express-session');
 
+
+
+
 // app
 const app = express();
 
@@ -55,3 +58,28 @@ const port = process.env.PORT || 8080; //use PORT set up in enVars, or use 8080
 const server = app.listen(port, () =>
   console.log(`server is running on port ${port}`)
 );
+
+// for video chat
+const io = require("socket.io")(server, {
+	cors: {
+		origin: "http://localhost:3000", // where are frontend is running
+		methods: [ "GET", "POST" ]
+	}
+})
+
+  io.on("connection", (socket) => {
+    socket.emit("me", socket.id) // emit my ID
+
+    socket.on("disconnect", () => {
+      socket.broadcast.emit("callEnded")
+    })
+
+    socket.on("callUser", (data) => {
+      io.to(data.userToCall).emit("callUser", { signal: data.signalData, from: data.from, name: data.name })
+    })
+
+    socket.on("answerCall", (data) => {
+      io.to(data.to).emit("callAccepted", data.signal)
+    })
+  })
+
