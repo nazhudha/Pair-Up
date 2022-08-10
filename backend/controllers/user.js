@@ -29,6 +29,13 @@ const UserController = {
 
     await user.save().then((doc) => res.status(201).json(user));
   },
+  AddFriend: (req, res) => {
+    console.log("hello");
+  },
+  // Join: async (req, res) => {
+  //   console.log(req.params)
+
+  // },
 };
 
 module.exports = UserController;

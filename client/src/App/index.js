@@ -13,6 +13,7 @@ import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
 import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
 
+import AddFriendButton from "../Components/AddFriendButton";
 import Welcome from "./LoginAndSignup/Signup/Welcome/index";
 import NewProjectPage from "./Projects/NewProjectPage";
 import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
@@ -22,14 +23,13 @@ import Find from './Find/index';
 import PairNow from './PairNow/PairNow';
 import ProfileUser from "./ProfileUser/index"
 
-
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
 
 function App() {
   //state = {};
 
-  // user signup
+
   const [user, setUser] = useState({
     fname: "",
     lname: "",
@@ -75,6 +75,8 @@ function App() {
     });
   };
 
+
+  //pass user and neccisary functions to the individual paths
   // render() {
   //   if (localStorage.getItem('token') !== null) {
   //     return (
@@ -135,7 +137,8 @@ function App() {
             />
           }
         />
-        {/* <Route path="/welcome" element={<Welcome />} /> */}
+
+        <Route path="/welcome" element={<Welcome />} />
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/project/home" element={<HomepageProjects/>} />
@@ -143,7 +146,6 @@ function App() {
         <Route path="/project/view/:id" element={<ViewProjectPage/>} />
         <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
         <Route path="/profile/:id" element={<ProfileUser />} />
-
       </Routes>
     </BrowserRouter>
   );

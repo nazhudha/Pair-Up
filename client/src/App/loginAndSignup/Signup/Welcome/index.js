@@ -26,6 +26,10 @@ export default function Welcome() {
       <div className="cardsContainer">
         <UserCardsContainer usersData={usersData} />
       </div>
+
+      <div className="cardsContainer">
+        <UserCardsContainer usersData={usersData} />
+      </div>
     </div>
   );
 }
