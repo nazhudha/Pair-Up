@@ -2,6 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import GithubTable from '../../Components/GithubTable';
 import ProfileUser from '../../Components/ProfileUser';
+import Loading from '../../Components/Loading';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -56,7 +57,7 @@ const Profile = () => {
   if (isLoading)
     return (
       <div>
-        <p>Loading...</p>
+        <Loading />
       </div>
     );
 

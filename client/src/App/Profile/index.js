@@ -1,26 +1,33 @@
-import React, { Component, useEffect, useState } from "react";
-import ProfileHeader from "./profileHeader";
-import "./profile.css";
-import LeftProfileFeed from "./LeftProfileFeed/LeftProfileFeed";
-import RightSideBar from "./RightSideBar/RightSideBar";
+import React, { Component, useEffect, useState } from 'react';
+import ProfileHeader from './profileHeader';
+import './profile.css';
+import LeftProfileFeed from './LeftProfileFeed/LeftProfileFeed';
+import RightSideBar from './RightSideBar/RightSideBar';
+import ProfileUser from '../../Components/ProfileUser';
+import Loading from '../../Components/Loading';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoading2, setIsLoading2] = useState(true);
   const [result, setResult] = useState({ user: [] });
+  const [info, setInfo] = useState({ user: [] });
 
   useEffect(() => {
     let config = null;
-    if (localStorage.getItem("token") !== null) {
+    if (localStorage.getItem('token') !== null) {
       config = {
         headers: {
-          "x-auth-token": localStorage.getItem("token"),
+          'x-auth-token': localStorage.getItem('token'),
         },
       };
     }
-    fetch("http://localhost:8080/profile/me", config)
+    fetch('http://localhost:8080/profile/me', config)
       .then((response) => response.json())
       .then((data) => {
         setResult({ user: data });
+
+        // console.log(info, 'info');
+        // console.log(result, 'result');
         setIsLoading(false);
       });
   }, []);
@@ -28,14 +35,14 @@ const Profile = () => {
   if (isLoading)
     return (
       <div>
-        <p>Loading...</p>
+        <Loading />
       </div>
     );
 
   //setTimeout(getRecords, 1000);
   return (
     <div>
-      <ProfileHeader />
+      {/* <ProfileHeader />
       <div>
         <p>{result.user.fname}</p>
         <p>{result.user.lname}</p>
@@ -44,7 +51,8 @@ const Profile = () => {
       <div className="main-feed-container">
         <LeftProfileFeed />
         <RightSideBar />
-      </div>
+      </div> */}
+      <ProfileUser info={info} result={result} />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import GithubTable from '../Components/GithubTable';
+import Loading from '../Components/Loading';
 
 export default function BasicCard({ info, result }) {
   const [githubinfo, setGithubInfo] = useState({ user: [] });
@@ -20,8 +21,9 @@ export default function BasicCard({ info, result }) {
     fetch('https://api.github.com/users/' + result.user.github)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, '!111!');
         //setData(data);
+        console.log(info, 'info');
+        console.log(result, 'result');
         setGithubInfo(data);
       });
     fetch(`https://api.github.com/users/${result.user.github}/repos`)
@@ -34,7 +36,7 @@ export default function BasicCard({ info, result }) {
   if (isLoading)
     return (
       <div>
-        <p>Loading...</p>
+        <Loading />
       </div>
     );
   return (
@@ -78,9 +80,9 @@ export default function BasicCard({ info, result }) {
                 <p>
                   {' '}
                   <b>Bio: </b>
-                  {info.bio}. I have been working with responsive design
-                  integration, and have experimented with several responsive
-                  techniques and tools.
+                  {info.bio}. I am very passionate about Web Development, and
+                  strive to better myself as a developer, and the development
+                  community as a whole.
                 </p>
                 <br />
                 <p>
