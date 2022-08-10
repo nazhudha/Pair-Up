@@ -3,6 +3,7 @@ import ProjectPostCardContainer from '../ProjectPostCards/ProjectPostCardContain
 
 // Functions
 import { getAllProjects, getAllProjectsById } from '../../Functions/getProjects';
+import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBar_LoggedIn copy';
 
 const signedInUserId = "62eff044c98668c5a2f8d923" // change to take ID from sessions
 
@@ -29,7 +30,7 @@ export default function HomepageProjects() {
 
   return (
     <>
-
+    <ResponsiveAppBarLoggedIn/>
     <h2>My Projects</h2> 
       <ProjectPostCardContainer projects={MyProjects}/>
     <h2>All Projects</h2> 

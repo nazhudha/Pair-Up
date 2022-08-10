@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import ResponsiveAppBarLoggedOut from '../../../Components/ResponsiveAppBar_Loggedout';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -42,6 +43,8 @@ const Login = () => {
 // }
 
   return (
+    <>
+    <ResponsiveAppBarLoggedOut/>
     <form onSubmit={submit}>
       <h3>Login</h3>
       <div className="form-group">
@@ -68,6 +71,7 @@ const Login = () => {
         </button>
       </div>
     </form>
+    </>
 
   );
 };

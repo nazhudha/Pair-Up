@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import ResponsiveAppBarLoggedOut from "../../../../Components/ResponsiveAppBar_Loggedout";
 
 export default function SignupCredentials({
   createUser,
@@ -37,6 +38,7 @@ export default function SignupCredentials({
 
   return (
     <>
+    <ResponsiveAppBarLoggedOut/>
       <div className="form-container">
         <div className="wrapper">
           <form className="form">

@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import ResponsiveAppBarLoggedOut from "../../../../Components/ResponsiveAppBar_Loggedout";
 
 export default function SignupName({ addName, user }) {
   const firstNameRef = useRef();
@@ -19,6 +20,7 @@ export default function SignupName({ addName, user }) {
 
   return (
     <>
+    <ResponsiveAppBarLoggedOut/>
       <div className="form-container">
         <div className="signup-wrapper">
           <form>

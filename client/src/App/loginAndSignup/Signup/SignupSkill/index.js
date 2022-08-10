@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import ResponsiveAppBarLoggedOut from "../../../../Components/ResponsiveAppBar_Loggedout";
 
 export default function SignupSkill({ user, addSkill }) {
   const beginnerRef = useRef();
@@ -33,6 +34,7 @@ export default function SignupSkill({ user, addSkill }) {
 
   return (
     <>
+    <ResponsiveAppBarLoggedOut/>
       <div className="codinglevel">
         <h3>What's your coding level?</h3>
         <input

@@ -3,6 +3,7 @@ import ProfileHeader from './profileHeader';
 import './profile.css';
 import LeftProfileFeed from './LeftProfileFeed/LeftProfileFeed';
 import RightSideBar from './RightSideBar/RightSideBar';
+import ResponsiveAppBarLoggedIn from '../../Components/ResponsiveAppBar_LoggedIn copy';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,7 @@ const Profile = () => {
   // setTimeout(getRecords, 1000);
   return (
     <div>
+      <ResponsiveAppBarLoggedIn/>
       <ProfileHeader result={result.user} />
       <div className="main-feed-container">
         <LeftProfileFeed />

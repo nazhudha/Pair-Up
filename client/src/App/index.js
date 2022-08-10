@@ -22,7 +22,8 @@ import Find from './Find/index';
 
 // Functions
 import { createUser } from './LoginAndSignup/Signup/functions/createUser';
-import ResponsiveAppBar from '../Components/ResponsiveAppBar';
+import ResponsiveAppBar from '../Components/ResponsiveAppBar_Loggedout';
+import ResponsiveAppBarLoggedIn from '../Components/ResponsiveAppBar_LoggedIn copy';
 
 function App() {
   //state = {};
@@ -95,7 +96,7 @@ function App() {
   //   }
   return (
     <BrowserRouter>
-      <ResponsiveAppBar/>
+      {/* <ResponsiveAppBarLoggedIn/> */}
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
@@ -130,7 +131,7 @@ function App() {
             />
           }
         />
-        {/* <Route path="/welcome" element={<Welcome />} /> */}
+        <Route path="/welcome" element={<Welcome />} />
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/project/home" element={<HomepageProjects/>} />

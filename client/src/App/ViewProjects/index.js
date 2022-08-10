@@ -4,6 +4,7 @@ import UserCardsContainer from "./AllUserCardsContainer";
 
 // Functions
 import { getAllUsers } from "../Functions/getAllUsers";
+import ResponsiveAppBarLoggedIn from "../../Components/ResponsiveAppBar_LoggedIn copy";
 
 export default function Welcome() {
   const [usersData, setUsersData] = useState([]);
@@ -20,6 +21,7 @@ export default function Welcome() {
 
   return (
     <div>
+      <ResponsiveAppBarLoggedIn/>
       <h1>Welcome to Pair Up!</h1>
       <div className="cardsContainer">
         <UserCardsContainer usersData={usersData} />

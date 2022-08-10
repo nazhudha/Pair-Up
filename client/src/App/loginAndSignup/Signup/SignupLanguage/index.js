@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import ResponsiveAppBarLoggedOut from "../../../../Components/ResponsiveAppBar_Loggedout";
 
 export default function SignupLanguage({ addLang, user }) {
   const rubyRef = useRef(null);
@@ -23,6 +24,7 @@ export default function SignupLanguage({ addLang, user }) {
 
   return (
     <>
+    <ResponsiveAppBarLoggedOut/>
       <div className="languagetype">
         <h3>What programming languages do you know?</h3>
         <input ref={rubyRef} type="radio" value="ruby" name="ruby" /> ruby
