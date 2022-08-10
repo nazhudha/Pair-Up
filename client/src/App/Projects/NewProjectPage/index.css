@@ -6,11 +6,28 @@ margin-top: -30px;
 margin-bottom: 50px;
 }
 
+.h {
+  font-size: larger;
+  margin: auto;
+  width: px;
+  margin-top: -30px;
+  margin-bottom: 50px;
+  
+  }
+  .c {
+    font-size: larger;
+    margin: auto;
+    width: px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+    }
+
 
 .content {
   max-width: 800px;
   margin: auto;
-  background: linear-gradient(-45deg, #716764, #ae8f9b, #e7cbcb, #99f2df);
+  background: linear-gradient(-45deg, #d8d9e2, #c7c5f0, #cfcbe7, #9d99f2);
   padding: 150px;
   text-align: center;
   

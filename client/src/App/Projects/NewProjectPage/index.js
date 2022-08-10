@@ -64,10 +64,12 @@ export default function NewProjectPage() {
             />
           </label>
           <h3>Describe briefly what you are trying to build</h3>
-          <textarea
-            name="summary"
-            {...register("summary", { required: true })}
-          ></textarea>
+          <div className="i">
+            <textarea
+              name="summary"
+              {...register("summary", { required: true })}
+            ></textarea>
+          </div>
           <h3>How long do you think this project will take?</h3>
           <div className="i">
             <input
@@ -121,114 +123,127 @@ export default function NewProjectPage() {
             Longer
           </div>
           <h3>How much of a commitment are you looking for from your team?</h3>
-          <input
-            type="radio"
-            name="commitmentLevel"
-            value="eh, whenever is good for them!"
-            {...register("commitmentLevel", { required: true })}
-          />
-          eh, whenever is good for them!
-          <input
-            type="radio"
-            name="commitmentLevel"
-            value="maybe 1 session a week?"
-            {...register("commitmentLevel", { required: true })}
-          />
-          maybe 1 session a week?
-          <input
-            type="radio"
-            name="commitmentLevel"
-            value="couple times a week preferably"
-            {...register("commitmentLevel", { required: true })}
-          />
-          couple times a week preferably
-          <h3>How difficult do you think this project will be?</h3>
-          <input
-            type="radio"
-            name="difficulty"
-            value="Very Easy"
-            {...register("difficulty", { required: true })}
-          />
-          Quite easy. A good beginner project for new coders just starting out.
-          <input
-            type="radio"
-            name="difficulty"
-            value="Easy"
-            {...register("difficulty", { required: true })}
-          />
-          Not too tricky. But might be a challenge for absolute beginner.
-          <input
-            type="radio"
-            name="difficulty"
-            value="Intermediate"
-            {...register("difficulty", { required: true })}
-          />
-          It will likely need people with a good understanding of their perfered
-          language, who have built apps and websites previously.
-          <input
-            type="radio"
-            name="difficulty"
-            value="Hard"
-            {...register("difficulty", { required: true })}
-          />
-          It will likely need people who have worked as coders before.
-          <input
-            type="radio"
-            name="difficulty"
-            value="Very Hard"
-            {...register("difficulty", { required: true })}
-          />
-          It need very experienced professional coders.
-          <input
-            type="radio"
-            name="difficulty"
-            value="Master"
-            {...register("difficulty", { required: true })}
-          />
-          It will require people looking to tackle the most severe problem
-          solving.
-          <h3>How long do you want a pair-up session to be?</h3>
-          <label>
+          <div className="h">
             <input
-              type="number"
-              name="preferedSessionLength"
-              min="1"
-              max="8"
-              {...register("preferedSessionLength", { required: true })}
+              type="radio"
+              name="commitmentLevel"
+              value="eh, whenever is good for them!"
+              {...register("commitmentLevel", { required: true })}
             />
-            (1 - 8 hours)
-          </label>
+            eh, whenever is good for them!
+            <input
+              type="radio"
+              name="commitmentLevel"
+              value="maybe 1 session a week?"
+              {...register("commitmentLevel", { required: true })}
+            />
+            maybe 1 session a week?
+            <input
+              type="radio"
+              name="commitmentLevel"
+              value="couple times a week preferably"
+              {...register("commitmentLevel", { required: true })}
+            />
+            couple times a week preferably
+          </div>
+          <h3>How difficult do you think this project will be?</h3>
+          <div className="h">
+            <input
+              type="radio"
+              name="difficulty"
+              value="Very Easy"
+              {...register("difficulty", { required: true })}
+            />
+            Quite easy. A good beginner project for new coders just starting
+            out.
+            <input
+              type="radio"
+              name="difficulty"
+              value="Easy"
+              {...register("difficulty", { required: true })}
+            />
+            Not too tricky. But might be a challenge for absolute beginner.
+            <input
+              type="radio"
+              name="difficulty"
+              value="Intermediate"
+              {...register("difficulty", { required: true })}
+            />
+            It will likely need people with a good understanding of their
+            perfered language, who have built apps and websites previously.
+            <input
+              type="radio"
+              name="difficulty"
+              value="Hard"
+              {...register("difficulty", { required: true })}
+            />
+            It will likely need people who have worked as coders before.
+            <input
+              type="radio"
+              name="difficulty"
+              value="Very Hard"
+              {...register("difficulty", { required: true })}
+            />
+            It need very experienced professional coders.
+            <input
+              type="radio"
+              name="difficulty"
+              value="Master"
+              {...register("difficulty", { required: true })}
+            />
+            It will require people looking to tackle the most severe problem
+            solving.
+          </div>
+          <h3>How long do you want a pair-up session to be?</h3>
+          <div className="h">
+            <label>
+              <input
+                type="number"
+                name="preferedSessionLength"
+                min="1"
+                max="8"
+                {...register("preferedSessionLength", { required: true })}
+              />
+              (1 - 8 hours)
+            </label>
+          </div>
           <h3>
             Write the full details of what you want to achieve in this project:
           </h3>
-          <textarea
-            name="description"
-            {...register("description", { required: true })}
-          ></textarea>
-          <br></br>
-          <label>
-            display your location?
-            <input
-              type="checkbox"
-              name="displayLocation"
-              value={true}
-              {...register("displayLocation")}
-            />
-          </label>
+          <div className="h">
+            <textarea
+              name="description"
+              {...register("description", { required: true })}
+            ></textarea>
+            <br></br>
+            <label>
+              display your location?
+              <input
+                type="checkbox"
+                name="displayLocation"
+                value={true}
+                {...register("displayLocation")}
+              />
+            </label>
+          </div>
           <h3>
             How many additional people are you looking for to help you in this
             project
           </h3>
-          <label>
-            <input
-              type="number"
-              name="numberOfAdditionalUsersNeeded"
-              min="1"
-              max="5"
-              {...register("numberOfAdditionalUsersNeeded", { required: true })}
-            />
-            (max 5)
-          </label>
+          <div className="h">
+            <label>
+              <input
+                type="number"
+                name="numberOfAdditionalUsersNeeded"
+                min="1"
+                max="5"
+                {...register("numberOfAdditionalUsersNeeded", {
+                  required: true,
+                })}
+              />
+              (max 5)
+            </label>
+          </div>
           <h3>What skills are you looking for to help you on this project? </h3>
           {/* <i className="devicon-coffeescript-original" name="langWeNeed" value="coffeescript" type="checkbox" onClick={()=>{console.log("hello")}} {...register('langWeNeed')}></i> */}
           <div>
@@ -333,12 +348,15 @@ export default function NewProjectPage() {
           </div>
           {/* add more icons from https://devicon.dev/ */}
           <br></br>
+
           <textarea
             name="description"
             placeholder="other details"
             {...register("additionalSkillsNeeded")}
           />
-          <input type="submit" value="submit" />
+          <div className="c">
+            <input type="submit" value="submit" />
+          </div>
         </form>
       </div>
     </>
