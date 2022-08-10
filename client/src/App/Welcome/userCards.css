@@ -1,8 +1,8 @@
-*{
+* {
   font-size: 15px;
 }
 
-h1{
+h1 {
   font-size: 60px;
 }
 
@@ -24,7 +24,7 @@ h1{
 
 .userCards {
   width: 150px;
-  display: flex; 
+  display: flex;
   /* flex-direction: column; */
   align-items: center;
   justify-content: center;
@@ -34,16 +34,16 @@ h1{
   box-shadow: 10px 5px 8px 10px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   padding: 10px;
-  
 }
 
-.userInfo, p{
+.userInfo,
+p {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
-p{
+p {
   height: max-content;
   width: fit-content;
   font-size: 12px;
@@ -53,11 +53,11 @@ p{
   padding: 10px;
 }
 
-.buttonContainer{
+.buttonContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly; 
+  justify-content: space-evenly;
 }
 
 button {
@@ -68,7 +68,7 @@ button {
   border-style: none;
 }
 
-button:hover{
+button:hover {
   background-color: orange;
 }
 
