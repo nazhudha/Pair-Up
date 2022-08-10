@@ -21,7 +21,6 @@ import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
 import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
 import Find from './Find/index';
 import PairNow from './PairNow/PairNow';
-import ProfileUser from "./ProfileUser/index"
 
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
