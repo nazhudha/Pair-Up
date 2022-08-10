@@ -11,7 +11,7 @@ export default function UserCardsContainer({usersData}) {
     return (
       
       // <UserCards user={userData} key={userData.username}/>
-      < NewUserCard user={userData} key={userData.username}/>
+      < NewUserCard user={userData} key={userData._id}/>
     );
   });
 

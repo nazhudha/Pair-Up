@@ -3,7 +3,7 @@ import UserCards from "./userCards";
 import UserCardsContainer from "./AllUserCardsContainer";
 
 // Functions
-import { getAllUsers } from "../Functions/getAllUsers";
+import { getAllUsers, getAllUsersById } from "../Functions/getAllUsers";
 
 export default function Welcome() {
   const [usersData, setUsersData] = useState([]);

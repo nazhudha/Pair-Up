@@ -5,3 +5,21 @@ export const getAllUsers = async () => {
     return await res.json();
   } catch (err) {}
 };
+
+export const getAllUsersById = async () => {
+  let config = null;
+  if (localStorage.getItem('token') !== null) {
+    config = {
+      headers: {
+        'x-auth-token': localStorage.getItem('token'),
+        "Content-Type": "application/json",
+      },
+      method: "GET",
+    };
+  }
+  try {
+    const res = await fetch(`http://localhost:8080/user/getmyfriends`, config);
+    console.log("pulling projects by ID")
+    return await res.json();
+  } catch (err) {}
+};
