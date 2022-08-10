@@ -80,7 +80,7 @@ add connection code to backend/app.js
 
 cd client
 
-npm add simple-peer socket.io-client @material-ui/core @material-ui/icons react-copy-t
+yarn add simple-peer socket.io-client @material-ui/core @material-ui/icons react-copy-t
 o-clipboard
 
 ```
