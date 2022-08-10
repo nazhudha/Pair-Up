@@ -9,12 +9,6 @@ export default function SignupLanguage({ addLang, user }) {
   const rubyRef = useRef(null);
   const javascriptRef = useRef(null);
   const pythonRef = useRef(null);
-  const checkBox = {
-    bottom: -300,
-    left: 1200,
-    fontSize: 20,
-    center: 10,
-  };
 
   function sendSkillsArray() {
     let languages = [];
@@ -32,39 +26,51 @@ export default function SignupLanguage({ addLang, user }) {
   }
 
   return (
-    <FormGroup style={checkBox}>
-      <FormControlLabel
-        inputRef={rubyRef}
-        control={<Checkbox />}
-        value="Ruby"
-        label="Ruby"
-      />
-      <FormControlLabel
-        inputRef={javascriptRef}
-        control={<Checkbox />}
-        value="Javascript"
-        label="Javascript"
-      />
-      <FormControlLabel
-        inputRef={pythonRef}
-        control={<Checkbox />}
-        value="Python"
-        label="Python"
-      />
-      <Link to="/signupcredentials">
-        <Button
-          onClick={sendSkillsArray}
-          variant="contained"
-          sx={{
-            color: "black",
-            backgroundColor: "#b7bfe4",
-            border: "2px black solid",
-          }}
-          className="btn btn-primary btn-bloack"
-        >
-          Next
-        </Button>
-      </Link>
-    </FormGroup>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <FormGroup>
+        <FormControlLabel
+          inputRef={rubyRef}
+          control={<Checkbox />}
+          value="Ruby"
+          label="Ruby"
+          onChange={sendSkillsArray}
+        />
+        <FormControlLabel
+          inputRef={javascriptRef}
+          control={<Checkbox />}
+          value="Javascript"
+          label="Javascript"
+          onChange={sendSkillsArray}
+        />
+        <FormControlLabel
+          inputRef={pythonRef}
+          control={<Checkbox />}
+          value="Python"
+          label="Python"
+          onChange={sendSkillsArray}
+        />
+        <Link to="/signupcredentials">
+          <Button
+            onClick={sendSkillsArray}
+            variant="contained"
+            sx={{
+              color: "black",
+              backgroundColor: "#b7bfe4",
+              border: "2px black solid",
+            }}
+            className="btn btn-primary btn-bloack"
+          >
+            Next
+          </Button>
+        </Link>
+      </FormGroup>
+    </div>
   );
 }

@@ -67,8 +67,6 @@ function App() {
       password: password,
       postcode: postcode,
     });
-    createUser(user);
-    console.log(user);
   };
 
   // render() {

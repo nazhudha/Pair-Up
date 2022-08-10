@@ -11,12 +11,6 @@ export default function SignupSkill({ user, addSkill }) {
   const beginnerRef = useRef();
   const intermediateRef = useRef();
   const expertRef = useRef();
-  const radio = {
-    bottom: -300,
-    left: 1200,
-    fontSize: 20,
-    center: 10,
-  };
 
   const nextButtonRef = useRef();
 
@@ -34,8 +28,15 @@ export default function SignupSkill({ user, addSkill }) {
   }
 
   return (
-    <div>
-      <FormControl style={radio}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <FormControl>
         <FormLabel id="demo-radio-buttons-group-label">Coding Level</FormLabel>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
