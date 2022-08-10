@@ -19,16 +19,14 @@ import NewProjectPage from "./Projects/NewProjectPage";
 import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
 import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
 import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
-import Find from './Find/index';
-import PairNow from './PairNow/PairNow';
-import ProfileUser from "./ProfileUser/index"
+import Find from "./Find/index";
+import PairNow from "./PairNow/PairNow";
 
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
 
 function App() {
   //state = {};
-
 
   const [user, setUser] = useState({
     fname: "",
@@ -74,7 +72,6 @@ function App() {
       postcode: postcode,
     });
   };
-
 
   //pass user and neccisary functions to the individual paths
   // render() {
@@ -123,10 +120,7 @@ function App() {
           path="/signuplanguage"
           element={<SignupLanguage addLang={addLang} user={user} />}
         />
-        <Route
-          path="/pairnow"
-          element={<PairNow />}
-        />
+        <Route path="/pairnow" element={<PairNow />} />
         <Route
           path="/signupcredentials"
           element={
@@ -141,10 +135,13 @@ function App() {
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/project/home" element={<HomepageProjects/>} />
+        <Route path="/project/home" element={<HomepageProjects />} />
         <Route path="/project/newproject" element={<NewProjectPage />} />
-        <Route path="/project/view/:id" element={<ViewProjectPage/>} />
-        <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
+        <Route path="/project/view/:id" element={<ViewProjectPage />} />
+        <Route
+          path="/project/joinrequestsent"
+          element={<JoiningProjectPage />}
+        />
         <Route path="/profile/:id" element={<ProfileUser />} />
       </Routes>
     </BrowserRouter>
