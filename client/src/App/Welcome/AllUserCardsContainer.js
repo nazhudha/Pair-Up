@@ -6,7 +6,7 @@ import NewUserCard from './NewUserCard';
 
 
 export default function UserCardsContainer({usersData}) {
-  return usersData.map((userData) => {
+  return usersData.slice(0,12).map((userData) => {
     //render a todo with props
     return (
       
