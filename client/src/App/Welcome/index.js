@@ -7,10 +7,17 @@ import { getAllUsers, getAllUsersById } from "../Functions/getAllUsers";
 
 export default function Welcome() {
   const [usersData, setUsersData] = useState([]);
+  const [friendsData, setFriendsData] = useState([]);
 
   const pullUsers = () => {
     getAllUsers() // api function
       .then((res) => setUsersData(res))
+      .catch((err) => console.log(err));
+  };
+
+  const getAllUsersById = () => {
+    getAllUsers() // api function
+      .then((res) => setFriendsData(res))
       .catch((err) => console.log(err));
   };
 
@@ -21,6 +28,10 @@ export default function Welcome() {
   return (
     <div>
       <h1>Welcome to Pair Up!</h1>
+      <div className="cardsContainer">
+        <UserCardsContainer usersData={friendsData} />
+      </div>
+
       <div className="cardsContainer">
         <UserCardsContainer usersData={usersData} />
       </div>
