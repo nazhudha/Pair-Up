@@ -40,6 +40,7 @@ function App() {
   });
 
   console.log(user);
+  console.log(user);
 
   const [userSignIn, setuserSignIn] = useState({
     email: "",
