@@ -5,7 +5,7 @@ import Navbar from "./navbar";
 
 // Functions
 import { getAllUsers } from "../../../Functions/getAllUsers";
-import ResponsiveAppBarLoggedIn from "../../../../Components/ResponsiveAppBar_LoggedIn copy";
+import ResponsiveAppBarLoggedIn from "../../../../Components/ResponsiveAppBar_LoggedIn";
 
 export default function Welcome() {
   const [usersData, setUsersData] = useState([]);

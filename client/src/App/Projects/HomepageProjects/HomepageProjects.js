@@ -3,7 +3,7 @@ import ProjectPostCardContainer from '../ProjectPostCards/ProjectPostCardContain
 
 // Functions
 import { getAllProjects, getAllProjectsById } from '../../Functions/getProjects';
-import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBar_LoggedIn copy';
+import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBar_LoggedIn';
 
 const signedInUserId = "62eff044c98668c5a2f8d923" // change to take ID from sessions
 

@@ -3,7 +3,7 @@ import ProfileHeader from './profileHeader';
 import './profile.css';
 import LeftProfileFeed from './LeftProfileFeed/LeftProfileFeed';
 import RightSideBar from './RightSideBar/RightSideBar';
-import ResponsiveAppBarLoggedIn from '../../Components/ResponsiveAppBar_LoggedIn copy';
+import ResponsiveAppBarLoggedIn from '../../Components/ResponsiveAppBar_LoggedIn';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);

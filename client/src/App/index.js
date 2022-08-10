@@ -23,7 +23,7 @@ import Find from './Find/index';
 // Functions
 import { createUser } from './LoginAndSignup/Signup/functions/createUser';
 import ResponsiveAppBar from '../Components/ResponsiveAppBar_Loggedout';
-import ResponsiveAppBarLoggedIn from '../Components/ResponsiveAppBar_LoggedIn copy';
+import ResponsiveAppBarLoggedIn from '../Components/ResponsiveAppBar_LoggedIn';
 
 function App() {
   //state = {};

@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react'
 import {useForm} from "react-hook-form"
 import {Link} from 'react-router-dom'
-import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBar_LoggedIn copy';
+import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBar_LoggedIn';
 
 export default function NewProjectPage() {
   const {register, handleSubmit} = useForm();
