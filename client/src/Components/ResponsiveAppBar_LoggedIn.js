@@ -13,10 +13,10 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Home', 'My Projects', 'New Projects'];
-const pageLink = ['/welcome', '/project/home', '/project/newproject'];
+const pages = ['Home', 'Profile', 'My Projects', 'New Projects'];
+const pageLink = ['/welcome', '/profile', '/project/home', '/project/newproject'];
 
-const settings = ['Profile', 'Logout'];
+const settings = ['Logout'];
 
 const ResponsiveAppBarLoggedIn = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
