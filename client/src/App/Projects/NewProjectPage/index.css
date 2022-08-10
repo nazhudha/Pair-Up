@@ -1,3 +1,58 @@
 .i {
 font-size: larger;
+margin: auto;
+width: 500px;
+}
+
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  background: rgb(241, 189, 189);
+  padding: 150px;
+  text-align: center;
+  
+}
+
+h3 {
+  display: block;
+  font-size: 1em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-align: center;
+ 
+}
+
+.devicon-django-plain {
+  font-size: 5rem
+}
+.devicon-bootstrap-plain{
+  font-size: 5rem
+}
+.devicon-ruby-plain{
+  font-size: 5rem
+}
+.devicon-javascript-plain{
+  font-size: 5rem
+}
+.devicon-python-plain{
+  font-size: 5rem
+}
+.devicon-java-plain{
+  font-size: 5rem
+}
+.devicon-cplusplus-plain{
+  font-size: 5rem
+}
+.devicon-typescript-plain{
+  font-size: 5rem
+}
+.devicon-csharp-plain{
+  font-size: 5rem
+}
+.devicon-cplusplus-plain{
+  font-size: 5rem
 }
