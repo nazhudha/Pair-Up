@@ -1,17 +1,18 @@
-
-import './index.css';
-import { Component, useState } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import 'leaflet/dist/leaflet.css';
+import "./index.css";
+import { Component, useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import "leaflet/dist/leaflet.css";
 
 // Components
 import LoginAndSignup from "./LoginAndSignup/index";
 import Login from "./LoginAndSignup/Login/index";
 import Profile from "./Profile/index";
+import ProfileUser from "./ProfileUser/index";
 import SignupName from "./LoginAndSignup/Signup/SignupName/index";
 import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
 import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
+
 import Welcome from "./LoginAndSignup/Signup/Welcome/index";
 import NewProjectPage from "./Projects/NewProjectPage";
 import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
@@ -21,29 +22,30 @@ import Find from './Find/index';
 import PairNow from './PairNow/PairNow';
 import ProfileUser from "./ProfileUser/index"
 
+
 // Functions
-import { createUser } from './LoginAndSignup/Signup/functions/createUser';
+import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
 
 function App() {
   //state = {};
 
   // user signup
   const [user, setUser] = useState({
-    fname: '',
-    lname: '',
-    skill: '',
+    fname: "",
+    lname: "",
+    skill: "",
     languages: [],
-    username: '',
-    email: '',
-    password: '',
-    postcode: '',
+    username: "",
+    email: "",
+    password: "",
+    postcode: "",
   });
 
+  console.log(user);
+
   const [userSignIn, setuserSignIn] = useState({
-
-    email: '',
-    password: '',
-
+    email: "",
+    password: "",
   });
 
   //user SU functions - move to componant
