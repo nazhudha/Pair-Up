@@ -1,6 +1,6 @@
 import React from 'react'
 import UserCards from './userCards'
-
+import NewUserCard from './NewUserCard';
 
 
 
@@ -10,8 +10,8 @@ export default function UserCardsContainer({usersData}) {
     //render a todo with props
     return (
       
-      <UserCards user={userData} key={userData.username}/>
-
+      // <UserCards user={userData} key={userData.username}/>
+      < NewUserCard />
     );
   });
 

@@ -14,14 +14,14 @@ import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
 
 import AddFriendButton from "../Components/AddFriendButton";
-import Welcome from "./LoginAndSignup/Signup/Welcome/index";
+import Welcome from "./Welcome/index"
 import NewProjectPage from "./Projects/NewProjectPage";
 import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
 import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
 import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
 import Find from './Find/index';
 import PairNow from './PairNow/PairNow';
-import ProfileUser from "./ProfileUser/index"
+import NewUserCard from "./Welcome/NewUserCard";
 
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
@@ -137,7 +137,7 @@ function App() {
             />
           }
         />
-
+        <Route path="/test" element={<NewUserCard />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
