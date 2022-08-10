@@ -1,25 +1,22 @@
-
 import React, { Component, useEffect, useState } from 'react';
-import ProfileHeader from './profileHeader';
-import './profile.css';
-import LeftProfileFeed from './LeftProfileFeed/LeftProfileFeed';
-import RightSideBar from './RightSideBar/RightSideBar';
-
+import { useParams } from 'react-router-dom';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [result, setResult] = useState({ user: [] });
-
+  const { id } = useParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // searchParams.get('__firebase_request_key');
   useEffect(() => {
     let config = null;
-    if (localStorage.getItem("token") !== null) {
+    if (localStorage.getItem('token') !== null) {
       config = {
         headers: {
-          "x-auth-token": localStorage.getItem("token"),
+          'x-auth-token': localStorage.getItem('token'),
         },
       };
     }
-    fetch("http://localhost:8080/profile/me", config)
+    fetch('http://localhost:8080/profile/' + id, config)
       .then((response) => response.json())
       .then((data) => {
         setResult({ user: data });
@@ -34,17 +31,13 @@ const Profile = () => {
       </div>
     );
 
-
-  // setTimeout(getRecords, 1000);
   return (
     <div>
-      <ProfileHeader result={result.user} />
-
-      <div className="main-feed-container">
-        <LeftProfileFeed />
-        <RightSideBar />
-      </div>
+      <p>{result.user.fname}</p>
+      <p>{result.user.lname}</p>
+      <p>{result.user.email}</p>
     </div>
   );
 };
+
 export default Profile;

@@ -4,7 +4,7 @@ import ProjectPostCardContainer from '../ProjectPostCards/ProjectPostCardContain
 // Functions
 import { getAllProjects, getAllProjectsById } from '../../Functions/getProjects';
 
-const signedInUserId = "62ebab3246601bb290812d9e" // change to take ID from sessions
+const signedInUserId = "62eff044c98668c5a2f8d923" // change to take ID from sessions
 
 export default function HomepageProjects() {
   const [projects, setProjects] = useState([]);

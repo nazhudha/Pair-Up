@@ -1,25 +1,34 @@
 import "./index.css";
-import { useState } from "react";
+import { Component, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
+
 // Components
 import LoginAndSignup from "./LoginAndSignup/index";
 import Login from "./LoginAndSignup/Login/index";
 import Profile from "./Profile/index";
-import Find from "./Find/index";
+import ProfileUser from "./ProfileUser/index";
 import SignupName from "./LoginAndSignup/Signup/SignupName/index";
 import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
 import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
+
+import AddFriendButton from "../Components/AddFriendButton";
 import Welcome from "./LoginAndSignup/Signup/Welcome/index";
 import NewProjectPage from "./Projects/NewProjectPage";
 import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
-import AddFriendButton from "../Components/AddFriendButton";
+import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
+import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
+import Find from './Find/index';
+import PairNow from './PairNow/PairNow';
+import ProfileUser from "./ProfileUser/index"
 
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
 
 function App() {
+  //state = {};
+
 
   const [user, setUser] = useState({
     fname: "",
@@ -30,6 +39,13 @@ function App() {
     email: "",
     password: "",
     postcode: "",
+  });
+
+  console.log(user);
+
+  const [userSignIn, setuserSignIn] = useState({
+    email: "",
+    password: "",
   });
 
   //user SU functions - move to componant
@@ -45,6 +61,10 @@ function App() {
     setUser({ ...user, languages: lang });
   };
 
+  const createSignInObject = (email, password) => {
+    setuserSignIn({ email: email, password: password });
+  };
+
   const addCredentials = (username, email, password, postcode) => {
     setUser({
       ...user,
@@ -57,12 +77,40 @@ function App() {
 
 
   //pass user and neccisary functions to the individual paths
+  // render() {
+  //   if (localStorage.getItem('token') !== null) {
+  //     return (
+  //       <BrowserRouter>
+  //         <h2>Hi, welcome to Pair Up!</h2>
+  //         <button onClick={() => localStorage.clear()} className="log-out">
+  //           Logout
+  //         </button>
+  //         <Routes>
+  //           <Route path="/projects/newproject" element={<NewProjectPage />} />
+  //           {/* <Route path="/" element={<LoginAndSignup />} /> */}
+  //           {/* <Route path="/welcome" element={<Welcome />} /> */}
+  //           <Route path="/find" element={<Find />} />
+  //           <Route path="/profile" element={<Profile />} />
+  //           <Route path="/profile/:id" element={<ProfileUser />} />
+  //           <Route path="/home/projects" element={<HomepageProjects />} />
+  //         </Routes>
+  //       </BrowserRouter>
+  //     );
+  //   }
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={
+            <Login
+              userSignIn={userSignIn}
+              createSignInObject={createSignInObject}
+            />
+          }
+        />
         <Route
           path="/signupname"
           element={<SignupName addName={addName} user={user} />}
@@ -76,6 +124,10 @@ function App() {
           element={<SignupLanguage addLang={addLang} user={user} />}
         />
         <Route
+          path="/pairnow"
+          element={<PairNow />}
+        />
+        <Route
           path="/signupcredentials"
           element={
             <SignupCredentials
@@ -85,10 +137,15 @@ function App() {
             />
           }
         />
+
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/find" element={<Find />} />
-        <Route path="/home/projects" element={<HomepageProjects />} />
-
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/project/home" element={<HomepageProjects/>} />
+        <Route path="/project/newproject" element={<NewProjectPage />} />
+        <Route path="/project/view/:id" element={<ViewProjectPage/>} />
+        <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
+        <Route path="/profile/:id" element={<ProfileUser />} />
       </Routes>
     </BrowserRouter>
   );
