@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Building the Video Chat 
+
+`npm install socket.io`
+
+add connection code to backend/app.js
+
+```
+
+cd client
+
+yarn add simple-peer socket.io-client @material-ui/core @material-ui/icons react-copy-t
+o-clipboard
+
+```
+
+check these dependancies for errors if code doesn't work
+
+
+Import in react hooks, material UI componants and more to your app/index.js
