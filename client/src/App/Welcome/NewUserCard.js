@@ -26,11 +26,11 @@ export default function NewUserCard({ user }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Grid container justify="center">
-          <Button variant="contained" size="small">
+        <Grid container justifyContent="space-between">
+          <Button variant="contained" size="small" style={{ fontSize: "10px" }}>
             Profile
           </Button>
-          <Button variant="contained" size="small">
+          <Button variant="contained" size="small" style={{ fontSize: "10px" }}>
             Pair now
           </Button>
         </Grid>
