@@ -15,9 +15,10 @@ export default function SignupSkill({ user, addSkill }) {
   const nextButtonRef = useRef();
 
   function handleChange() {
-    let skill = "";
+    let skill = '';
 
     if (beginnerRef.current.checked === true) {
+
       skill = "Beginner";
     } else if (intermediateRef.current.checked === true) {
       skill = "Intermediate";

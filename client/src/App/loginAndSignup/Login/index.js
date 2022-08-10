@@ -52,7 +52,7 @@ const Login = () => {
   // }
   const paperStyle = {
     padding: 20,
-    height: '70vh',
+    height: '50vh',
     width: 500,
     margin: '20px auto',
   };

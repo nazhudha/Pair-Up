@@ -1,7 +1,8 @@
-import "./index.css";
-import { Component, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import "leaflet/dist/leaflet.css";
+import './index.css';
+import { Component, useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import 'leaflet/dist/leaflet.css';
+
 
 // Components
 import LoginAndSignup from "./LoginAndSignup/index";
@@ -23,7 +24,9 @@ import Find from './Find/index';
 import PairNow from './PairNow/PairNow';
 
 // Functions
-import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
+import { createUser } from './LoginAndSignup/Signup/functions/createUser';
+import ResponsiveAppBar from '../Components/ResponsiveAppBar';
+
 
 function App() {
   //state = {};
@@ -40,12 +43,13 @@ function App() {
     postcode: "",
   });
 
-  console.log(user);
 
   const [userSignIn, setuserSignIn] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: '',
+
+  console.log(user);
+
 
   //user SU functions - move to componant
   const addName = (fname, lname) => {
@@ -98,6 +102,7 @@ function App() {
   //   }
   return (
     <BrowserRouter>
+      <ResponsiveAppBar />
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
