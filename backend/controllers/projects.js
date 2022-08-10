@@ -2,13 +2,13 @@ const { findOne } = require('../models/projects');
 const Project = require('../models/projects');
 const User = require('../models/user')
 
-const signedInUserId = "62f00f64623c84a6a434a41e" // change to take ID from sessions
+// const signedInUserId = "62f00f64623c84a6a434a41e" // change to take ID from sessions
 
 const ProjectController = {
 
   Create: async (req, res) => {
+    signedInUserId = req.user.id
     const signedInUser = await User.findOne({_id: signedInUserId})
-    console.log(signedInUser)
     const project = new Project({
       owner: signedInUserId, 
       name: req.body.name,
@@ -37,7 +37,7 @@ const ProjectController = {
   },
 
   Join: async (req, res) => {
-    console.log(req.params.projectid)
+    signedInUserId = req.user.id
     try {
       await Project.updateOne(
         {
@@ -78,11 +78,13 @@ const ProjectController = {
   
 
   AllById: async (req, res) => {
-    console.log(req.params.userid);
+    signedInUserId = req.user.id
+    console.log("hello")
+    console.log(signedInUserId);
       
     Project.find({
       $expr: {
-        $in: [req.params.userid, "$users"]
+        $in: [signedInUserId, "$users"]
       }
     })
       .populate("owner")

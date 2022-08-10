@@ -7,16 +7,23 @@ export default function NewProjectPage() {
 
    const addProjectToDb = async (createdProject) => {
     console.log(JSON.stringify(createdProject))
-    try {
-      const res = await fetch("http://localhost:8080/projects/createproject", {
-        method: "POST",
-        body: JSON.stringify(createdProject),
+    let config = null;
+    if (localStorage.getItem('token') !== null) {
+      config = {
         headers: {
+          'x-auth-token': localStorage.getItem('token'),
           "Content-Type": "application/json",
         },
-      }).then(res => {
+        method: "POST",
+        body: JSON.stringify(createdProject),
+      };
+    }
+
+    try {
+      const res = await fetch("http://localhost:8080/projects/createproject", config
+      ).then(res => {
         console.log(res)
-        window.location = "http://localhost:3000/welcome";
+        window.location = "http://localhost:3000/project/home";
 
       });
   

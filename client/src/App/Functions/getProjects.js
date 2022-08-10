@@ -6,9 +6,19 @@ export const getAllProjects = async () => {
   } catch (err) {}
 };
 
-export const getAllProjectsById = async (id) => {
+export const getAllProjectsById = async () => {
+  let config = null;
+  if (localStorage.getItem('token') !== null) {
+    config = {
+      headers: {
+        'x-auth-token': localStorage.getItem('token'),
+        "Content-Type": "application/json",
+      },
+      method: "GET",
+    };
+  }
   try {
-    const res = await fetch(`http://localhost:8080/projects/getallprojects/${id}`);
+    const res = await fetch(`http://localhost:8080/projects/getallmyprojects`, config);
     console.log("pulling projects by ID")
     return await res.json();
   } catch (err) {}
