@@ -11,12 +11,7 @@ import Grid from "@material-ui/core/Grid";
 export default function NewUserCard({ user }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={profilePic}
-        alt="green iguana"
-      />
+      <CardMedia component="img" height="140" image={profilePic} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {`${user.fname} ${user.lname}`}
