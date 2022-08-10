@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import FormGroup from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import FormGroup from '@mui/material/FormControl';
+import Button from '@mui/material/Button';
 
 export default function SignupName({ addName, user }) {
   const firstNameRef = useRef();
@@ -16,10 +16,10 @@ export default function SignupName({ addName, user }) {
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
       }}
     >
       <FormGroup>
@@ -49,9 +49,9 @@ export default function SignupName({ addName, user }) {
         <Button
           variant="contained"
           sx={{
-            color: "black",
-            backgroundColor: "#b7bfe4",
-            border: "2px black solid",
+            color: 'black',
+            backgroundColor: '#b7bfe4',
+            border: '2px black solid',
           }}
           className="btn btn-primary btn-bloack"
         >
