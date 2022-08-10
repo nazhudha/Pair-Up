@@ -18,7 +18,7 @@ export const getAllUsersById = async () => {
     };
   }
   try {
-    const res = await fetch(`http://localhost:8080/user/getmyfriends`, config);
+    const res = await fetch(`http://localhost:8080/user/getfriends`, config);
     console.log("pulling projects by ID")
     return await res.json();
   } catch (err) {}
