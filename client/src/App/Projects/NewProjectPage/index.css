@@ -1,14 +1,16 @@
 .i {
 font-size: larger;
 margin: auto;
-width: 500px;
+width: 300px;
+margin-top: -30px;
+margin-bottom: 50px;
 }
 
 
 .content {
   max-width: 800px;
   margin: auto;
-  background: rgb(241, 189, 189);
+  background: linear-gradient(-45deg, #716764, #ae8f9b, #e7cbcb, #99f2df);
   padding: 150px;
   text-align: center;
   
@@ -53,6 +55,6 @@ h3 {
 .devicon-csharp-plain{
   font-size: 5rem
 }
-.devicon-cplusplus-plain{
+.devicon-docker-plain{
   font-size: 5rem
 }

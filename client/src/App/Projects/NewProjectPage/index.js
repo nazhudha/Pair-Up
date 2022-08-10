@@ -69,55 +69,57 @@ export default function NewProjectPage() {
             {...register("summary", { required: true })}
           ></textarea>
           <h3>How long do you think this project will take?</h3>
-          <input
-            type="radio"
-            name="expectedProjectLength"
-            value="<1 day"
-            {...register("expectedProjectLength", { required: true })}
-          />
-          &lt;1 day
-          <input
-            type="radio"
-            name="expectedProjectLength"
-            value=">1 day"
-            {...register("expectedProjectLength", { required: true })}
-          />
-          &gt;1 day
-          <input
-            type="radio"
-            name="expectedProjectLength"
-            value="2-3 days"
-            {...register("expectedProjectLength", { required: true })}
-          />
-          2-3 days
-          <input
-            type="radio"
-            name="expectedProjectLength"
-            value="<1 week"
-            {...register("expectedProjectLength", { required: true })}
-          />
-          &lt;1 week
-          <input
-            type="radio"
-            name="expectedProjectLength"
-            value=">1 week"
-            {...register("expectedProjectLength", { required: true })}
-          />
-          &gt;1 week
-          <input
-            type="radio"
-            name="expectedProjectLength"
-            value="2-3 weeks"
-            {...register("expectedProjectLength", { required: true })}
-          />
-          2-3 weeks
-          <input
-            type="radio"
-            name="expectedProjectLength"
-            value="Longer"
-            {...register("expectedProjectLength", { required: true })}
-          />
-          Longer
+          <div className="i">
+            <input
+              type="radio"
+              name="expectedProjectLength"
+              value="<1 day"
+              {...register("expectedProjectLength", { required: true })}
+            />
+            &lt;1 day
+            <input
+              type="radio"
+              name="expectedProjectLength"
+              value=">1 day"
+              {...register("expectedProjectLength", { required: true })}
+            />
+            &gt;1 day
+            <input
+              type="radio"
+              name="expectedProjectLength"
+              value="2-3 days"
+              {...register("expectedProjectLength", { required: true })}
+            />
+            2-3 days
+            <input
+              type="radio"
+              name="expectedProjectLength"
+              value="<1 week"
+              {...register("expectedProjectLength", { required: true })}
+            />
+            &lt;1 week
+            <input
+              type="radio"
+              name="expectedProjectLength"
+              value=">1 week"
+              {...register("expectedProjectLength", { required: true })}
+            />
+            &gt;1 week
+            <input
+              type="radio"
+              name="expectedProjectLength"
+              value="2-3 weeks"
+              {...register("expectedProjectLength", { required: true })}
+            />
+            2-3 weeks
+            <input
+              type="radio"
+              name="expectedProjectLength"
+              value="Longer"
+              {...register("expectedProjectLength", { required: true })}
+            />
+            Longer
+          </div>
           <h3>How much of a commitment are you looking for from your team?</h3>
           <input
             type="radio"
