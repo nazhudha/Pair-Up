@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Project = require('../models/projects');
 const bcrypt = require("bcrypt");
 
 const UserController = {
@@ -30,8 +31,24 @@ const UserController = {
     await user.save().then((doc) => res.status(201).json(user));
   },
   GetFriends: (req, res) => {
-    console.log(req.user);
-  },
-};
+    signedInUserId = req.user.id
+    console.log("hello")
+    console.log(signedInUserId);
+      
+    User.find({
+      $expr: {
+        $in: [signedInUserId, "$friends"]
+      }
+    })
+      .exec((err, myfriends) => {
+                if (err) {
+            throw err;  
+          }
+      return res.json(myfriends);
+    });
+
+  }
+  
+}
 
 module.exports = UserController;
