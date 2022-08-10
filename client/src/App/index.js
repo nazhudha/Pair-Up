@@ -22,6 +22,7 @@ import Find from './Find/index';
 
 // Functions
 import { createUser } from './LoginAndSignup/Signup/functions/createUser';
+import ResponsiveAppBar from '../Components/ResponsiveAppBar';
 
 function App() {
   //state = {};
@@ -94,6 +95,7 @@ function App() {
   //   }
   return (
     <BrowserRouter>
+      <ResponsiveAppBar/>
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
@@ -135,7 +137,7 @@ function App() {
         <Route path="/project/newproject" element={<NewProjectPage />} />
         <Route path="/project/view/:id" element={<ViewProjectPage/>} />
         <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
-        <Route path="/profile/:id" element={<ProfileUser />} />
+        {/* <Route path="/profile/:id" element={<ProfileUser />} /> */}
 
       </Routes>
     </BrowserRouter>
