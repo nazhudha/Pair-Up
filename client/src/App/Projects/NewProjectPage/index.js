@@ -2,6 +2,15 @@ import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./index.css";
+import Button from "@mui/material/Button";
+
+const submit = {
+  minWidth: 100,
+  minHeight: 50,
+  bottom: -20,
+  left: 0,
+  fontSize: 20,
+};
 
 export default function NewProjectPage() {
   const { register, handleSubmit } = useForm();
@@ -355,7 +364,21 @@ export default function NewProjectPage() {
             {...register("additionalSkillsNeeded")}
           />
           <div className="c">
-            <input type="submit" value="submit" />
+            <Button
+              style={submit}
+              variant="contained"
+              sx={{
+                color: "black",
+                backgroundColor: "#b7bfe4",
+                border: "2px black solid",
+              }}
+              className="btn btn-primary btn-bloack"
+              type="submit"
+              value="submit"
+            >
+              {" "}
+              Submit{" "}
+            </Button>
           </div>
         </form>
       </div>
