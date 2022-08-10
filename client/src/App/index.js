@@ -19,7 +19,8 @@ import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
 import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
 import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
 import Find from './Find/index';
-
+import PairNow from './PairNow/PairNow';
+import ProfileUser from "./ProfileUser/index"
 
 
 // Functions
@@ -119,6 +120,10 @@ function App() {
         <Route
           path="/signuplanguage"
           element={<SignupLanguage addLang={addLang} user={user} />}
+        />
+        <Route
+          path="/pairnow"
+          element={<PairNow />}
         />
         <Route
           path="/signupcredentials"
