@@ -8,6 +8,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import { motion } from "framer-motion";
 
 export default function SignupSkill({ user, addSkill }) {
   const beginnerRef = useRef();
@@ -37,6 +38,15 @@ export default function SignupSkill({ user, addSkill }) {
 
   return (
     <Grid>
+      <div className="header">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, scale: 1.8 }}
+          transition={{ delay: 0.1, duration: 2.5 }}
+        >
+          What coding level are you?
+        </motion.h1>
+      </div>
       <Paper elevation={10} style={paperStyle}>
         <Grid align="center" spacing={5}></Grid>
         <div

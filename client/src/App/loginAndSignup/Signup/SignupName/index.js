@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
 
 export default function SignupName({ addName, user }) {
   const firstNameRef = useRef();
@@ -24,6 +25,16 @@ export default function SignupName({ addName, user }) {
 
   return (
     <Grid>
+      <div className="header">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, scale: 1.8 }}
+          transition={{ delay: 0.1, duration: 2.5 }}
+        >
+          Please provide your first name and last name!
+        </motion.h2>
+      </div>
+
       <Paper elevation={10} style={paperStyle}>
         <Grid align="center" spacing={5}></Grid>
         <div

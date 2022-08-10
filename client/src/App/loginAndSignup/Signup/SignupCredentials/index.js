@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormControl";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import { motion } from "framer-motion";
 
 export default function SignupCredentials({
   createUser,
@@ -40,6 +41,15 @@ export default function SignupCredentials({
 
   return (
     <Grid>
+      <div className="header">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, scale: 1.8 }}
+          transition={{ delay: 0.1, duration: 2.5 }}
+        >
+          Please fill in the below!
+        </motion.h1>
+      </div>
       <Paper elevation={10} style={paperStyle}>
         <Grid align="center" spacing={5}></Grid>
         <div
