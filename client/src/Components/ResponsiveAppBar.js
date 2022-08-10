@@ -13,8 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog1', 'Blog2', 'Blog3'];
-const pageLink = ['find', 'profile', '1', '2', '3'];
+const pages = ['Home', 'My Projects', 'New Projects'];
+const pageLink = ['/welcome', '/project/home', '/project/newproject'];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -60,7 +60,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            PAIR UP!
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -116,7 +116,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            PAIR UP!
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
