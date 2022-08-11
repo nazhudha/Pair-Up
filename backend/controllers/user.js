@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Project = require('../models/projects');
 const bcrypt = require("bcrypt");
 
 const UserController = {
@@ -29,13 +30,22 @@ const UserController = {
 
     await user.save().then((doc) => res.status(201).json(user));
   },
-  AddFriend: (req, res) => {
-    console.log("hello");
-  },
-  // Join: async (req, res) => {
-  //   console.log(req.params)
+  GetFriends: (req, res) => {
+    signedInUserId = req.user.id
+    console.log("hello")
+    console.log(signedInUserId);
+      
+    User.find({
+      'friends': { $in: [signedInUserId]}
+  },).exec((err, myfriends) => {
+            if (err) {
+        throw err;  
+        }
+        return res.json(myfriends);
+        });
 
-  // },
-};
+  }
+  
+}
 
 module.exports = UserController;
