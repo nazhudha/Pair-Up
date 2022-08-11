@@ -12,8 +12,14 @@ export default function ProjectBanner({project}) {
   return (
 
       itemData.map((item) => (
-        <ImageListItem >
+        <ImageListItem 
+          sx={{
+            height: 50,
+            marginTop: 15,
+            }}>
           <ImageListItemBar
+            sx={{
+              height: 110}}
             title={project.name}
             subtitle={project.category}
             actionIcon={
@@ -21,13 +27,13 @@ export default function ProjectBanner({project}) {
                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                 aria-label="Join this project!"
               >
-            
                 <Button  variant="contained" spacing={4} sx={{
                    height: 38,
                    marginRight: 10
                    
                    
                     }}>Join</Button>
+
         
 
               </IconButton>
