@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import ProjectPostCardContainer from '../ProjectPostCards/ProjectPostCardContainer';
-import ResponsiveAppBarLoggedOut from '../../../Components/ResponsiveAppBarLoggedOut';
-import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBarLoggedIn';
+import React, { useState, useEffect } from "react";
+import ProjectPostCardContainer from "../ProjectPostCards/ProjectPostCardContainer";
+import ResponsiveAppBarLoggedOut from "../../../Components/ResponsiveAppBarLoggedOut";
+import ResponsiveAppBarLoggedIn from "../../../Components/ResponsiveAppBarLoggedIn";
+import "./ProjectCard.css";
 // Functions
 import {
   getAllProjects,
   getAllProjectsById,
-} from '../../Functions/getProjects';
+} from "../../Functions/getProjects";
 
 export default function HomepageProjects() {
   const [projects, setProjects] = useState(null);
@@ -33,15 +34,20 @@ export default function HomepageProjects() {
     console.log(projects);
     return (
       <>
-        {localStorage.getItem('token') !== null ? (
+        {localStorage.getItem("token") !== null ? (
           <ResponsiveAppBarLoggedIn />
         ) : (
           <ResponsiveAppBarLoggedOut />
         )}
         <h2>My Projects</h2>
-        <ProjectPostCardContainer projects={myProjects} />
+        <div className="ProjectCardContainer">
+          <ProjectPostCardContainer projects={myProjects} />
+        </div>
+
         <h2>All Projects</h2>
-        <ProjectPostCardContainer projects={projects} />
+        <div className="ProjectCardContainer">
+          <ProjectPostCardContainer projects={projects} />
+        </div>
       </>
     );
   }
