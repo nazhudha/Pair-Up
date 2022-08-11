@@ -21,12 +21,15 @@ export default function ProjectBanner({project}) {
                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                 aria-label="Join this project!"
               >
-                <Button variant="contained" spacing={4} sx={{
-                   height: 38
+            
+                <Button  variant="contained" spacing={4} sx={{
+                   height: 38,
+                   marginRight: 10
                    
                    
                     }}>Join</Button>
-                <Button></Button>
+        
+
               </IconButton>
             }
           />
