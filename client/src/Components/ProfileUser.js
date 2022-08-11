@@ -11,8 +11,9 @@ import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import GithubTable from '../Components/GithubTable';
 import Loading from '../Components/Loading';
+import AddFriendButton from './AddFriendButton';
 
-export default function BasicCard({ info, result }) {
+export default function BasicCard({ info, result, friendId }) {
   const [githubinfo, setGithubInfo] = useState({ user: [] });
   const [repos, setRepos] = useState({ repository: [] });
   const [isLoading, setIsLoading] = useState(true);
@@ -66,6 +67,7 @@ export default function BasicCard({ info, result }) {
                 sx={{ width: 150, height: 150 }}
               />
             </Grid>
+            <AddFriendButton friendId={friendId}/>
             <Grid item xs={6}>
               <Typography variant="h4" component="div" gutterBottom>
                 {result.user.fname} {result.user.lname}

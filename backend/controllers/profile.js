@@ -25,16 +25,16 @@ const ProfileController = {
 
 
   AddFriend: async (req, res) => {
-    console.log(req.body)
+    console.log(req.user.id)
     console.log(req.params)
-    const friend = await User.findById(req.body._id)
+    const friend = await User.findById(req.user.id)
     await User.updateOne(
       {
         _id: req.params.id,
      
       },
       {
-        $addToSet: { friends: req.body._id},
+        $addToSet: { friends: req.user.id},
 
   
         
@@ -45,7 +45,7 @@ const ProfileController = {
       });
       await User.updateOne(
         {
-          _id: req.body._id,
+          _id: req.user.id,
        
         },
         {

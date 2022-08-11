@@ -3,8 +3,12 @@ import { useParams } from 'react-router-dom';
 import GithubTable from '../../Components/GithubTable';
 import ProfileUser from '../../Components/ProfileUser';
 import Loading from '../../Components/Loading';
+
+import AddFriendButton from '../../Components/AddFriendButton';
+
 import ResponsiveAppBarLoggedOut from '../../Components/ResponsiveAppBar';
 import ResponsiveAppBarLoggedIn from '../../Components/ResponsiveAppBarLoggedIn';
+
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [result, setResult] = useState({ user: [] });
@@ -76,7 +80,9 @@ const Profile = () => {
       <p>{bio}</p>
       <p>{login}</p>
       <p>{followers}</p>
-      <ProfileUser info={info} result={result} />
+      {/* <AddFriendButton friendId={friendId}/> */}
+      <ProfileUser info={info} result={result} friendId={id}
+      />
       <br></br>
       {/* <GithubTable repos={repos} /> */}
     </div>

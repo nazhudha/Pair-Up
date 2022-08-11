@@ -1,16 +1,24 @@
 import React from 'react'
 
-import { addFriend } from '../App/Functions/addFriend'
 
-// this takes a friend OBJECT and myId as a STRING!!!
+export default function AddFriendButton({friendId}) {
 
-
-export default function AddFriendButton({friend, myId}) {
+  const addFriend = () => {
+    let config = null;
+    if (localStorage.getItem('token') !== null) {
+      config = {
+        method: "PATCH",
+        headers: {
+          'x-auth-token': localStorage.getItem('token'),
+        },
+      };
+    }
+    fetch('http://localhost:8080/profile/addfriend/' + friendId, config)
+    }
 
   const handleClick = () => {
-    console.log({friend})
-    console.log({myId})
-    addFriend(friend, myId)
+    console.log({friendId})
+    addFriend()
   }
 
   return (
