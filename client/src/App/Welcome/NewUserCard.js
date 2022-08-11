@@ -23,7 +23,7 @@ export default function NewUserCard({ user }) {
       </CardContent>
       <CardActions>
         <Grid container justifyContent="space-between">
-        <Link to="/profile/62f007e5dd344fce0c132aa1">
+        <Link to={{pathname: `/profile/${user._id}`}}>
           <Button variant="contained" size="small" style={{ fontSize: "10px" }}>
             Profile
           </Button>
