@@ -30,8 +30,11 @@ export default function Welcome() {
   return (
     <div>
       <h1>Welcome to Pair Up!</h1>
+      <div className="sub-title">
+      <h2>Your Friends</h2>
+      </div>
       <div className="cardsContainer">
-        <h2 className="sub-title">Your Friends List</h2>
+        
         <UserCardsContainer usersData={friendsData} />
       </div>
 
@@ -40,8 +43,10 @@ export default function Welcome() {
         <Location />
       </div>
 
+      <div className="sub-title">
+      <h2>All Users</h2>
+      </div>
       <div className="cardsContainer">
-        <h2 className="sub-title">All Users</h2>
         <UserCardsContainer usersData={usersData} />
       </div>
     </div>
