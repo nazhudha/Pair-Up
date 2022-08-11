@@ -21,7 +21,7 @@ export default function SignupCredentials({
     padding: 20,
     height: "40vh",
     width: 400,
-    margin: "350px auto",
+    margin: "150px auto",
   };
   const button = {
     height: "40vh",

@@ -15,7 +15,7 @@ export default function SignupName({ addName, user }) {
     padding: 20,
     height: "20vh",
     width: 400,
-    margin: "350px auto",
+    margin: "250px auto",
   };
 
   function handleChange() {

@@ -16,7 +16,7 @@ export default function SignupLanguage({ addLang, user }) {
     padding: 20,
     height: "20vh",
     width: 400,
-    margin: "350px auto",
+    margin: "250px auto",
   };
 
   function sendSkillsArray() {
@@ -37,13 +37,13 @@ export default function SignupLanguage({ addLang, user }) {
   return (
     <Grid>
       <div className="header">
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, scale: 1.8 }}
           transition={{ delay: 0.1, duration: 2.5 }}
         >
           What languages do you know?
-        </motion.h1>
+        </motion.h2>
       </div>
       <Paper elevation={10} style={paperStyle}>
         <Grid align="center" spacing={5}></Grid>
