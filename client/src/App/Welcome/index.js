@@ -3,10 +3,11 @@ import UserCards from "./userCards";
 import UserCardsContainer from "./AllUserCardsContainer";
 
 // Functions
-import { getAllUsers } from "../Functions/getAllUsers";
+import { getAllUsers, getAllUsersById } from "../Functions/getAllUsers";
 
 export default function Welcome() {
   const [usersData, setUsersData] = useState([]);
+  const [friendsData, setFriendsData] = useState([]);
 
   const pullUsers = () => {
     getAllUsers() // api function
@@ -14,13 +15,25 @@ export default function Welcome() {
       .catch((err) => console.log(err));
   };
 
+  const pullFriends = () => {
+    getAllUsersById() // api function
+      .then((res) => setFriendsData(res))
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
-    pullUsers();
+    pullUsers()
+    pullFriends();
   }, []); // this is the dependancy array. [] means it will run once when the page opens
 
+  
   return (
     <div>
       <h1>Welcome to Pair Up!</h1>
+      <div className="cardsContainer">
+        <UserCardsContainer usersData={friendsData} />
+      </div>
+
       <div className="cardsContainer">
         <UserCardsContainer usersData={usersData} />
       </div>
