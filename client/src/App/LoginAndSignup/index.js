@@ -26,7 +26,7 @@ export default function LoginAndSignup() {
         backgroundImage: `url(${background})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "right",
-        // opacity: 0.4,
+        backgroundSize: "20%",
       }}
     >
       <div>
