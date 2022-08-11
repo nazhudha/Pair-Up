@@ -1,22 +1,21 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import FormGroup from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import { motion } from "framer-motion";
-
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import FormGroup from '@mui/material/FormControl';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { motion } from 'framer-motion';
 
 export default function SignupName({ addName, user }) {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const paperStyle = {
     padding: 20,
-    height: "20vh",
+    height: '20vh',
     width: 400,
-    margin: "250px auto",
+    margin: '250px auto',
   };
 
   function handleChange() {
@@ -25,46 +24,6 @@ export default function SignupName({ addName, user }) {
   }
 
   return (
-
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
-      <FormGroup>
-        <TextField
-          type="text"
-          inputRef={firstNameRef}
-          id="filled-basic"
-          label="First Name"
-          variant="filled"
-          onChange={handleChange}
-        />
-        <TextField
-          type="text"
-          inputRef={lastNameRef}
-          id="filled-basic"
-          label="Last Name"
-          variant="filled"
-          onChange={handleChange}
-        />
-      </FormGroup>
-      <Link
-        to="/signupskill"
-        onClick={() => {
-          addName(firstNameRef.current.value, lastNameRef.current.value);
-        }}
-      >
-        <Button
-          variant="contained"
-          sx={{
-            color: 'black',
-            backgroundColor: '#b7bfe4',
-            border: '2px black solid',
-
     <Grid>
       <div className="header">
         <motion.h2
@@ -80,11 +39,10 @@ export default function SignupName({ addName, user }) {
         <Grid align="center" spacing={5}></Grid>
         <div
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "15vh",
-
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '15vh',
           }}
         >
           <FormGroup>
@@ -95,13 +53,13 @@ export default function SignupName({ addName, user }) {
               label="First Name"
               variant="filled"
               sx={{
-                color: "black",
-                backgroundColor: "white",
-                border: "2px black solid",
-                maxWidth: "300px",
-                maxHeight: "60px",
-                minWidth: "360px",
-                minHeight: "60px",
+                color: 'black',
+                backgroundColor: 'white',
+                border: '2px black solid',
+                maxWidth: '300px',
+                maxHeight: '60px',
+                minWidth: '360px',
+                minHeight: '60px',
               }}
               onChange={handleChange}
             />
@@ -113,13 +71,13 @@ export default function SignupName({ addName, user }) {
               label="Last Name"
               variant="filled"
               sx={{
-                color: "black",
-                backgroundColor: "white",
-                border: "2px black solid",
-                maxWidth: "300px",
-                maxHeight: "60px",
-                minWidth: "360px",
-                minHeight: "60px",
+                color: 'black',
+                backgroundColor: 'white',
+                border: '2px black solid',
+                maxWidth: '300px',
+                maxHeight: '60px',
+                minWidth: '360px',
+                minHeight: '60px',
               }}
               onChange={handleChange}
             />
@@ -134,9 +92,9 @@ export default function SignupName({ addName, user }) {
             <Button
               variant="contained"
               sx={{
-                color: "black",
-                backgroundColor: "#b7bfe4",
-                border: "2px black solid",
+                color: 'black',
+                backgroundColor: '#b7bfe4',
+                border: '2px black solid',
                 bottom: -100,
                 left: -150,
               }}
