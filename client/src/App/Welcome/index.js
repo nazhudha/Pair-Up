@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
-import UserCards from "./userCards";
-import UserCardsContainer from "./AllUserCardsContainer";
-import Location from "../../Components/Location";
+import React, { useState, useEffect } from 'react';
+import UserCards from './userCards';
+import UserCardsContainer from './AllUserCardsContainer';
+import Location from '../../Components/Location';
+import ResponsiveAppBarLoggedOut from '../../Components/ResponsiveAppBar';
+import ResponsiveAppBarLoggedIn from '../../Components/ResponsiveAppBarLoggedIn';
 
 // Functions
-import { getAllUsers, getAllUsersById } from "../Functions/getAllUsers";
+import { getAllUsers, getAllUsersById } from '../Functions/getAllUsers';
 
 export default function Welcome() {
   const [usersData, setUsersData] = useState([]);
@@ -23,18 +25,25 @@ export default function Welcome() {
   };
 
   useEffect(() => {
-    pullUsers()
+    pullUsers();
     pullFriends();
   }, []); // this is the dependancy array. [] means it will run once when the page opens
 
-  
   return (
     <div>
+      {localStorage.getItem('token') !== null ? (
+        <ResponsiveAppBarLoggedIn />
+      ) : (
+        <ResponsiveAppBarLoggedOut />
+      )}
       <h1>Welcome to Pair Up!</h1>
       <div className="cardsContainer">
         <UserCardsContainer usersData={friendsData} />
       </div>
-      <div><br /><Location /></div>
+      <div>
+        <br />
+        <Location />
+      </div>
 
       <div className="cardsContainer">
         <UserCardsContainer usersData={usersData} />

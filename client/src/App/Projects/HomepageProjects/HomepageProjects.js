@@ -1,9 +1,12 @@
-import React, {useState, useEffect} from 'react'
-import ProjectPostCardContainer from '../ProjectPostCards/ProjectPostCardContainer'
-
+import React, { useState, useEffect } from 'react';
+import ProjectPostCardContainer from '../ProjectPostCards/ProjectPostCardContainer';
+import ResponsiveAppBarLoggedOut from '../../../Components/ResponsiveAppBarLoggedOut';
+import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBarLoggedIn';
 // Functions
-import { getAllProjects, getAllProjectsById } from '../../Functions/getProjects';
-
+import {
+  getAllProjects,
+  getAllProjectsById,
+} from '../../Functions/getProjects';
 
 export default function HomepageProjects() {
   const [projects, setProjects] = useState(null);
@@ -26,16 +29,20 @@ export default function HomepageProjects() {
     pullProjects();
   }, []); // this is the dependancy array. [] means it will run once when the page opens
 
-
-  if (projects != null ) {
-  console.log(projects)
-  return (
-    <>
-
-    <h2>My Projects</h2> 
-      <ProjectPostCardContainer projects={myProjects}/>
-    <h2>All Projects</h2> 
-      <ProjectPostCardContainer projects={projects}/>
-    </>
-  )}
+  if (projects != null) {
+    console.log(projects);
+    return (
+      <>
+        {localStorage.getItem('token') !== null ? (
+          <ResponsiveAppBarLoggedIn />
+        ) : (
+          <ResponsiveAppBarLoggedOut />
+        )}
+        <h2>My Projects</h2>
+        <ProjectPostCardContainer projects={myProjects} />
+        <h2>All Projects</h2>
+        <ProjectPostCardContainer projects={projects} />
+      </>
+    );
+  }
 }

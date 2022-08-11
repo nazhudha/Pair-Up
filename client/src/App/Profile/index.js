@@ -5,6 +5,8 @@ import LeftProfileFeed from './LeftProfileFeed/LeftProfileFeed';
 import RightSideBar from './RightSideBar/RightSideBar';
 import ProfileUser from '../../Components/ProfileUser';
 import Loading from '../../Components/Loading';
+import ResponsiveAppBarLoggedOut from '../../Components/ResponsiveAppBar';
+import ResponsiveAppBarLoggedIn from '../../Components/ResponsiveAppBarLoggedIn';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,11 +41,14 @@ const Profile = () => {
       </div>
     );
 
-
   // setTimeout(getRecords, 1000);
   return (
     <div>
-
+      {localStorage.getItem('token') !== null ? (
+        <ResponsiveAppBarLoggedIn />
+      ) : (
+        <ResponsiveAppBarLoggedOut />
+      )}
       {/* <ProfileHeader />
       <div>
         <p>{result.user.fname}</p>
