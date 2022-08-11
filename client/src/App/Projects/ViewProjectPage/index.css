@@ -1,0 +1,33 @@
+.color {
+  background: linear-gradient(-45deg, #716764, #8fae9b, #e7b4b42a, #d4c7e5d4);
+  background-size: 400% 400%;
+}
+.color2 {
+  background: linear-gradient(-45deg, #716764, hsl(141, 49%, 73%), #ebb1b12a, #d79ded);
+  background-size: 400% 400%;
+}
+
+.color3 {
+  background: linear-gradient(-45deg, #3878e8, #b73ce7, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.boxcontainer {
+ 
+  display:flex;
+  justify-content: right;
+  margin-right: 50px;
+}
