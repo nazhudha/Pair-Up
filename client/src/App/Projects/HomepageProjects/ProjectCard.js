@@ -14,16 +14,16 @@ export default function ProjectCard({ project }) {
     <Card sx={{ minWidth: 275, marginBottom: 3, width: 50 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {project.category}
+          Category: {project.category}
         </Typography>
         <Typography variant="h5" component="div">
-          {project.name}
+          Name: {project.name}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {project.difficulty}
+          Difficulty: {project.difficulty}
         </Typography>
         <Typography variant="body2">
-          {project.summary}
+          Summary: {project.summary}
           <br />
         </Typography>
       </CardContent>
