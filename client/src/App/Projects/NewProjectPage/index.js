@@ -1,8 +1,10 @@
-import React, { useRef, useState } from "react";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import "./index.css";
-import Button from "@mui/material/Button";
+import React, { useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import './index.css';
+import Button from '@mui/material/Button';
+import ResponsiveAppBarLoggedOut from '../../../Components/ResponsiveAppBarLoggedOut';
+import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBarLoggedIn';
 
 const submit = {
   minWidth: 100,
@@ -18,24 +20,24 @@ export default function NewProjectPage() {
   const addProjectToDb = async (createdProject) => {
     console.log(JSON.stringify(createdProject));
     let config = null;
-    if (localStorage.getItem("token") !== null) {
+    if (localStorage.getItem('token') !== null) {
       config = {
         headers: {
-          "x-auth-token": localStorage.getItem("token"),
-          "Content-Type": "application/json",
+          'x-auth-token': localStorage.getItem('token'),
+          'Content-Type': 'application/json',
         },
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify(createdProject),
       };
     }
 
     try {
       const res = await fetch(
-        "http://localhost:8080/projects/createproject",
+        'http://localhost:8080/projects/createproject',
         config
       ).then((res) => {
         console.log(res);
-        window.location = "http://localhost:3000/project/home";
+        window.location = 'http://localhost:3000/project/home';
       });
 
       // const json = await res.json(); // not sure why this line is needed?
@@ -54,6 +56,11 @@ export default function NewProjectPage() {
 
   return (
     <>
+      {localStorage.getItem('token') !== null ? (
+        <ResponsiveAppBarLoggedIn />
+      ) : (
+        <ResponsiveAppBarLoggedOut />
+      )}
       <div>
         <form class="content" onSubmit={handleSubmit(submitForm)}>
           <label>
@@ -61,7 +68,7 @@ export default function NewProjectPage() {
             <input
               type="text"
               name="name"
-              {...register("name", { required: true })}
+              {...register('name', { required: true })}
             />
           </label>
           <label>
@@ -69,14 +76,14 @@ export default function NewProjectPage() {
             <input
               type="text"
               name="category"
-              {...register("category", { required: true })}
+              {...register('category', { required: true })}
             />
           </label>
           <h3>Describe briefly what you are trying to build</h3>
           <div className="i">
             <textarea
               name="summary"
-              {...register("summary", { required: true })}
+              {...register('summary', { required: true })}
             ></textarea>
           </div>
           <h3>How long do you think this project will take?</h3>
@@ -85,49 +92,49 @@ export default function NewProjectPage() {
               type="radio"
               name="expectedProjectLength"
               value="<1 day"
-              {...register("expectedProjectLength", { required: true })}
+              {...register('expectedProjectLength', { required: true })}
             />
             &lt;1 day
             <input
               type="radio"
               name="expectedProjectLength"
               value=">1 day"
-              {...register("expectedProjectLength", { required: true })}
+              {...register('expectedProjectLength', { required: true })}
             />
             &gt;1 day
             <input
               type="radio"
               name="expectedProjectLength"
               value="2-3 days"
-              {...register("expectedProjectLength", { required: true })}
+              {...register('expectedProjectLength', { required: true })}
             />
             2-3 days
             <input
               type="radio"
               name="expectedProjectLength"
               value="<1 week"
-              {...register("expectedProjectLength", { required: true })}
+              {...register('expectedProjectLength', { required: true })}
             />
             &lt;1 week
             <input
               type="radio"
               name="expectedProjectLength"
               value=">1 week"
-              {...register("expectedProjectLength", { required: true })}
+              {...register('expectedProjectLength', { required: true })}
             />
             &gt;1 week
             <input
               type="radio"
               name="expectedProjectLength"
               value="2-3 weeks"
-              {...register("expectedProjectLength", { required: true })}
+              {...register('expectedProjectLength', { required: true })}
             />
             2-3 weeks
             <input
               type="radio"
               name="expectedProjectLength"
               value="Longer"
-              {...register("expectedProjectLength", { required: true })}
+              {...register('expectedProjectLength', { required: true })}
             />
             Longer
           </div>
@@ -137,21 +144,21 @@ export default function NewProjectPage() {
               type="radio"
               name="commitmentLevel"
               value="eh, whenever is good for them!"
-              {...register("commitmentLevel", { required: true })}
+              {...register('commitmentLevel', { required: true })}
             />
             eh, whenever is good for them!
             <input
               type="radio"
               name="commitmentLevel"
               value="maybe 1 session a week?"
-              {...register("commitmentLevel", { required: true })}
+              {...register('commitmentLevel', { required: true })}
             />
             maybe 1 session a week?
             <input
               type="radio"
               name="commitmentLevel"
               value="couple times a week preferably"
-              {...register("commitmentLevel", { required: true })}
+              {...register('commitmentLevel', { required: true })}
             />
             couple times a week preferably
           </div>
@@ -161,7 +168,7 @@ export default function NewProjectPage() {
               type="radio"
               name="difficulty"
               value="Very Easy"
-              {...register("difficulty", { required: true })}
+              {...register('difficulty', { required: true })}
             />
             Quite easy. A good beginner project for new coders just starting
             out.
@@ -169,14 +176,14 @@ export default function NewProjectPage() {
               type="radio"
               name="difficulty"
               value="Easy"
-              {...register("difficulty", { required: true })}
+              {...register('difficulty', { required: true })}
             />
             Not too tricky. But might be a challenge for absolute beginner.
             <input
               type="radio"
               name="difficulty"
               value="Intermediate"
-              {...register("difficulty", { required: true })}
+              {...register('difficulty', { required: true })}
             />
             It will likely need people with a good understanding of their
             perfered language, who have built apps and websites previously.
@@ -184,21 +191,21 @@ export default function NewProjectPage() {
               type="radio"
               name="difficulty"
               value="Hard"
-              {...register("difficulty", { required: true })}
+              {...register('difficulty', { required: true })}
             />
             It will likely need people who have worked as coders before.
             <input
               type="radio"
               name="difficulty"
               value="Very Hard"
-              {...register("difficulty", { required: true })}
+              {...register('difficulty', { required: true })}
             />
             It need very experienced professional coders.
             <input
               type="radio"
               name="difficulty"
               value="Master"
-              {...register("difficulty", { required: true })}
+              {...register('difficulty', { required: true })}
             />
             It will require people looking to tackle the most severe problem
             solving.
@@ -211,7 +218,7 @@ export default function NewProjectPage() {
                 name="preferedSessionLength"
                 min="1"
                 max="8"
-                {...register("preferedSessionLength", { required: true })}
+                {...register('preferedSessionLength', { required: true })}
               />
               (1 - 8 hours)
             </label>
@@ -222,7 +229,7 @@ export default function NewProjectPage() {
           <div className="h">
             <textarea
               name="description"
-              {...register("description", { required: true })}
+              {...register('description', { required: true })}
             ></textarea>
             <br></br>
             <label>
@@ -231,7 +238,7 @@ export default function NewProjectPage() {
                 type="checkbox"
                 name="displayLocation"
                 value={true}
-                {...register("displayLocation")}
+                {...register('displayLocation')}
               />
             </label>
           </div>
@@ -246,7 +253,7 @@ export default function NewProjectPage() {
                 name="numberOfAdditionalUsersNeeded"
                 min="1"
                 max="5"
-                {...register("numberOfAdditionalUsersNeeded", {
+                {...register('numberOfAdditionalUsersNeeded', {
                   required: true,
                 })}
               />
@@ -262,7 +269,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="bootstrap"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -272,7 +279,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="ruby"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -282,7 +289,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="javascript"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -292,7 +299,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="python"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -302,7 +309,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="java"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -312,7 +319,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="cplusplus"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -322,7 +329,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="typescript"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -332,7 +339,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="csharp"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -342,7 +349,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="docker"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           <div>
@@ -352,7 +359,7 @@ export default function NewProjectPage() {
               type="checkbox"
               name="langWeNeed"
               value="django"
-              {...register("langWeNeed")}
+              {...register('langWeNeed')}
             />
           </div>
           {/* add more icons from https://devicon.dev/ */}
@@ -361,23 +368,23 @@ export default function NewProjectPage() {
           <textarea
             name="description"
             placeholder="other details"
-            {...register("additionalSkillsNeeded")}
+            {...register('additionalSkillsNeeded')}
           />
           <div className="c">
             <Button
               style={submit}
               variant="contained"
               sx={{
-                color: "black",
-                backgroundColor: "#b7bfe4",
-                border: "2px black solid",
+                color: 'black',
+                backgroundColor: '#b7bfe4',
+                border: '2px black solid',
               }}
               className="btn btn-primary btn-bloack"
               type="submit"
               value="submit"
             >
-              {" "}
-              Submit{" "}
+              {' '}
+              Submit{' '}
             </Button>
           </div>
         </form>

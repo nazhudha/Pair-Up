@@ -1,33 +1,32 @@
-import "./index.css";
-import { Component, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import "leaflet/dist/leaflet.css";
+import './index.css';
+import { Component, useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import 'leaflet/dist/leaflet.css';
 
 // Components
-import LoginAndSignup from "./LoginAndSignup/index";
-import Login from "./LoginAndSignup/Login/index";
-import Profile from "./Profile/index";
-import ProfileUser from "./ProfileUser/index";
-import SignupName from "./LoginAndSignup/Signup/SignupName/index";
-import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
-import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
-import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
+import LoginAndSignup from './LoginAndSignup/index';
+import Login from './LoginAndSignup/Login/index';
+import Profile from './Profile/index';
+import ProfileUser from './ProfileUser/index';
+import SignupName from './LoginAndSignup/Signup/SignupName/index';
+import SignupSkill from './LoginAndSignup/Signup/SignupSkill/index';
+import SignupLanguage from './LoginAndSignup/Signup/SignupLanguage/index';
+import SignupCredentials from './LoginAndSignup/Signup/SignupCredentials/index';
 
-import AddFriendButton from "../Components/AddFriendButton";
-import Welcome from "./Welcome/index";
-import NewProjectPage from "./Projects/NewProjectPage";
-import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
-import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
-import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
-import Find from "./Find/index";
-import PairNow from "./PairNow/PairNow";
+import AddFriendButton from '../Components/AddFriendButton';
+import Welcome from './Welcome/index';
+import NewProjectPage from './Projects/NewProjectPage';
+import HomepageProjects from './Projects/HomepageProjects/HomepageProjects';
+import ViewProjectPage from './Projects/ViewProjectPage/ViewProjectPage';
+import JoiningProjectPage from './Projects/JoiningProjectPage/JoiningProjectPage';
+import Find from './Find/index';
+import PairNow from './PairNow/PairNow';
 
-import NewUserCard from "./Welcome/NewUserCard";
-
+import NewUserCard from './Welcome/NewUserCard';
 
 // Functions
-import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
-import ResponsiveAppBar from "../Components/ResponsiveAppBar";
+import { createUser } from './LoginAndSignup/Signup/functions/createUser';
+import ResponsiveAppBar from '../Components/ResponsiveAppBar';
 import ResponsiveAppBarLoggedIn from '../Components/ResponsiveAppBarLoggedIn';
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
   });
 
   const [userSignIn, setuserSignIn] = useState({
-
     email: '',
     password: '',
   });
@@ -100,7 +98,12 @@ function App() {
   //   }
   return (
     <BrowserRouter>
-      <ResponsiveAppBarLoggedIn />
+      {/* {localStorage.getItem('token') !== null ? (
+        <ResponsiveAppBarLoggedIn />
+      ) : (
+        <ResponsiveAppBar />
+      )} */}
+      {/* <ResponsiveAppBarLoggedIn /> */}
       {/* <ResponsiveAppBar /> */}
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />

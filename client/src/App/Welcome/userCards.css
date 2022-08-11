@@ -6,6 +6,21 @@ h1 {
   font-size: 60px;
 }
 
+.sub-title{
+  margin-top: 100px;
+  margin-bottom: -100px;
+  /* margin: 0px; */
+  padding: 0px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.sub-title h2 {
+  font-size: 2.6rem;
+  color: whitesmoke; 
+}
+
 .cardsContainer {
   margin-top: 90px;
   margin-bottom: 20px;

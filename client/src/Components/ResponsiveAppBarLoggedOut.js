@@ -13,8 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Profile', 'My Projects', 'New Projects'];
-const pageLink = ['/profile', '/project/home', '/project/newproject'];
+const pages = ['Profile', 'My Projects', 'New Projects', 'Find User'];
+const pageLink = ['/profile', '/project/home', '/project/newproject', '/find'];
 const pagesRight = ['Sign Up', 'Login'];
 const PageLinkRight = ['/Signupname', '/login'];
 const pagesRightLoggedIn = ['Logout'];
@@ -128,7 +128,7 @@ const ResponsiveAppBarLoggedIn = () => {
               </Button>
             ))}
           </Box>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pagesRight.map((page, index) => (
               <Button
                 key={page}
@@ -139,7 +139,7 @@ const ResponsiveAppBarLoggedIn = () => {
                 {page}
               </Button>
             ))}
-          </Box> */}
+          </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pagesRightLoggedIn.map((page, index) => (

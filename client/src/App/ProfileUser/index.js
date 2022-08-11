@@ -3,7 +3,11 @@ import { useParams } from 'react-router-dom';
 import GithubTable from '../../Components/GithubTable';
 import ProfileUser from '../../Components/ProfileUser';
 import Loading from '../../Components/Loading';
+
 import AddFriendButton from '../../Components/AddFriendButton';
+
+import ResponsiveAppBarLoggedOut from '../../Components/ResponsiveAppBar';
+import ResponsiveAppBarLoggedIn from '../../Components/ResponsiveAppBarLoggedIn';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -64,6 +68,11 @@ const Profile = () => {
 
   return (
     <div>
+      {localStorage.getItem('token') !== null ? (
+        <ResponsiveAppBarLoggedIn />
+      ) : (
+        <ResponsiveAppBarLoggedOut />
+      )}
       {/* <p>{result.user.fname}</p>
       <p>{result.user.lname}</p>
       <p>{result.user.email}</p> */}
