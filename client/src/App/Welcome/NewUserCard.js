@@ -23,13 +23,22 @@ export default function NewUserCard({ user }) {
       </CardContent>
       <CardActions>
         <Grid container justifyContent="space-between">
-        <Link to={{pathname: `/profile/${user._id}`}}>
-          <Button variant="contained" size="small" style={{ fontSize: "10px" }}>
-            Profile
-          </Button>
-        </Link>
+          <Link to={{ pathname: `/profile/${user._id}` }}>
+            <Button
+              variant="contained"
+              size="small"
+              style={{ fontSize: "10px" }}
+            >
+              Profile
+            </Button>
+          </Link>
           <Link to="/pairnow">
-            <Button variant="contained" size="small" style={{ fontSize: "10px" }}>
+            <Button
+              variant="contained"
+              size="small"
+              style={{ justifyContent: "center" }}
+              style={{ fontSize: "10px" }}
+            >
               Pair now
             </Button>
           </Link>
@@ -38,5 +47,3 @@ export default function NewUserCard({ user }) {
     </Card>
   );
 }
-
-
