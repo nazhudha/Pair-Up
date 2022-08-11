@@ -36,16 +36,13 @@ const UserController = {
     console.log(signedInUserId);
       
     User.find({
-      $expr: {
-        $in: [signedInUserId, "$friends"]
-      }
-    })
-      .exec((err, myfriends) => {
-                if (err) {
-            throw err;  
-          }
-      return res.json(myfriends);
-    });
+      'friends': { $in: [signedInUserId]}
+  },).exec((err, myfriends) => {
+            if (err) {
+        throw err;  
+        }
+        return res.json(myfriends);
+        });
 
   }
   
