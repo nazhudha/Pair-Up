@@ -1,6 +1,13 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import ResponsiveAppBarLoggedOut from "../../../../Components/ResponsiveAppBar_Loggedout";
+=======
+import Checkbox from "@mui/material/Checkbox";
+import FormGroup from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Button from "@mui/material/Button";
+>>>>>>> dc50664f583302e22daaa84b0ca046b7c14b57d5
 
 export default function SignupLanguage({ addLang, user }) {
   const rubyRef = useRef(null);
@@ -23,6 +30,7 @@ export default function SignupLanguage({ addLang, user }) {
   }
 
   return (
+<<<<<<< HEAD
     <>
     <ResponsiveAppBarLoggedOut/>
       <div className="languagetype">
@@ -42,5 +50,53 @@ export default function SignupLanguage({ addLang, user }) {
         <button className="next-btn">NEXT</button>
       </Link>
     </>
+=======
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <FormGroup>
+        <FormControlLabel
+          inputRef={rubyRef}
+          control={<Checkbox />}
+          value="Ruby"
+          label="Ruby"
+          onChange={sendSkillsArray}
+        />
+        <FormControlLabel
+          inputRef={javascriptRef}
+          control={<Checkbox />}
+          value="Javascript"
+          label="Javascript"
+          onChange={sendSkillsArray}
+        />
+        <FormControlLabel
+          inputRef={pythonRef}
+          control={<Checkbox />}
+          value="Python"
+          label="Python"
+          onChange={sendSkillsArray}
+        />
+        <Link to="/signupcredentials">
+          <Button
+            onClick={sendSkillsArray}
+            variant="contained"
+            sx={{
+              color: "black",
+              backgroundColor: "#b7bfe4",
+              border: "2px black solid",
+            }}
+            className="btn btn-primary btn-bloack"
+          >
+            Next
+          </Button>
+        </Link>
+      </FormGroup>
+    </div>
+>>>>>>> dc50664f583302e22daaa84b0ca046b7c14b57d5
   );
 }

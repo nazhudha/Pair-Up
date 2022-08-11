@@ -5,11 +5,10 @@ import ProjectPostCardContainer from '../ProjectPostCards/ProjectPostCardContain
 import { getAllProjects, getAllProjectsById } from '../../Functions/getProjects';
 import ResponsiveAppBarLoggedIn from '../../../Components/ResponsiveAppBar_LoggedIn';
 
-const signedInUserId = "62eff044c98668c5a2f8d923" // change to take ID from sessions
 
 export default function HomepageProjects() {
-  const [projects, setProjects] = useState([]);
-  const [MyProjects, setMyProjects] = useState([]);
+  const [projects, setProjects] = useState(null);
+  const [myProjects, setMyProjects] = useState(null);
 
   const pullProjects = () => {
     getAllProjects() // api function
@@ -18,7 +17,7 @@ export default function HomepageProjects() {
   };
 
   const pullMyProjects = () => {
-    getAllProjectsById(signedInUserId) // api function
+    getAllProjectsById() // api functiQon
       .then((res) => setMyProjects(res))
       .catch((err) => console.log(err));
   };
@@ -28,13 +27,16 @@ export default function HomepageProjects() {
     pullProjects();
   }, []); // this is the dependancy array. [] means it will run once when the page opens
 
+
+  if (projects != null ) {
+  console.log(projects)
   return (
     <>
     <ResponsiveAppBarLoggedIn/>
     <h2>My Projects</h2> 
-      <ProjectPostCardContainer projects={MyProjects}/>
+      <ProjectPostCardContainer projects={myProjects}/>
     <h2>All Projects</h2> 
       <ProjectPostCardContainer projects={projects}/>
     </>
-  )
+  )}
 }

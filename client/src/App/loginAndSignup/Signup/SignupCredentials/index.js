@@ -1,32 +1,25 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import ResponsiveAppBarLoggedOut from "../../../../Components/ResponsiveAppBar_Loggedout";
+=======
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import FormGroup from "@mui/material/FormControl";
+>>>>>>> dc50664f583302e22daaa84b0ca046b7c14b57d5
 
 export default function SignupCredentials({
   createUser,
   addCredentials,
   user,
 }) {
-  const usernameRef = useRef();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const password2Ref = useRef();
-  const postcodeRef = useRef();
-
-  const submitButtonRef = useRef();
+  const usernameRef = useRef(null);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const password2Ref = useRef(null);
+  const postcodeRef = useRef(null);
 
   function handleChange() {
-    if (
-      emailRef.current.value.length == 0 ||
-      passwordRef.current.value.length == 0 ||
-      password2Ref.current.value.length == 0 ||
-      postcodeRef.current.value.length == 0 ||
-      usernameRef.current.value.length == 0
-    ) {
-      submitButtonRef.current.disabled = true;
-    } else {
-      submitButtonRef.current.disabled = false;
-    }
     addCredentials(
       usernameRef.current.value,
       emailRef.current.value,
@@ -37,6 +30,7 @@ export default function SignupCredentials({
   }
 
   return (
+<<<<<<< HEAD
     <>
     <ResponsiveAppBarLoggedOut/>
       <div className="form-container">
@@ -105,5 +99,82 @@ export default function SignupCredentials({
         </div>
       </div>
     </>
+=======
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <FormGroup>
+        <TextField
+          type="text"
+          inputRef={usernameRef}
+          id="Username_"
+          label="Username"
+          variant="filled"
+          onChange={handleChange}
+        />
+        <TextField
+          type="text"
+          inputRef={emailRef}
+          id="Email_"
+          label="Email"
+          variant="filled"
+          onChange={handleChange}
+        />
+        <TextField
+          type="text"
+          inputRef={passwordRef}
+          id="Password_"
+          label="Password"
+          variant="filled"
+          onChange={handleChange}
+        />
+        <TextField
+          type="text"
+          inputRef={password2Ref}
+          id="Password2_"
+          label="Password Checker"
+          variant="filled"
+          onChange={handleChange}
+        />
+
+        <TextField
+          type="text"
+          inputRef={postcodeRef}
+          //style={firstName}
+          id="Postcode_"
+          label="Postcode"
+          variant="filled"
+          onChange={handleChange}
+        />
+      </FormGroup>
+      <Link to="/login">
+        <Button
+          onClick={() => {
+            addCredentials(
+              usernameRef.current.value,
+              emailRef.current.value,
+              passwordRef.current.value,
+              postcodeRef.current.value
+            );
+            createUser(user);
+          }}
+          variant="contained"
+          sx={{
+            color: "black",
+            backgroundColor: "#b7bfe4",
+            border: "2px black solid",
+          }}
+          className="btn btn-primary btn-bloack"
+        >
+          Create User
+        </Button>
+      </Link>
+    </div>
+>>>>>>> dc50664f583302e22daaa84b0ca046b7c14b57d5
   );
 }

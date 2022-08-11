@@ -1,23 +1,28 @@
-
 import './index.css';
 import { Component, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 
+
 // Components
 import LoginAndSignup from "./LoginAndSignup/index";
 import Login from "./LoginAndSignup/Login/index";
 import Profile from "./Profile/index";
+import ProfileUser from "./ProfileUser/index";
 import SignupName from "./LoginAndSignup/Signup/SignupName/index";
 import SignupSkill from "./LoginAndSignup/Signup/SignupSkill/index";
 import SignupLanguage from "./LoginAndSignup/Signup/SignupLanguage/index";
 import SignupCredentials from "./LoginAndSignup/Signup/SignupCredentials/index";
-import Welcome from "./LoginAndSignup/Signup/Welcome/index";
+
+import AddFriendButton from "../Components/AddFriendButton";
+import Welcome from "./Welcome/index"
 import NewProjectPage from "./Projects/NewProjectPage";
 import HomepageProjects from "./Projects/HomepageProjects/HomepageProjects";
 import ViewProjectPage from "./Projects/ViewProjectPage/ViewProjectPage";
 import JoiningProjectPage from "./Projects/JoiningProjectPage/JoiningProjectPage";
 import Find from './Find/index';
+import PairNow from './PairNow/PairNow';
+import NewUserCard from "./Welcome/NewUserCard";
 
 
 // Functions
@@ -28,24 +33,25 @@ import ResponsiveAppBarLoggedIn from '../Components/ResponsiveAppBar_LoggedIn';
 function App() {
   //state = {};
 
-  // user signup
+
   const [user, setUser] = useState({
-    fname: '',
-    lname: '',
-    skill: '',
+    fname: "",
+    lname: "",
+    skill: "",
     languages: [],
-    username: '',
-    email: '',
-    password: '',
-    postcode: '',
+    username: "",
+    email: "",
+    password: "",
+    postcode: "",
   });
+
 
   const [userSignIn, setuserSignIn] = useState({
-
     email: '',
     password: '',
 
-  });
+  console.log(user);
+
 
   //user SU functions - move to componant
   const addName = (fname, lname) => {
@@ -74,6 +80,8 @@ function App() {
     });
   };
 
+
+  //pass user and neccisary functions to the individual paths
   // render() {
   //   if (localStorage.getItem('token') !== null) {
   //     return (
@@ -96,7 +104,8 @@ function App() {
   //   }
   return (
     <BrowserRouter>
-      {/* <ResponsiveAppBarLoggedIn/> */}
+
+      <ResponsiveAppBar />
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />
@@ -122,6 +131,10 @@ function App() {
           element={<SignupLanguage addLang={addLang} user={user} />}
         />
         <Route
+          path="/pairnow"
+          element={<PairNow />}
+        />
+        <Route
           path="/signupcredentials"
           element={
             <SignupCredentials
@@ -131,6 +144,9 @@ function App() {
             />
           }
         />
+
+        <Route path="/test" element={<NewUserCard />} />
+
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/find" element={<Find />} />
         <Route path="/profile" element={<Profile />} />
@@ -138,8 +154,12 @@ function App() {
         <Route path="/project/newproject" element={<NewProjectPage />} />
         <Route path="/project/view/:id" element={<ViewProjectPage/>} />
         <Route path="/project/joinrequestsent" element={<JoiningProjectPage/>} />
+<<<<<<< HEAD
         {/* <Route path="/profile/:id" element={<ProfileUser />} /> */}
 
+=======
+        <Route path="/profile/:id" element={<ProfileUser />} />
+>>>>>>> dc50664f583302e22daaa84b0ca046b7c14b57d5
       </Routes>
     </BrowserRouter>
   );
