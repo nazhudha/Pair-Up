@@ -5,8 +5,9 @@
   padding: 15px;
   width: 80%;
   align-items: center;
+  border: 2px;
   border-style: solid;
-  border-color: black;
+  border-color: rgb(99, 96, 96);
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
