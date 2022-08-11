@@ -39,27 +39,18 @@ const Login = () => {
 
   if (redirect) return <Navigate to="/profile" />;
 
-  // function handleChange() {
-  //   if (
-  //     emailRef.current.value.length === 0 ||
-  //     passwordRef.current.value.length === 0
-  //   ) {
-  //     submitButtonRef.current.disabled = true;
-  //   } else {
-  //     submitButtonRef.current.disabled = false;
-  //   }
-  //   createSignInObject(emailRef.current.value, passwordRef.current.value);
-  // }
   const paperStyle = {
     padding: 20,
     height: "70vh",
     width: 500,
     margin: "20px auto",
   };
+
   const avatarStyle = { backgroundColor: "#89CFF0" };
   const btnstyle = { margin: "8px 0" };
   const fontColour = { color: "black", align: "left" };
   //const passwordStyle = { minWidth: 150, minHeight: 100, bottom: 0 };
+
   return (
     <Grid>
       <Paper elevation={10} style={paperStyle}>
@@ -73,10 +64,13 @@ const Login = () => {
           Sign In
         </Typography>
         <form onSubmit={submit}>
+
+          <div className="form-group"></div>
+
           {/* <TextField label="Email" placeholder="Enter Email:" fullWidth />
           <TextField label="Password" placeholder="Enter Password:" fullWidth /> */}
+
           <TextField
-            // style={passwordStyle}
             minWidth={150}
             id="standard-basic"
             fullWidth
@@ -87,7 +81,6 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
-            // style={passwordStyle}
             label="Password"
             id="standard-basic"
             fullWidth

@@ -28,24 +28,26 @@ import NewUserCard from "./Welcome/NewUserCard";
 // Functions
 import { createUser } from "./LoginAndSignup/Signup/functions/createUser";
 import ResponsiveAppBar from "../Components/ResponsiveAppBar";
+import ResponsiveAppBarLoggedIn from '../Components/ResponsiveAppBarLoggedIn';
 
 function App() {
   //state = {};
 
   const [user, setUser] = useState({
-    fname: "",
-    lname: "",
-    skill: "",
+    fname: '',
+    lname: '',
+    skill: '',
     languages: [],
-    username: "",
-    email: "",
-    password: "",
-    postcode: "",
+    username: '',
+    email: '',
+    password: '',
+    postcode: '',
   });
 
   const [userSignIn, setuserSignIn] = useState({
-    email: "",
-    password: "",
+
+    email: '',
+    password: '',
   });
 
   //user SU functions - move to componant
@@ -98,7 +100,8 @@ function App() {
   //   }
   return (
     <BrowserRouter>
-      <ResponsiveAppBar />
+      <ResponsiveAppBarLoggedIn />
+      {/* <ResponsiveAppBar /> */}
       <Routes>
         <Route path="/projects/newproject" element={<NewProjectPage />} />
         <Route path="/" element={<LoginAndSignup />} />

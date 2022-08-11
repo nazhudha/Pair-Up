@@ -8,6 +8,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { motion } from "framer-motion";
 
+
 export default function SignupName({ addName, user }) {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -24,6 +25,46 @@ export default function SignupName({ addName, user }) {
   }
 
   return (
+
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
+      <FormGroup>
+        <TextField
+          type="text"
+          inputRef={firstNameRef}
+          id="filled-basic"
+          label="First Name"
+          variant="filled"
+          onChange={handleChange}
+        />
+        <TextField
+          type="text"
+          inputRef={lastNameRef}
+          id="filled-basic"
+          label="Last Name"
+          variant="filled"
+          onChange={handleChange}
+        />
+      </FormGroup>
+      <Link
+        to="/signupskill"
+        onClick={() => {
+          addName(firstNameRef.current.value, lastNameRef.current.value);
+        }}
+      >
+        <Button
+          variant="contained"
+          sx={{
+            color: 'black',
+            backgroundColor: '#b7bfe4',
+            border: '2px black solid',
+
     <Grid>
       <div className="header">
         <motion.h2
@@ -43,6 +84,7 @@ export default function SignupName({ addName, user }) {
             justifyContent: "center",
             alignItems: "center",
             height: "15vh",
+
           }}
         >
           <FormGroup>

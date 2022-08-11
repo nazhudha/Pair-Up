@@ -67,7 +67,6 @@ export default function BasicCard({ info, result }) {
               />
             </Grid>
             <Grid item xs={6}>
-              <br />
               <Typography variant="h4" component="div" gutterBottom>
                 {result.user.fname} {result.user.lname}
               </Typography>
@@ -76,7 +75,7 @@ export default function BasicCard({ info, result }) {
                   sx={{ mb: 5.5 }}
                   color="text.secondary"
                 ></Typography>
-                <br />
+
                 <p>
                   {' '}
                   <b>Bio: </b>
@@ -84,23 +83,15 @@ export default function BasicCard({ info, result }) {
                   strive to better myself as a developer, and the development
                   community as a whole.
                 </p>
-                <br />
+
                 <p>
                   <b>Email: </b>
                   {result.user.email}
                 </p>
-                <br />
+
                 <p>
-                  <b>Github Profile: </b>
-                </p>
-                <p>
-                  {' '}
-                  <b>Username: </b>
-                  {result.user.github}
-                </p>
-                <p>
-                  {' '}
-                  <b>Followers: </b>
+                  <b>Github Username: </b>
+                  {result.user.github} <b>Followers: </b>
                   {githubinfo.followers}
                 </p>
               </Typography>
