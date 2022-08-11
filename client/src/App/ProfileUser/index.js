@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import GithubTable from '../../Components/GithubTable';
 import ProfileUser from '../../Components/ProfileUser';
 import Loading from '../../Components/Loading';
+import AddFriendButton from '../../Components/AddFriendButton';
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -70,7 +71,9 @@ const Profile = () => {
       <p>{bio}</p>
       <p>{login}</p>
       <p>{followers}</p>
-      <ProfileUser info={info} result={result} />
+      <AddFriendButton myId="62f00849dd344fce0c132aa5"/>
+      <ProfileUser info={info} result={result} friend={id}
+      />
       <br></br>
       {/* <GithubTable repos={repos} /> */}
     </div>
