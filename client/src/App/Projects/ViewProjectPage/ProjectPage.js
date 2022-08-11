@@ -6,11 +6,14 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Index from "./index.css";
+import Box from "@mui/material/Box";
+import { makeStyles } from "@material-ui/core/styles";
 
 // componants
 import UserCardsContainer from "../../Welcome/AllUserCardsContainer";
 import JoinButton from "../Componants/JoinButton";
 import { color } from "@mui/system";
+
 const paperStyle = {
   padding: 15,
   height: "15vh",
@@ -22,21 +25,22 @@ const paperStyle = {
 const paperStyle2 = {
   padding: 10,
   height: "10vh",
-  width: 800,
+  width: 200,
   margin: "20px auto",
 };
 const paperStyle3 = {
   padding: 10,
   height: "30vh",
   width: 1300,
-  margin: "-10px auto",
+  margin: "-180px auto",
 };
 const paperStyle4 = {
   padding: 10,
   height: "5vh",
   width: 200,
-  margin: "20px auto",
+  margin: "200px auto",
 };
+
 export default function ProjectPage({ project }) {
   // console.log(project)
   return (
@@ -79,17 +83,19 @@ export default function ProjectPage({ project }) {
             /{project.numberOfAdditionalUsersNeeded}
           </h4>
         </Paper>
-        <Grid container spacing={2}>
-          <Grid
-            item
-            xs={1}
-            style={{ justifyContent: "right", display: "flex-end" }}
-            container
-            // direction="right"
-            // alignItems="right"
-            // justify="right"
-          >
-            <Paper className="color2" elevation={10} style={paperStyle2}>
+        <div className="boxcontainer">
+          <Box>
+            <Paper
+              sx={{
+                color: "black",
+                backgroundColor: "#b7bfe4",
+                border: "2px black solid",
+                bottom: 0,
+              }}
+              className="color2"
+              elevation={10}
+              style={paperStyle2}
+            >
               <div
                 style={{
                   display: "flex",
@@ -111,20 +117,20 @@ export default function ProjectPage({ project }) {
                 </div>
               </div>
             </Paper>
-          </Grid>
-        </Grid>
+          </Box>
+        </div>
 
         <br />
       </div>
 
-      <Paper className="color" elevation={10} style={paperStyle3}>
+      <Paper className="color2" elevation={10} style={paperStyle3}>
         <div>
           <h5>Summary: {project.summary}</h5>
           <h5>Description: {project.description}</h5>
         </div>
       </Paper>
 
-      <Paper className="color" elevation={10} style={paperStyle4}>
+      <Paper className="color2" elevation={10} style={paperStyle4}>
         <strong
           style={{
             display: "flex",
@@ -142,7 +148,7 @@ export default function ProjectPage({ project }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "40vh",
+          height: "0vh",
         }}
       >
         <br />

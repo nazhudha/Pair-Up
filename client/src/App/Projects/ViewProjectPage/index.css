@@ -24,3 +24,10 @@
       background-position: 0% 50%;
   }
 }
+
+.boxcontainer {
+ 
+  display:flex;
+  justify-content: right;
+  margin-right: 50px;
+}
