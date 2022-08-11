@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -22,14 +23,20 @@ export default function NewUserCard({ user }) {
       </CardContent>
       <CardActions>
         <Grid container justifyContent="space-between">
+        <Link to="/profile/62f007e5dd344fce0c132aa1">
           <Button variant="contained" size="small" style={{ fontSize: "10px" }}>
             Profile
           </Button>
-          <Button variant="contained" size="small" style={{ fontSize: "10px" }}>
-            Pair now
-          </Button>
+        </Link>
+          <Link to="/pairnow">
+            <Button variant="contained" size="small" style={{ fontSize: "10px" }}>
+              Pair now
+            </Button>
+          </Link>
         </Grid>
       </CardActions>
     </Card>
   );
 }
+
+
