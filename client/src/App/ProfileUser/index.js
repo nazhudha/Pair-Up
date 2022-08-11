@@ -71,8 +71,8 @@ const Profile = () => {
       <p>{bio}</p>
       <p>{login}</p>
       <p>{followers}</p>
-      <AddFriendButton myId="62f00849dd344fce0c132aa5"/>
-      <ProfileUser info={info} result={result} friend={id}
+      <AddFriendButton myId="62f281373f2292f756248398" friend={id}/>
+      <ProfileUser info={info} result={result} 
       />
       <br></br>
       {/* <GithubTable repos={repos} /> */}
