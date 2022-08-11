@@ -6,11 +6,20 @@ import FormLabel from "@mui/material/FormLabel";
 import Radio from "@mui/material/Radio";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import { motion } from "framer-motion";
 
 export default function SignupSkill({ user, addSkill }) {
   const beginnerRef = useRef();
   const intermediateRef = useRef();
   const expertRef = useRef();
+  const paperStyle = {
+    padding: 20,
+    height: "20vh",
+    width: 400,
+    margin: "250px auto",
+  };
 
   const nextButtonRef = useRef();
 
@@ -29,58 +38,74 @@ export default function SignupSkill({ user, addSkill }) {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
-      <FormControl>
-        <FormLabel id="demo-radio-buttons-group-label">Coding Level</FormLabel>
-        <RadioGroup
-          aria-labelledby="demo-radio-buttons-group-label"
-          name="radio-buttons-group"
+    <Grid>
+      <div className="header">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, scale: 1.8 }}
+          transition={{ delay: 0.1, duration: 2.5 }}
         >
-          <FormControlLabel
-            inputRef={beginnerRef}
-            value="Beginner"
-            control={<Radio />}
-            label="Beginner"
-            onChange={handleChange}
-          />
-          <FormControlLabel
-            inputRef={intermediateRef}
-            value="Intermediate"
-            control={<Radio />}
-            label="Intermediate"
-            onChange={handleChange}
-          />
-          <FormControlLabel
-            inputRef={expertRef}
-            value="Expert"
-            control={<Radio />}
-            label="Expert"
-            onChange={handleChange}
-          />
-        </RadioGroup>
-        <Link to="/signuplanguage">
-          <Button
-            inputRef={nextButtonRef}
-            variant="contained"
-            sx={{
-              color: "black",
-              backgroundColor: "#b7bfe4",
-              border: "2px black solid",
-            }}
-            className="btn btn-primary btn-bloack"
-          >
-            Next
-          </Button>
-        </Link>
-      </FormControl>
-    </div>
+          What coding level are you?
+        </motion.h2>
+      </div>
+      <Paper elevation={10} style={paperStyle}>
+        <Grid align="center" spacing={5}></Grid>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "15vh",
+          }}
+        >
+          <FormControl>
+            <FormLabel id="demo-radio-buttons-group-label">
+              Coding Level
+            </FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              name="radio-buttons-group"
+            >
+              <FormControlLabel
+                inputRef={beginnerRef}
+                value="Beginner"
+                control={<Radio />}
+                label="Beginner"
+                onChange={handleChange}
+              />
+              <FormControlLabel
+                inputRef={intermediateRef}
+                value="Intermediate"
+                control={<Radio />}
+                label="Intermediate"
+                onChange={handleChange}
+              />
+              <FormControlLabel
+                inputRef={expertRef}
+                value="Expert"
+                control={<Radio />}
+                label="Expert"
+                onChange={handleChange}
+              />
+            </RadioGroup>
+            <Link to="/signuplanguage">
+              <Button
+                inputRef={nextButtonRef}
+                variant="contained"
+                sx={{
+                  color: "black",
+                  backgroundColor: "#b7bfe4",
+                  border: "2px black solid",
+                }}
+                className="btn btn-primary btn-bloack"
+              >
+                Next
+              </Button>
+            </Link>
+          </FormControl>
+        </div>
+      </Paper>
+    </Grid>
     // <>
     //   <div className="codinglevel">
     //     <h3>What's your coding level?</h3>
