@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserCards from "./userCards";
 import UserCardsContainer from "./AllUserCardsContainer";
+import Location from "../../Components/Location";
 
 // Functions
 import { getAllUsers, getAllUsersById } from "../Functions/getAllUsers";
@@ -33,6 +34,7 @@ export default function Welcome() {
       <div className="cardsContainer">
         <UserCardsContainer usersData={friendsData} />
       </div>
+      <div><br /><Location /></div>
 
       <div className="cardsContainer">
         <UserCardsContainer usersData={usersData} />

@@ -37,7 +37,7 @@ const Login = () => {
     setRedirect(true);
   };
 
-  if (redirect) return <Navigate to="/profile" />;
+  if (redirect) return <Navigate to="/welcome" />;
 
   const paperStyle = {
     padding: 20,
