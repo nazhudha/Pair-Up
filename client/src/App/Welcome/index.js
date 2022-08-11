@@ -37,7 +37,11 @@ export default function Welcome() {
         <ResponsiveAppBarLoggedOut />
       )}
       <h1>Welcome to Pair Up!</h1>
+      <div className="sub-title">
+      <h2>Your Friends</h2>
+      </div>
       <div className="cardsContainer">
+        
         <UserCardsContainer usersData={friendsData} />
       </div>
       <div>
@@ -45,6 +49,15 @@ export default function Welcome() {
         <Location />
       </div>
 
+
+      <div>
+        <br />
+        <Location />
+      </div>
+
+      <div className="sub-title">
+      <h2>All Users</h2>
+      </div>
       <div className="cardsContainer">
         <UserCardsContainer usersData={usersData} />
       </div>
