@@ -29,11 +29,11 @@ const paperStyle3 = {
   padding: 10,
   height: "30vh",
   width: 1300,
-  margin: "20px auto",
+  margin: "-10px auto",
 };
 const paperStyle4 = {
   padding: 10,
-  height: "30vh",
+  height: "5vh",
   width: 200,
   margin: "20px auto",
 };
@@ -123,18 +123,20 @@ export default function ProjectPage({ project }) {
       {/* Skills we need */}
 
       {/* Users in this project */}
-      <strong
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "0vh",
-        }}
-      >
-        <Paper className="color" elevation={10} style={paperStyle4}>
+
+      <Paper className="color" elevation={10} style={paperStyle4}>
+        <strong
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "5vh",
+          }}
+        >
           Users in this project{" "}
-        </Paper>
-      </strong>
+        </strong>
+      </Paper>
+
       <div
         style={{
           display: "flex",
