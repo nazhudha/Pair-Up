@@ -6,6 +6,7 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import { buttonBaseClasses } from '@mui/material';
+import Button from '@mui/material/Button';
 
 export default function ProjectBanner({project}) {
   return (
@@ -18,9 +19,14 @@ export default function ProjectBanner({project}) {
             actionIcon={
               <IconButton
                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                aria-label={`info about ${item.title}`}
+                aria-label="Join this project!"
               >
-                <InfoIcon />
+                <Button variant="contained" spacing={4} sx={{
+                   height: 38
+                   
+                   
+                    }}>Join</Button>
+                <Button></Button>
               </IconButton>
             }
           />
