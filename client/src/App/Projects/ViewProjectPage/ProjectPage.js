@@ -14,7 +14,7 @@ import { color } from "@mui/system";
 const paperStyle = {
   padding: 15,
   height: "15vh",
-  width: 1300,
+  width: "auto",
   margin: "0px auto",
   left: 100,
 };
@@ -43,7 +43,7 @@ export default function ProjectPage({ project }) {
     <>
       {/* banner */}
       <div>
-        <Paper className="color" elevation={10} style={paperStyle}>
+        <Paper className="color3" elevation={5} style={paperStyle}>
           <div
             style={{
               display: "flex",
@@ -54,9 +54,6 @@ export default function ProjectPage({ project }) {
           >
             <small>{project.category} </small>
           </div>
-
-          <br />
-          <br />
 
           <div
             style={{
@@ -72,7 +69,6 @@ export default function ProjectPage({ project }) {
             <strong>Join this project </strong>
             <JoinButton projectId={project._id} />
           </div>
-
           <br />
           <br />
           <h4>
@@ -83,46 +79,50 @@ export default function ProjectPage({ project }) {
             /{project.numberOfAdditionalUsersNeeded}
           </h4>
         </Paper>
-
-        <Paper className="color2" elevation={10} style={paperStyle2}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "10vh",
-            }}
+        <Grid container spacing={2}>
+          <Grid
+            item
+            xs={1}
+            style={{ justifyContent: "right", display: "flex-end" }}
+            container
+            // direction="right"
+            // alignItems="right"
+            // justify="right"
           >
-            <strong>Skills we have: </strong>
-            {project.langWeHave.map((languange) => {
-              return `   ${languange} `;
-            })}
-            <br />
-            <div>
-              <strong>Skills we need </strong>
-              {project.langWeNeed.map((languange) => {
-                return `${languange} `;
-              })}
-            </div>
-          </div>
-        </Paper>
+            <Paper className="color2" elevation={10} style={paperStyle2}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "10vh",
+                }}
+              >
+                <strong>Skills we have: </strong>
+                {project.langWeHave.map((languange) => {
+                  return `   ${languange} `;
+                })}
+                <br />
+                <div>
+                  <strong>Skills we need </strong>
+                  {project.langWeNeed.map((languange) => {
+                    return `${languange} `;
+                  })}
+                </div>
+              </div>
+            </Paper>
+          </Grid>
+        </Grid>
 
         <br />
       </div>
-      {/* Summary and Description */}
+
       <Paper className="color" elevation={10} style={paperStyle3}>
         <div>
           <h5>Summary: {project.summary}</h5>
           <h5>Description: {project.description}</h5>
         </div>
       </Paper>
-      {/* Join this project */}
-
-      {/* Skills we have */}
-
-      {/* Skills we need */}
-
-      {/* Users in this project */}
 
       <Paper className="color" elevation={10} style={paperStyle4}>
         <strong
@@ -148,8 +148,6 @@ export default function ProjectPage({ project }) {
         <br />
         <UserCardsContainer usersData={project.users} />
       </div>
-
-      {/* Map of users*/}
     </>
   );
 }
