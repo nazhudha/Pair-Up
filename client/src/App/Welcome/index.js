@@ -23,20 +23,25 @@ export default function Welcome() {
   };
 
   useEffect(() => {
-    pullUsers()
+    pullUsers();
     pullFriends();
   }, []); // this is the dependancy array. [] means it will run once when the page opens
 
-  
   return (
     <div>
       <h1>Welcome to Pair Up!</h1>
       <div className="cardsContainer">
+        <h2 className="sub-title">Your Friends List</h2>
         <UserCardsContainer usersData={friendsData} />
       </div>
-      <div><br /><Location /></div>
+
+      <div>
+        <br />
+        <Location />
+      </div>
 
       <div className="cardsContainer">
+        <h2 className="sub-title">All Users</h2>
         <UserCardsContainer usersData={usersData} />
       </div>
     </div>

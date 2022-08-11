@@ -6,6 +6,13 @@ h1 {
   font-size: 60px;
 }
 
+.sub-title{
+  margin: 0px;
+  padding: 0px;
+  font-size: 2rem;
+  justify-self: left;
+}
+
 .cardsContainer {
   margin-top: 90px;
   margin-bottom: 20px;
