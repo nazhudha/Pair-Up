@@ -13,12 +13,12 @@ export default function AddFriendButton({friendId}) {
         },
       };
     }
-    fetch('http://localhost:8080/profile/' + friendId, config)
+    fetch('http://localhost:8080/profile/addfriend/' + friendId, config)
     }
 
   const handleClick = () => {
     console.log({friendId})
-    addFriend(friendId)
+    addFriend()
   }
 
   return (

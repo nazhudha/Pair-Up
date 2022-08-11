@@ -71,7 +71,7 @@ const Profile = () => {
       <p>{bio}</p>
       <p>{login}</p>
       <p>{followers}</p>
-      <AddFriendButton myId="62f281373f2292f756248398" friend={id}/>
+      <AddFriendButton friendId={id}/>
       <ProfileUser info={info} result={result} 
       />
       <br></br>
