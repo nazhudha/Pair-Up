@@ -1,0 +1,8 @@
+.color {
+  background: linear-gradient(-45deg, #716764, #8fae9b, #e7b4b42a, #e1cde9);
+  background-size: 400% 400%;
+}
+.color2 {
+  background: linear-gradient(-45deg, #716764, hsl(141, 49%, 73%), #ebb1b12a, #d098e7);
+  background-size: 400% 400%;
+}
