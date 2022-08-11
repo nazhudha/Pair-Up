@@ -13,6 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import UserCardsContainer from "../../Welcome/AllUserCardsContainer";
 import JoinButton from "../Componants/JoinButton";
 import { color } from "@mui/system";
+// import ProjectBanner from "./components/ProjectBanner";
 
 const paperStyle = {
   padding: 15,
@@ -64,7 +65,7 @@ export default function ProjectPage({ project }) {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              height: "0vh",
+              height: "5vh",
             }}
           >
             <strong> {project.name}</strong>
@@ -83,6 +84,8 @@ export default function ProjectPage({ project }) {
             /{project.numberOfAdditionalUsersNeeded}
           </h4>
         </Paper>
+
+        
         <div className="boxcontainer">
           <Box>
             <Paper
