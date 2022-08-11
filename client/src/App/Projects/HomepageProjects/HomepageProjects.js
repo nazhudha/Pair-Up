@@ -39,12 +39,17 @@ export default function HomepageProjects() {
         ) : (
           <ResponsiveAppBarLoggedOut />
         )}
-        <h2>My Projects</h2>
+        <div className="sub-title">
+          <h2>My Projects</h2>
+        </div>
+
         <div className="ProjectCardContainer">
           <ProjectPostCardContainer projects={myProjects} />
         </div>
 
-        <h2>All Projects</h2>
+        <div className="sub-title">
+          <h2>All Projects</h2>
+        </div>
         <div className="ProjectCardContainer">
           <ProjectPostCardContainer projects={projects} />
         </div>
