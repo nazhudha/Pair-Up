@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import background from "./images/Pairing-men-colour.png";
 
 export default function LoginAndSignup() {
   const logIn = {
@@ -20,15 +21,24 @@ export default function LoginAndSignup() {
     fontSize: 20,
   };
   return (
-    <div>
-      <div className="header">
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, scale: 1.8 }}
-          transition={{ delay: 0.1, duration: 2.5 }}
-        >
-          Pair Up!
-        </motion.h1>
+    <div
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "right",
+        // opacity: 0.4,
+      }}
+    >
+      <div>
+        <div className="header">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, scale: 1.8 }}
+            transition={{ delay: 0.1, duration: 2.5 }}
+          >
+            Pair Up!
+          </motion.h1>
+        </div>
       </div>
 
       <h2 className="header2">
