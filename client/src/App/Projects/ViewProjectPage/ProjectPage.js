@@ -11,6 +11,9 @@ import Index from "./index.css";
 import UserCardsContainer from "../../Welcome/AllUserCardsContainer";
 import JoinButton from "../Componants/JoinButton";
 import { color } from "@mui/system";
+import ProjectBanner from "./components/ProjectBanner";
+
+
 const paperStyle = {
   padding: 15,
   height: "15vh",
@@ -42,6 +45,10 @@ export default function ProjectPage({ project }) {
   return (
     <>
       {/* banner */}
+      <div>
+        <ProjectBanner project={project} />
+      </div>
+
       <div>
         <Paper className="color" elevation={10} style={paperStyle}>
           <div
