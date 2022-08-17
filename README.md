@@ -48,9 +48,13 @@ MERN Stack
 
 # Screen Shots
  #### Login/Signup Pages
-![Welcome Page](./client/images/one%20.png))
+![Main Page](./client/images/one%20.png))
+![SignUp Page](./client/images/two.png))
 
 #### Main Page Features
-
+![Welcome Page](./client/images/three.png))
+![four Page](./client/images/four.png))
+![five Page](./client/images/five.png))
+![six Page](./client/images/six.png))
 
 # SETUP
